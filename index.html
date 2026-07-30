@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>安全技术错题本</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div>
+          <p class="source">Apple Notes · 26技术</p>
+          <h1>安全技术错题本</h1>
+        </div>
+        <div class="sync">
+          <span class="sync-dot"></span>
+          <span id="updatedAt">读取中</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="summary" aria-label="学习概览">
+          <article>
+            <span id="totalCount">0</span>
+            <p>错题</p>
+          </article>
+          <article>
+            <span id="sectionCount">0</span>
+            <p>章节</p>
+          </article>
+          <article>
+            <span id="masteredCount">0</span>
+            <p>已掌握</p>
+          </article>
+        </section>
+
+        <section class="controls" aria-label="筛选">
+          <label class="search">
+            <span>搜索</span>
+            <input id="searchInput" type="search" placeholder="输入关键词、数值、设备名" />
+          </label>
+          <div class="segments" role="tablist" aria-label="题型">
+            <button class="active" data-kind="all">全部</button>
+            <button data-kind="数值题">数值题</button>
+            <button data-kind="概念题">概念题</button>
+          </div>
+        </section>
+
+        <nav id="sectionTabs" class="section-tabs" aria-label="章节"></nav>
+
+        <section class="content">
+          <div class="section-head">
+            <div>
+              <p id="domainName">机械</p>
+              <h2 id="sectionName">机械基础</h2>
+            </div>
+            <button id="shuffleBtn" type="button">随机抽题</button>
+          </div>
+          <div id="cards" class="cards"></div>
+        </section>
+      </main>
+    </div>
+
+    <template id="cardTemplate">
+      <article class="mistake-card">
+        <div class="card-meta">
+          <strong></strong>
+          <span></span>
+        </div>
+        <p class="question"></p>
+        <div class="memory"></div>
+        <div class="actions">
+          <button class="review-btn" type="button">复习 +1</button>
+          <button class="master-btn" type="button">标记掌握</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
