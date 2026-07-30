@@ -4,6 +4,8 @@ const state = {
   section: "all",
   kind: "all",
   query: "",
+  quizPage: 0,
+  pageSize: 10,
   progress: JSON.parse(localStorage.getItem("safetyNotebookProgress") || "{}"),
   quiz: JSON.parse(localStorage.getItem("safetyNotebookQuiz") || '{"right":0,"wrong":0}'),
 };
@@ -13,6 +15,7 @@ const cards = $("#cards");
 const tabs = $("#sectionTabs");
 const template = $("#cardTemplate");
 const quizTemplate = $("#quizTemplate");
+const quizPager = $("#quizPager");
 
 const saveProgress = () => {
   localStorage.setItem("safetyNotebookProgress", JSON.stringify(state.progress));
@@ -55,6 +58,7 @@ const renderTabs = () => {
   all.innerHTML = `<strong>全部错题</strong><span>${state.data.items.length} 条</span>`;
   all.addEventListener("click", () => {
     state.section = "all";
+    state.quizPage = 0;
     render();
   });
   tabs.appendChild(all);
@@ -66,6 +70,7 @@ const renderTabs = () => {
     btn.innerHTML = `<strong>${section.section}</strong><span>${section.items.length} 条</span>`;
     btn.addEventListener("click", () => {
       state.section = section.section;
+      state.quizPage = 0;
       render();
     });
     tabs.appendChild(btn);
@@ -78,9 +83,12 @@ const renderCards = () => {
   const section = state.data.sections.find((entry) => entry.section === state.section);
   $("#domainName").textContent = section?.domain || "全部章节";
   $("#sectionName").textContent = state.mode === "quiz" ? "测试模式" : section?.section || "错题总览";
-  $("#shuffleBtn").textContent = state.mode === "quiz" ? "换一组题" : "随机背诵";
+  $("#shuffleBtn").textContent = state.mode === "quiz" ? "下一页" : "随机背诵";
+  $("#shuffleBtn").disabled = state.mode === "quiz" && state.quizPage >= Math.ceil(items.length / state.pageSize) - 1;
+  quizPager.hidden = state.mode !== "quiz";
 
   if (!items.length) {
+    quizPager.innerHTML = "";
     const empty = document.createElement("div");
     empty.className = "empty";
     empty.textContent = "没有找到匹配的错题";
@@ -117,21 +125,25 @@ const renderCards = () => {
 };
 
 const quizItems = (items) => {
-  const source = [...items];
-  for (let i = source.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [source[i], source[j]] = [source[j], source[i]];
-  }
-  return source.slice(0, Math.min(8, source.length));
+  const totalPages = Math.max(1, Math.ceil(items.length / state.pageSize));
+  state.quizPage = Math.min(state.quizPage, totalPages - 1);
+  const start = state.quizPage * state.pageSize;
+  return items.slice(start, start + state.pageSize);
 };
 
 const renderQuizCards = (items) => {
-  quizItems(items).forEach((item, index) => {
+  const totalPages = Math.max(1, Math.ceil(items.length / state.pageSize));
+  const pageItems = quizItems(items);
+  renderQuizPager(items.length, totalPages);
+
+  pageItems.forEach((item, index) => {
+    const quiz = makeQuiz(item);
     const node = quizTemplate.content.firstElementChild.cloneNode(true);
-    node.querySelector("strong").textContent = `Q${index + 1}`;
+    node.querySelector("strong").textContent = `Q${state.quizPage * state.pageSize + index + 1}`;
     node.querySelector(".card-meta span").textContent = `${item.section} · ${item.kind}`;
-    node.querySelector(".quiz-prompt").textContent = makePrompt(item);
-    node.querySelector(".quiz-answer").textContent = item.text;
+    node.querySelector(".quiz-prompt").textContent = quiz.prompt;
+    node.querySelector(".quiz-hint").textContent = quiz.hint;
+    node.querySelector(".quiz-answer").innerHTML = `<strong>应填：</strong>${escapeHtml(quiz.answer)}<br><strong>完整句：</strong>${escapeHtml(item.text)}`;
     node.querySelector(".reveal-btn").addEventListener("click", () => {
       node.querySelector(".quiz-answer").hidden = false;
       node.querySelector(".quiz-actions").hidden = false;
@@ -141,6 +153,7 @@ const renderQuizCards = (items) => {
       saveQuiz();
       renderSummary();
       node.classList.add("wrong");
+      lockQuizCard(node);
     });
     node.querySelector(".right-btn").addEventListener("click", () => {
       state.quiz.right += 1;
@@ -150,18 +163,97 @@ const renderQuizCards = (items) => {
       saveQuiz();
       renderSummary();
       node.classList.add("right");
+      lockQuizCard(node);
     });
     cards.appendChild(node);
   });
 };
 
-const makePrompt = (item) => {
-  if (item.kind === "数值题") {
-    return item.text.replace(/\d+(?:\.\d+)?\s*(?:mm|ms|米|伏|千伏|千欧|%|度)?/gi, "____");
-  }
-  const text = item.text.replace(/[。.]$/, "");
-  return `请复述：${text.slice(0, Math.max(12, Math.floor(text.length * 0.45)))}……`;
+const renderQuizPager = (count, totalPages) => {
+  quizPager.innerHTML = "";
+
+  const prev = document.createElement("button");
+  prev.type = "button";
+  prev.textContent = "上一页";
+  prev.disabled = state.quizPage === 0;
+  prev.addEventListener("click", () => {
+    state.quizPage = Math.max(0, state.quizPage - 1);
+    renderCards();
+  });
+
+  const page = document.createElement("span");
+  page.textContent = `第 ${state.quizPage + 1} / ${totalPages} 页 · 共 ${count} 题`;
+
+  const next = document.createElement("button");
+  next.type = "button";
+  next.textContent = "下一页";
+  next.disabled = state.quizPage >= totalPages - 1;
+  next.addEventListener("click", () => {
+    state.quizPage = Math.min(totalPages - 1, state.quizPage + 1);
+    renderCards();
+  });
+
+  quizPager.append(prev, page, next);
 };
+
+const lockQuizCard = (node) => {
+  node.querySelectorAll(".quiz-actions button").forEach((button) => {
+    button.disabled = true;
+  });
+};
+
+const makeQuiz = (item) => {
+  if (item.kind === "数值题") {
+    const answers = item.text.match(/\d+(?:\.\d+)?\s*(?:mm|ms|米|伏|千伏|千欧|%|度)?/gi) || [];
+    return {
+      prompt: `填空：${item.text.replace(/\d+(?:\.\d+)?\s*(?:mm|ms|米|伏|千伏|千欧|%|度)?/gi, "____")}`,
+      answer: answers.join("、"),
+      hint: "提示：重点核对数值、单位、上下限和适用对象。",
+    };
+  }
+  const cloze = makeCloze(item.text);
+  return {
+    prompt: `填空：${cloze.prompt}`,
+    answer: cloze.answer,
+    hint: `提示：${item.memory}`,
+  };
+};
+
+const makeCloze = (text) => {
+  const rules = [
+    /(不应|不得|不允许|不能|严禁)([^。，；]+)([。，；]?)/,
+    /(属于)([^。，；]+)([。，；]?)/,
+    /(是|为)([^。，；]+)([。，；]?)/,
+    /(应当|应|要|必须)([^。，；]+)([。，；]?)/,
+    /(采用|设置|安装)([^。，；]+)([。，；]?)/,
+  ];
+
+  for (const rule of rules) {
+    const match = text.match(rule);
+    if (match?.[2]?.trim().length >= 2) {
+      return {
+        prompt: text.replace(match[2], "____"),
+        answer: `${match[1]}${match[2]}`,
+      };
+    }
+  }
+
+  const clean = text.replace(/[。.]$/, "");
+  const keep = Math.max(8, Math.floor(clean.length * 0.58));
+  return {
+    prompt: `${clean.slice(0, keep)}____${text.endsWith("。") ? "。" : ""}`,
+    answer: clean.slice(keep),
+  };
+};
+
+const escapeHtml = (value) =>
+  String(value).replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;",
+  })[char]);
 
 const render = () => {
   renderSummary();
@@ -183,12 +275,14 @@ document.querySelectorAll(".mode-switch button").forEach((button) => {
     document.querySelectorAll(".mode-switch button").forEach((entry) => entry.classList.remove("active"));
     button.classList.add("active");
     state.mode = button.dataset.mode;
+    state.quizPage = 0;
     renderCards();
   });
 });
 
 $("#searchInput").addEventListener("input", (event) => {
   state.query = event.target.value;
+  state.quizPage = 0;
   renderCards();
 });
 
@@ -196,6 +290,8 @@ $("#shuffleBtn").addEventListener("click", () => {
   const items = filteredItems();
   if (!items.length) return;
   if (state.mode === "quiz") {
+    const totalPages = Math.max(1, Math.ceil(items.length / state.pageSize));
+    state.quizPage = Math.min(totalPages - 1, state.quizPage + 1);
     renderCards();
     return;
   }

@@ -13,6 +13,10 @@
           <p class="source">Apple Notes · 26技术</p>
           <h1>安全技术错题本</h1>
         </div>
+        <div class="honor">
+          <strong>错题攻克中</strong>
+          <span>稳步提升</span>
+        </div>
         <div class="sync">
           <span class="sync-dot"></span>
           <span id="updatedAt">读取中</span>
@@ -66,6 +70,7 @@
             </div>
             <button id="shuffleBtn" type="button">随机背诵</button>
           </div>
+          <div id="quizPager" class="quiz-pager" hidden></div>
           <div class="sync-note">
             当前网页从 <code>data.json</code> 读取内容。备忘录更新后需要重新导出并发布，线上页面才会更新。
           </div>
@@ -96,6 +101,7 @@
           <span></span>
         </div>
         <p class="quiz-prompt"></p>
+        <p class="quiz-hint"></p>
         <button class="reveal-btn" type="button">显示答案</button>
         <div class="quiz-answer" hidden></div>
         <div class="quiz-actions" hidden>
