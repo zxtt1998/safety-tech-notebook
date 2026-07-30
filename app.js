@@ -6,6 +6,7 @@ const state = {
   query: "",
   quizPage: 0,
   pageSize: 10,
+  appTitle: localStorage.getItem("safetyNotebookTitle") || "安全技术错题本",
   progress: JSON.parse(localStorage.getItem("safetyNotebookProgress") || "{}"),
   quiz: JSON.parse(localStorage.getItem("safetyNotebookQuiz") || '{"right":0,"wrong":0}'),
 };
@@ -16,6 +17,10 @@ const tabs = $("#sectionTabs");
 const template = $("#cardTemplate");
 const quizTemplate = $("#quizTemplate");
 const quizPagers = document.querySelectorAll("[data-quiz-pager]");
+const titleInput = $("#titleInput");
+const titleSyncStatus = $("#titleSyncStatus");
+
+state.quiz.sectionStats ||= {};
 
 const saveProgress = () => {
   localStorage.setItem("safetyNotebookProgress", JSON.stringify(state.progress));
@@ -23,6 +28,18 @@ const saveProgress = () => {
 
 const saveQuiz = () => {
   localStorage.setItem("safetyNotebookQuiz", JSON.stringify(state.quiz));
+};
+
+const saveTitleLocal = (title) => {
+  state.appTitle = title.trim() || "安全技术错题本";
+  localStorage.setItem("safetyNotebookTitle", state.appTitle);
+  document.title = state.appTitle;
+  titleInput.value = state.appTitle;
+};
+
+const setTitleStatus = (text, tone = "") => {
+  titleSyncStatus.textContent = text;
+  titleSyncStatus.dataset.tone = tone;
 };
 
 const itemProgress = (id) => {
@@ -48,6 +65,68 @@ const renderSummary = () => {
   $("#masteredCount").textContent = mastered;
   $("#quizScore").textContent = attempts ? `${Math.round((state.quiz.right / attempts) * 100)}%` : "0%";
   $("#updatedAt").textContent = `已同步 ${state.data.items.length} 条`;
+};
+
+const sectionInsight = () =>
+  state.data.sections
+    .map((section) => {
+      const items = state.data.items.filter((item) => item.section === section.section);
+      const stats = state.quiz.sectionStats[section.section] || { right: 0, wrong: 0 };
+      const mastered = items.filter((item) => itemProgress(item.id).mastered).length;
+      const reviewed = items.reduce((sum, item) => sum + itemProgress(item.id).review, 0);
+      const unmastered = items.length - mastered;
+      const weakness = unmastered + stats.wrong * 2 - stats.right * 0.6;
+      return {
+        section: section.section,
+        total: items.length,
+        mastered,
+        reviewed,
+        right: stats.right || 0,
+        wrong: stats.wrong || 0,
+        weakness: Math.max(0, weakness),
+      };
+    })
+    .sort((a, b) => b.weakness - a.weakness);
+
+const renderAnalysis = () => {
+  const insights = sectionInsight();
+  const top = insights.slice(0, 6);
+  const max = Math.max(...top.map((item) => item.weakness), 1);
+  const mastered = state.data.items.filter((item) => itemProgress(item.id).mastered).length;
+  const reviewed = state.data.items.filter((item) => itemProgress(item.id).review > 0 && !itemProgress(item.id).mastered).length;
+  const untouched = Math.max(0, state.data.items.length - mastered - reviewed);
+  const total = Math.max(1, state.data.items.length);
+  const masteredDeg = (mastered / total) * 360;
+  const reviewedDeg = ((mastered + reviewed) / total) * 360;
+  const weakest = top[0];
+
+  $("#analysisSignal").textContent = weakest
+    ? `当前最需巩固：${weakest.section} · ${Math.round(weakest.weakness)}`
+    : "等待学习记录";
+
+  $("#barChart").innerHTML = top
+    .map((item) => {
+      const width = Math.max(8, Math.round((item.weakness / max) * 100));
+      return `
+        <div class="bar-row">
+          <div class="bar-label">
+            <strong>${escapeHtml(item.section)}</strong>
+            <span>${item.mastered}/${item.total} 掌握 · 错 ${item.wrong}</span>
+          </div>
+          <div class="bar-track"><span style="width: ${width}%"></span></div>
+        </div>
+      `;
+    })
+    .join("");
+
+  $("#pieChart").style.background = `conic-gradient(#078b7f 0 ${masteredDeg}deg, #1d63d8 ${masteredDeg}deg ${reviewedDeg}deg, #d92d36 ${reviewedDeg}deg 360deg)`;
+  $("#pieLegend").innerHTML = [
+    ["已掌握", mastered, "#078b7f"],
+    ["待巩固", reviewed, "#1d63d8"],
+    ["需攻克", untouched, "#d92d36"],
+  ]
+    .map(([label, value, color]) => `<span><i style="background:${color}"></i>${label} ${value} 题</span>`)
+    .join("");
 };
 
 const renderTabs = () => {
@@ -154,18 +233,24 @@ const renderQuizCards = (items) => {
     });
     node.querySelector(".wrong-btn").addEventListener("click", () => {
       state.quiz.wrong += 1;
+      const stats = (state.quiz.sectionStats[item.section] ||= { right: 0, wrong: 0 });
+      stats.wrong += 1;
       saveQuiz();
       renderSummary();
+      renderAnalysis();
       node.classList.add("wrong");
       lockQuizCard(node);
     });
     node.querySelector(".right-btn").addEventListener("click", () => {
       state.quiz.right += 1;
+      const stats = (state.quiz.sectionStats[item.section] ||= { right: 0, wrong: 0 });
+      stats.right += 1;
       const progress = itemProgress(item.id);
       progress.review += 1;
       saveProgress();
       saveQuiz();
       renderSummary();
+      renderAnalysis();
       node.classList.add("right");
       lockQuizCard(node);
     });
@@ -264,8 +349,64 @@ const escapeHtml = (value) =>
 
 const render = () => {
   renderSummary();
+  renderAnalysis();
   renderTabs();
   renderCards();
+};
+
+const loadCloudTitle = () => {
+  saveTitleLocal(state.appTitle);
+  fetch(`title-config.json?_=${Date.now()}`)
+    .then((response) => (response.ok ? response.json() : null))
+    .then((config) => {
+      if (config?.title) {
+        saveTitleLocal(config.title);
+        setTitleStatus("云标题已加载", "ok");
+      } else {
+        setTitleStatus("使用本地标题", "");
+      }
+    })
+    .catch(() => setTitleStatus("使用本地标题", ""));
+};
+
+const syncTitleToGithub = async () => {
+  const title = titleInput.value.trim() || "安全技术错题本";
+  saveTitleLocal(title);
+  let token = localStorage.getItem("safetyNotebookGithubToken") || "";
+  if (!token) {
+    token = window.prompt("粘贴 GitHub Token，需要 repo contents 写入权限。Token 只保存在本机浏览器。") || "";
+    if (!token.trim()) {
+      setTitleStatus("已本地保存", "");
+      return;
+    }
+    localStorage.setItem("safetyNotebookGithubToken", token.trim());
+  }
+
+  setTitleStatus("云同步中...", "");
+  const api = "https://api.github.com/repos/zxtt1998/safety-tech-notebook/contents/title-config.json";
+  const headers = {
+    Authorization: `Bearer ${token.trim()}`,
+    Accept: "application/vnd.github+json",
+    "Content-Type": "application/json",
+  };
+  try {
+    const current = await fetch(api, { headers }).then((response) => response.json());
+    const content = `${JSON.stringify({ title, updated: new Date().toISOString() }, null, 2)}\n`;
+    const encoded = btoa(unescape(encodeURIComponent(content)));
+    const response = await fetch(api, {
+      method: "PUT",
+      headers,
+      body: JSON.stringify({
+        message: `Update notebook title to ${title}`,
+        content: encoded,
+        sha: current.sha,
+      }),
+    });
+    if (!response.ok) throw new Error("GitHub API failed");
+    setTitleStatus("标题已云同步", "ok");
+  } catch (error) {
+    setTitleStatus("云同步失败，已本地保存", "warn");
+  }
 };
 
 document.querySelectorAll(".segments button").forEach((button) => {
@@ -308,6 +449,23 @@ $("#shuffleBtn").addEventListener("click", () => {
   renderCards();
   cards.firstElementChild?.scrollIntoView({ behavior: "smooth", block: "start" });
 });
+
+$("#saveTitleBtn").addEventListener("click", () => {
+  saveTitleLocal(titleInput.value);
+  setTitleStatus("已本地保存", "ok");
+});
+
+$("#syncTitleBtn").addEventListener("click", syncTitleToGithub);
+
+titleInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    titleInput.blur();
+    saveTitleLocal(titleInput.value);
+    setTitleStatus("已本地保存", "ok");
+  }
+});
+
+loadCloudTitle();
 
 fetch("data.json")
   .then((response) => response.json())

@@ -9,9 +9,14 @@
   <body>
     <div class="app">
       <header class="topbar">
-        <div>
+        <div class="title-editor">
           <p class="source">Apple Notes · 26技术</p>
-          <h1>安全技术错题本</h1>
+          <input id="titleInput" class="title-input" type="text" value="安全技术错题本" aria-label="错题本标题" />
+          <div class="title-actions">
+            <button id="saveTitleBtn" type="button">保存标题</button>
+            <button id="syncTitleBtn" type="button">云同步</button>
+            <span id="titleSyncStatus">读取云标题</span>
+          </div>
         </div>
         <div class="honor">
           <strong>错题攻克中</strong>
@@ -46,6 +51,35 @@
             <span id="quizScore">0%</span>
             <p>测试正确率</p>
           </article>
+        </section>
+
+        <section class="analysis-panel" aria-label="错题分析">
+          <div class="analysis-head">
+            <div>
+              <p>错题分析</p>
+              <h2>薄弱章节雷达</h2>
+            </div>
+            <span id="analysisSignal">等待学习记录</span>
+          </div>
+          <div class="analysis-grid">
+            <article class="chart-card">
+              <div class="chart-title">
+                <strong>章节薄弱度</strong>
+                <span>未掌握 + 答错权重</span>
+              </div>
+              <div id="barChart" class="bar-chart"></div>
+            </article>
+            <article class="chart-card">
+              <div class="chart-title">
+                <strong>掌握结构</strong>
+                <span>已掌握 / 待巩固 / 需攻克</span>
+              </div>
+              <div class="pie-wrap">
+                <div id="pieChart" class="pie-chart"></div>
+                <div id="pieLegend" class="pie-legend"></div>
+              </div>
+            </article>
+          </div>
         </section>
 
         <section class="controls" aria-label="筛选">
