@@ -15,7 +15,7 @@ const cards = $("#cards");
 const tabs = $("#sectionTabs");
 const template = $("#cardTemplate");
 const quizTemplate = $("#quizTemplate");
-const quizPager = $("#quizPager");
+const quizPagers = document.querySelectorAll("[data-quiz-pager]");
 
 const saveProgress = () => {
   localStorage.setItem("safetyNotebookProgress", JSON.stringify(state.progress));
@@ -85,10 +85,14 @@ const renderCards = () => {
   $("#sectionName").textContent = state.mode === "quiz" ? "测试模式" : section?.section || "错题总览";
   $("#shuffleBtn").textContent = state.mode === "quiz" ? "下一页" : "随机背诵";
   $("#shuffleBtn").disabled = state.mode === "quiz" && state.quizPage >= Math.ceil(items.length / state.pageSize) - 1;
-  quizPager.hidden = state.mode !== "quiz";
+  quizPagers.forEach((pager) => {
+    pager.hidden = state.mode !== "quiz";
+  });
 
   if (!items.length) {
-    quizPager.innerHTML = "";
+    quizPagers.forEach((pager) => {
+      pager.innerHTML = "";
+    });
     const empty = document.createElement("div");
     empty.className = "empty";
     empty.textContent = "没有找到匹配的错题";
@@ -170,30 +174,32 @@ const renderQuizCards = (items) => {
 };
 
 const renderQuizPager = (count, totalPages) => {
-  quizPager.innerHTML = "";
+  quizPagers.forEach((pager) => {
+    pager.innerHTML = "";
 
-  const prev = document.createElement("button");
-  prev.type = "button";
-  prev.textContent = "上一页";
-  prev.disabled = state.quizPage === 0;
-  prev.addEventListener("click", () => {
-    state.quizPage = Math.max(0, state.quizPage - 1);
-    renderCards();
+    const prev = document.createElement("button");
+    prev.type = "button";
+    prev.textContent = "上一页";
+    prev.disabled = state.quizPage === 0;
+    prev.addEventListener("click", () => {
+      state.quizPage = Math.max(0, state.quizPage - 1);
+      renderCards();
+    });
+
+    const page = document.createElement("span");
+    page.textContent = `第 ${state.quizPage + 1} / ${totalPages} 页 · 共 ${count} 题`;
+
+    const next = document.createElement("button");
+    next.type = "button";
+    next.textContent = "下一页";
+    next.disabled = state.quizPage >= totalPages - 1;
+    next.addEventListener("click", () => {
+      state.quizPage = Math.min(totalPages - 1, state.quizPage + 1);
+      renderCards();
+    });
+
+    pager.append(prev, page, next);
   });
-
-  const page = document.createElement("span");
-  page.textContent = `第 ${state.quizPage + 1} / ${totalPages} 页 · 共 ${count} 题`;
-
-  const next = document.createElement("button");
-  next.type = "button";
-  next.textContent = "下一页";
-  next.disabled = state.quizPage >= totalPages - 1;
-  next.addEventListener("click", () => {
-    state.quizPage = Math.min(totalPages - 1, state.quizPage + 1);
-    renderCards();
-  });
-
-  quizPager.append(prev, page, next);
 };
 
 const lockQuizCard = (node) => {
@@ -204,9 +210,10 @@ const lockQuizCard = (node) => {
 
 const makeQuiz = (item) => {
   if (item.kind === "数值题") {
-    const answers = item.text.match(/\d+(?:\.\d+)?\s*(?:mm|ms|米|伏|千伏|千欧|%|度)?/gi) || [];
+    const numericPattern = /\d+(?:\.\d+)?\s*(?:dB\(A\)|dB|kN|mm|ms|min|米|伏|千伏|千欧|%|度)?/gi;
+    const answers = item.text.match(numericPattern) || [];
     return {
-      prompt: `填空：${item.text.replace(/\d+(?:\.\d+)?\s*(?:mm|ms|米|伏|千伏|千欧|%|度)?/gi, "____")}`,
+      prompt: `填空：${item.text.replace(numericPattern, "____")}`,
       answer: answers.join("、"),
       hint: "提示：重点核对数值、单位、上下限和适用对象。",
     };

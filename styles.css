@@ -376,6 +376,11 @@ main {
   border-radius: 8px;
 }
 
+.quiz-pager-bottom {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
 .quiz-pager span {
   color: var(--ink);
   text-align: center;
