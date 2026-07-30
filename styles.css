@@ -92,8 +92,34 @@ main {
   gap: 22px;
 }
 
+.mode-switch {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  background: #e8eef5;
+  border-radius: 8px;
+}
+
+.mode-switch button {
+  flex: 1;
+  height: 42px;
+  border: 0;
+  border-radius: 6px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.mode-switch button.active {
+  color: white;
+  background: var(--navy);
+}
+
 .summary {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 12px;
   align-self: start;
 }
@@ -352,6 +378,88 @@ main {
   border-radius: 8px;
 }
 
+.sync-note {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  color: #415064;
+  background: #eef4fb;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.sync-note code {
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.quiz-card {
+  padding: 18px;
+  background: white;
+  border: 1px solid #edf1f5;
+  border-radius: 8px;
+}
+
+.quiz-card.right {
+  border-color: #9eddbd;
+  background: #f0fbf6;
+}
+
+.quiz-card.wrong {
+  border-color: #f0b7b7;
+  background: #fff5f5;
+}
+
+.quiz-prompt {
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 800;
+}
+
+.reveal-btn,
+.quiz-actions button {
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.reveal-btn {
+  width: 100%;
+  margin-top: 14px;
+  color: white;
+  background: var(--blue);
+}
+
+.quiz-answer {
+  margin-top: 14px;
+  padding: 14px;
+  color: var(--ink);
+  background: #eef4fb;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.quiz-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.wrong-btn {
+  color: var(--red);
+  background: #feecec;
+}
+
+.right-btn {
+  color: white;
+  background: var(--teal);
+}
+
 @media (max-width: 760px) {
   .app {
     padding: 14px 12px 28px;
@@ -383,8 +491,12 @@ main {
     display: block;
   }
 
+  .mode-switch {
+    margin-bottom: 12px;
+  }
+
   .summary {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 8px;
     margin-bottom: 12px;
   }
@@ -399,6 +511,10 @@ main {
 
   .summary p {
     font-size: 12px;
+  }
+
+  #quizScore {
+    font-size: 22px;
   }
 
   .controls {
@@ -469,5 +585,9 @@ main {
   .actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .quiz-prompt {
+    font-size: 16px;
   }
 }

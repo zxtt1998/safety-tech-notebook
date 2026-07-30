@@ -20,6 +20,11 @@
       </header>
 
       <main>
+        <section class="mode-switch" aria-label="学习模式">
+          <button class="active" type="button" data-mode="review">背诵复习</button>
+          <button type="button" data-mode="quiz">测试模式</button>
+        </section>
+
         <section class="summary" aria-label="学习概览">
           <article>
             <span id="totalCount">0</span>
@@ -32,6 +37,10 @@
           <article>
             <span id="masteredCount">0</span>
             <p>已掌握</p>
+          </article>
+          <article>
+            <span id="quizScore">0%</span>
+            <p>测试正确率</p>
           </article>
         </section>
 
@@ -55,7 +64,10 @@
               <p id="domainName">机械</p>
               <h2 id="sectionName">机械基础</h2>
             </div>
-            <button id="shuffleBtn" type="button">随机抽题</button>
+            <button id="shuffleBtn" type="button">随机背诵</button>
+          </div>
+          <div class="sync-note">
+            当前网页从 <code>data.json</code> 读取内容。备忘录更新后需要重新导出并发布，线上页面才会更新。
           </div>
           <div id="cards" class="cards"></div>
         </section>
@@ -73,6 +85,22 @@
         <div class="actions">
           <button class="review-btn" type="button">复习 +1</button>
           <button class="master-btn" type="button">标记掌握</button>
+        </div>
+      </article>
+    </template>
+
+    <template id="quizTemplate">
+      <article class="quiz-card">
+        <div class="card-meta">
+          <strong></strong>
+          <span></span>
+        </div>
+        <p class="quiz-prompt"></p>
+        <button class="reveal-btn" type="button">显示答案</button>
+        <div class="quiz-answer" hidden></div>
+        <div class="quiz-actions" hidden>
+          <button class="wrong-btn" type="button">答错</button>
+          <button class="right-btn" type="button">答对</button>
         </div>
       </article>
     </template>
