@@ -1,11 +1,504 @@
 {
   "title": "安全技术错题本",
-  "progress": {},
-  "quiz": {
-    "right": 0,
-    "wrong": 0,
-    "sectionStats": {}
+  "progress": {
+    "100": {
+      "review": 0,
+      "mastered": false
+    },
+    "101": {
+      "review": 0,
+      "mastered": false
+    },
+    "102": {
+      "review": 0,
+      "mastered": false
+    },
+    "103": {
+      "review": 0,
+      "mastered": false
+    },
+    "104": {
+      "review": 0,
+      "mastered": false
+    },
+    "105": {
+      "review": 0,
+      "mastered": false
+    },
+    "106": {
+      "review": 0,
+      "mastered": false
+    },
+    "107": {
+      "review": 0,
+      "mastered": false
+    },
+    "108": {
+      "review": 0,
+      "mastered": false
+    },
+    "109": {
+      "review": 0,
+      "mastered": false
+    },
+    "110": {
+      "review": 0,
+      "mastered": false
+    },
+    "111": {
+      "review": 0,
+      "mastered": false
+    },
+    "112": {
+      "review": 0,
+      "mastered": false
+    },
+    "113": {
+      "review": 0,
+      "mastered": false
+    },
+    "114": {
+      "review": 0,
+      "mastered": false
+    },
+    "115": {
+      "review": 0,
+      "mastered": false
+    },
+    "116": {
+      "review": 0,
+      "mastered": false
+    },
+    "117": {
+      "review": 0,
+      "mastered": false
+    },
+    "118": {
+      "review": 0,
+      "mastered": false
+    },
+    "001": {
+      "review": 2,
+      "mastered": false
+    },
+    "002": {
+      "review": 2,
+      "mastered": false
+    },
+    "003": {
+      "review": 5,
+      "mastered": false
+    },
+    "004": {
+      "review": 1,
+      "mastered": false
+    },
+    "005": {
+      "review": 1,
+      "mastered": false
+    },
+    "006": {
+      "review": 1,
+      "mastered": false
+    },
+    "007": {
+      "review": 2,
+      "mastered": false
+    },
+    "008": {
+      "review": 0,
+      "mastered": false
+    },
+    "009": {
+      "review": 1,
+      "mastered": false
+    },
+    "010": {
+      "review": 1,
+      "mastered": false
+    },
+    "011": {
+      "review": 1,
+      "mastered": false
+    },
+    "012": {
+      "review": 2,
+      "mastered": false
+    },
+    "013": {
+      "review": 1,
+      "mastered": false
+    },
+    "014": {
+      "review": 1,
+      "mastered": false
+    },
+    "015": {
+      "review": 1,
+      "mastered": false
+    },
+    "016": {
+      "review": 0,
+      "mastered": false
+    },
+    "017": {
+      "review": 1,
+      "mastered": false
+    },
+    "018": {
+      "review": 0,
+      "mastered": false
+    },
+    "019": {
+      "review": 0,
+      "mastered": false
+    },
+    "020": {
+      "review": 0,
+      "mastered": false
+    },
+    "021": {
+      "review": 0,
+      "mastered": false
+    },
+    "022": {
+      "review": 0,
+      "mastered": false
+    },
+    "023": {
+      "review": 0,
+      "mastered": false
+    },
+    "024": {
+      "review": 0,
+      "mastered": false
+    },
+    "025": {
+      "review": 0,
+      "mastered": false
+    },
+    "026": {
+      "review": 0,
+      "mastered": false
+    },
+    "027": {
+      "review": 0,
+      "mastered": false
+    },
+    "028": {
+      "review": 0,
+      "mastered": false
+    },
+    "029": {
+      "review": 0,
+      "mastered": false
+    },
+    "030": {
+      "review": 0,
+      "mastered": false
+    },
+    "031": {
+      "review": 0,
+      "mastered": false
+    },
+    "032": {
+      "review": 0,
+      "mastered": false
+    },
+    "033": {
+      "review": 0,
+      "mastered": false
+    },
+    "034": {
+      "review": 0,
+      "mastered": false
+    },
+    "035": {
+      "review": 0,
+      "mastered": false
+    },
+    "036": {
+      "review": 0,
+      "mastered": false
+    },
+    "037": {
+      "review": 0,
+      "mastered": false
+    },
+    "038": {
+      "review": 0,
+      "mastered": false
+    },
+    "039": {
+      "review": 0,
+      "mastered": false
+    },
+    "040": {
+      "review": 0,
+      "mastered": false
+    },
+    "041": {
+      "review": 0,
+      "mastered": false
+    },
+    "042": {
+      "review": 0,
+      "mastered": false
+    },
+    "043": {
+      "review": 0,
+      "mastered": false
+    },
+    "044": {
+      "review": 0,
+      "mastered": false
+    },
+    "045": {
+      "review": 0,
+      "mastered": false
+    },
+    "046": {
+      "review": 0,
+      "mastered": false
+    },
+    "047": {
+      "review": 0,
+      "mastered": false
+    },
+    "048": {
+      "review": 0,
+      "mastered": false
+    },
+    "049": {
+      "review": 0,
+      "mastered": false
+    },
+    "050": {
+      "review": 0,
+      "mastered": false
+    },
+    "051": {
+      "review": 0,
+      "mastered": false
+    },
+    "052": {
+      "review": 0,
+      "mastered": false
+    },
+    "053": {
+      "review": 0,
+      "mastered": false
+    },
+    "054": {
+      "review": 0,
+      "mastered": false
+    },
+    "055": {
+      "review": 0,
+      "mastered": false
+    },
+    "056": {
+      "review": 0,
+      "mastered": false
+    },
+    "057": {
+      "review": 0,
+      "mastered": false
+    },
+    "058": {
+      "review": 0,
+      "mastered": false
+    },
+    "059": {
+      "review": 0,
+      "mastered": false
+    },
+    "060": {
+      "review": 1,
+      "mastered": false
+    },
+    "061": {
+      "review": 0,
+      "mastered": false
+    },
+    "062": {
+      "review": 0,
+      "mastered": false
+    },
+    "063": {
+      "review": 0,
+      "mastered": false
+    },
+    "064": {
+      "review": 0,
+      "mastered": false
+    },
+    "065": {
+      "review": 0,
+      "mastered": false
+    },
+    "066": {
+      "review": 0,
+      "mastered": false
+    },
+    "067": {
+      "review": 0,
+      "mastered": false
+    },
+    "068": {
+      "review": 0,
+      "mastered": false
+    },
+    "069": {
+      "review": 0,
+      "mastered": false
+    },
+    "070": {
+      "review": 0,
+      "mastered": false
+    },
+    "071": {
+      "review": 0,
+      "mastered": false
+    },
+    "072": {
+      "review": 0,
+      "mastered": false
+    },
+    "073": {
+      "review": 0,
+      "mastered": false
+    },
+    "074": {
+      "review": 0,
+      "mastered": false
+    },
+    "075": {
+      "review": 0,
+      "mastered": false
+    },
+    "076": {
+      "review": 0,
+      "mastered": false
+    },
+    "077": {
+      "review": 0,
+      "mastered": false
+    },
+    "078": {
+      "review": 0,
+      "mastered": false
+    },
+    "079": {
+      "review": 0,
+      "mastered": false
+    },
+    "080": {
+      "review": 0,
+      "mastered": false
+    },
+    "081": {
+      "review": 0,
+      "mastered": false
+    },
+    "082": {
+      "review": 0,
+      "mastered": false
+    },
+    "083": {
+      "review": 0,
+      "mastered": false
+    },
+    "084": {
+      "review": 0,
+      "mastered": false
+    },
+    "085": {
+      "review": 0,
+      "mastered": false
+    },
+    "086": {
+      "review": 0,
+      "mastered": false
+    },
+    "087": {
+      "review": 0,
+      "mastered": false
+    },
+    "088": {
+      "review": 0,
+      "mastered": false
+    },
+    "089": {
+      "review": 0,
+      "mastered": false
+    },
+    "090": {
+      "review": 0,
+      "mastered": false
+    },
+    "091": {
+      "review": 0,
+      "mastered": false
+    },
+    "092": {
+      "review": 0,
+      "mastered": false
+    },
+    "093": {
+      "review": 0,
+      "mastered": false
+    },
+    "094": {
+      "review": 0,
+      "mastered": false
+    },
+    "095": {
+      "review": 0,
+      "mastered": false
+    },
+    "096": {
+      "review": 0,
+      "mastered": false
+    },
+    "097": {
+      "review": 0,
+      "mastered": false
+    },
+    "098": {
+      "review": 0,
+      "mastered": false
+    },
+    "099": {
+      "review": 0,
+      "mastered": false
+    }
   },
-  "customQuiz": {},
-  "updated": "2026-07-31 08:20"
+  "quiz": {
+    "right": 20,
+    "wrong": 5,
+    "sectionStats": {
+      "机械基础": {
+        "right": 10,
+        "wrong": 0
+      },
+      "金属切削机床": {
+        "right": 5,
+        "wrong": 1
+      },
+      "木工平刨床": {
+        "right": 2,
+        "wrong": 2
+      }
+    }
+  },
+  "customQuiz": {
+    "013": {
+      "prompt": "填空：1类机床，停止或紧急停止时，____应不迟于____停止。",
+      "answer": "进给运动  主运动",
+      "hint": "提示：重点核对数值、单位、上下限和适用对象。",
+      "updated": "2026-07-31T03:29:56.419Z"
+    }
+  },
+  "updated": "2026-07-31T11:59:34.141Z"
 }
