@@ -28,6 +28,27 @@ const analysisToggle = $("#analysisToggle");
 
 state.quiz.sectionStats ||= {};
 
+const REVIEW_INTERVALS = [
+  { label: "20 分钟", ms: 20 * 60 * 1000 },
+  { label: "1 小时", ms: 60 * 60 * 1000 },
+  { label: "9 小时", ms: 9 * 60 * 60 * 1000 },
+  { label: "1 天", ms: 24 * 60 * 60 * 1000 },
+  { label: "2 天", ms: 2 * 24 * 60 * 60 * 1000 },
+  { label: "6 天", ms: 6 * 24 * 60 * 60 * 1000 },
+  { label: "31 天", ms: 31 * 24 * 60 * 60 * 1000 },
+];
+
+const FORGETTING_POINTS = [
+  ["刚学", 100],
+  ["20分", 55],
+  ["1时", 40],
+  ["9时", 37],
+  ["1天", 30],
+  ["2天", 25],
+  ["6天", 20],
+  ["31天", 10],
+];
+
 const saveProgress = () => {
   localStorage.setItem("safetyNotebookProgress", JSON.stringify(state.progress));
 };
@@ -64,6 +85,45 @@ const itemProgress = (id) => {
   return state.progress[id];
 };
 
+const scheduleMemory = (item, result) => {
+  const progress = itemProgress(item.id);
+  const now = Date.now();
+  progress.lastTestedAt = new Date(now).toISOString();
+  progress.lastResult = result;
+  progress.testAttempts = (progress.testAttempts || 0) + 1;
+  progress.testWrong = (progress.testWrong || 0) + (result === "wrong" ? 1 : 0);
+
+  if (result === "wrong") {
+    progress.memoryStage = -1;
+    progress.nextReviewAt = new Date(now).toISOString();
+    return progress;
+  }
+
+  const nextStage = Math.min((progress.memoryStage ?? -1) + 1, REVIEW_INTERVALS.length - 1);
+  progress.memoryStage = nextStage;
+  progress.nextReviewAt = new Date(now + REVIEW_INTERVALS[nextStage].ms).toISOString();
+  return progress;
+};
+
+const dueLabel = (iso) => {
+  if (!iso) return "未安排";
+  const due = Date.parse(iso);
+  if (Number.isNaN(due)) return "未安排";
+  const diff = due - Date.now();
+  if (diff <= 0) return "现在巩固";
+  const minutes = Math.ceil(diff / 60000);
+  if (minutes < 60) return `${minutes} 分钟后`;
+  const hours = Math.ceil(minutes / 60);
+  if (hours < 24) return `${hours} 小时后`;
+  return `${Math.ceil(hours / 24)} 天后`;
+};
+
+const memoryQueue = () =>
+  state.data.items
+    .map((item) => ({ item, progress: itemProgress(item.id), due: Date.parse(itemProgress(item.id).nextReviewAt || "") }))
+    .filter((entry) => entry.progress.nextReviewAt && !Number.isNaN(entry.due))
+    .sort((a, b) => a.due - b.due);
+
 const filteredItems = () => {
   const query = state.query.trim().toLowerCase();
   return state.data.items.filter((item) => {
@@ -89,47 +149,23 @@ const renderSummary = () => {
   $("#updatedAt").textContent = `已同步 ${state.data.items.length} 条`;
 };
 
-const reviewInsight = () =>
-  state.data.sections
-    .map((section) => {
-      const items = state.data.items.filter((item) => item.section === section.section);
-      const mastered = items.filter((item) => itemProgress(item.id).mastered).length;
-      const reviewed = items.reduce((sum, item) => sum + itemProgress(item.id).review, 0);
-      const unmastered = items.length - mastered;
-      const reviewCoverage = items.length ? Math.min(1, reviewed / items.length) : 0;
-      const weakness = items.length * 0.6 + unmastered * 1.4 + (1 - reviewCoverage) * items.length * 0.5;
-      return {
-        section: section.section,
-        total: items.length,
-        mastered,
-        reviewed,
-        coverage: reviewCoverage,
-        weakness: Math.max(0, weakness),
-      };
-    })
-    .sort((a, b) => b.weakness - a.weakness);
-
 const quizInsight = () =>
   state.data.sections
     .map((section) => {
-      const items = state.data.items.filter((item) => item.section === section.section);
       const stats = state.quiz.sectionStats[section.section] || { right: 0, wrong: 0 };
       const attempts = (stats.right || 0) + (stats.wrong || 0);
       const wrongRate = attempts ? (stats.wrong || 0) / attempts : 0;
-      const coverage = items.length ? Math.min(1, attempts / items.length) : 0;
-      const weakness = attempts ? wrongRate * 70 + (stats.wrong || 0) * 8 + (1 - coverage) * 12 : 0;
+      const weakness = attempts ? wrongRate * 100 : 0;
       return {
         section: section.section,
-        total: items.length,
         attempts,
         right: stats.right || 0,
         wrong: stats.wrong || 0,
         wrongRate,
-        coverage,
         weakness: Math.max(0, weakness),
       };
     })
-    .sort((a, b) => b.weakness - a.weakness);
+    .sort((a, b) => b.weakness - a.weakness || b.wrong - a.wrong);
 
 const renderBarChart = (target, rows, max, formatter) => {
   target.innerHTML = rows
@@ -148,43 +184,112 @@ const renderBarChart = (target, rows, max, formatter) => {
     .join("");
 };
 
+const renderForgettingCurve = () => {
+  const width = 520;
+  const height = 172;
+  const left = 26;
+  const top = 18;
+  const plotWidth = 470;
+  const plotHeight = 104;
+  const points = FORGETTING_POINTS.map(([, retention], index) => {
+    const x = left + (index / (FORGETTING_POINTS.length - 1)) * plotWidth;
+    const y = top + (1 - retention / 100) * plotHeight;
+    return [x, y];
+  });
+
+  $("#forgettingCurve").innerHTML = `
+    <svg class="curve-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="遗忘曲线">
+      <path d="M ${left} ${top} V ${top + plotHeight} H ${left + plotWidth}" class="curve-axis"></path>
+      <polyline points="${points.map(([x, y]) => `${x},${y}`).join(" ")}" class="curve-line"></polyline>
+      ${points.map(([x, y], index) => `
+        <g>
+          <circle cx="${x}" cy="${y}" r="4.5" class="curve-dot"></circle>
+          <text x="${x}" y="${top + plotHeight + 24}" text-anchor="middle">${FORGETTING_POINTS[index][0]}</text>
+          <text x="${x}" y="${y - 10}" text-anchor="middle">${FORGETTING_POINTS[index][1]}%</text>
+        </g>
+      `).join("")}
+    </svg>
+  `;
+};
+
+const focusQuizItem = (item) => {
+  state.mode = "quiz";
+  state.section = item.section;
+  state.kind = "all";
+  state.query = item.text.slice(0, 12);
+  state.quizPage = 0;
+  $("#searchInput").value = state.query;
+  document.querySelectorAll(".mode-switch button").forEach((entry) => {
+    entry.classList.toggle("active", entry.dataset.mode === "quiz");
+  });
+  document.querySelectorAll(".segments button").forEach((entry) => {
+    entry.classList.toggle("active", entry.dataset.kind === "all");
+  });
+  render();
+  scrollToFirstQuiz();
+};
+
+const renderReviewQueue = () => {
+  const queue = memoryQueue();
+  const dueNow = queue.filter((entry) => entry.due <= Date.now());
+  const target = $("#reviewQueue");
+  const list = [...dueNow, ...queue.filter((entry) => entry.due > Date.now())].slice(0, 8);
+
+  if (!list.length) {
+    target.innerHTML = '<div class="empty mini">暂无巩固任务。测试答错后，会自动把题目放到这里。</div>';
+    return;
+  }
+
+  target.innerHTML = "";
+  const summary = document.createElement("div");
+  summary.className = "queue-summary";
+  summary.textContent = `现在需巩固 ${dueNow.length} 题 · 已安排 ${queue.length} 题`;
+  target.appendChild(summary);
+
+  list.forEach(({ item, progress, due }) => {
+    const row = document.createElement("div");
+    row.className = `queue-item${due <= Date.now() ? " due" : ""}`;
+    const stage = Math.max(0, Math.min(progress.memoryStage || 0, REVIEW_INTERVALS.length - 1));
+    row.innerHTML = `
+      <div>
+        <strong>${escapeHtml(item.id)} · ${escapeHtml(item.section)}</strong>
+        <p>${escapeHtml(item.text)}</p>
+        <span>${escapeHtml(dueLabel(progress.nextReviewAt))} · 第 ${stage + 1} 阶段 · 上次${progress.lastResult === "wrong" ? "答错" : "答对"}</span>
+      </div>
+    `;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = due <= Date.now() ? "开始巩固" : "查看";
+    button.addEventListener("click", () => focusQuizItem(item));
+    row.appendChild(button);
+    target.appendChild(row);
+  });
+};
+
 const renderAnalysis = () => {
-  const reviewRows = reviewInsight().slice(0, 6);
+  if (state.mode !== "quiz") {
+    analysisPanel.hidden = true;
+    return;
+  }
+  analysisPanel.hidden = false;
   const quizRows = quizInsight().filter((item) => item.attempts > 0).slice(0, 6);
-  const reviewMax = Math.max(...reviewRows.map((item) => item.weakness), 1);
   const quizMax = Math.max(...quizRows.map((item) => item.weakness), 1);
-  const mastered = state.data.items.filter((item) => itemProgress(item.id).mastered).length;
-  const reviewed = state.data.items.filter((item) => itemProgress(item.id).review > 0 && !itemProgress(item.id).mastered).length;
-  const untouched = Math.max(0, state.data.items.length - mastered - reviewed);
-  const total = Math.max(1, state.data.items.length);
-  const masteredDeg = (mastered / total) * 360;
-  const reviewedDeg = ((mastered + reviewed) / total) * 360;
-  const weakest = reviewRows[0];
   const quizWeakest = quizRows[0];
 
-  $("#analysisSignal").textContent = weakest
-    ? `背诵：${weakest.section} · 测试：${quizWeakest?.section || "暂无"}`
-    : "等待学习记录";
+  $("#analysisSignal").textContent = quizWeakest
+    ? `${quizWeakest.section} · 错误率 ${Math.round(quizWeakest.wrongRate * 100)}%`
+    : "等待测试记录";
 
-  renderBarChart($("#reviewBarChart"), reviewRows, reviewMax, (item) =>
-    `${item.mastered}/${item.total} 掌握 · 复习 ${item.reviewed} 次 · 分 ${Math.round(item.weakness)}`,
-  );
   if (quizRows.length) {
     renderBarChart($("#quizBarChart"), quizRows, quizMax, (item) =>
-      `错 ${item.wrong}/${item.attempts} · 错误率 ${Math.round(item.wrongRate * 100)}% · 分 ${Math.round(item.weakness)}`,
+      `错 ${item.wrong}/${item.attempts} · 正确 ${item.right} · 薄弱 ${Math.round(item.weakness)}`,
     );
   } else {
     $("#quizBarChart").innerHTML = '<div class="empty mini">还没有测试记录，答题后会生成测试雷达。</div>';
   }
 
-  $("#pieChart").style.background = `conic-gradient(#078b7f 0 ${masteredDeg}deg, #1d63d8 ${masteredDeg}deg ${reviewedDeg}deg, #d92d36 ${reviewedDeg}deg 360deg)`;
-  $("#pieLegend").innerHTML = [
-    ["已掌握", mastered, "#078b7f"],
-    ["待巩固", reviewed, "#1d63d8"],
-    ["需攻克", untouched, "#d92d36"],
-  ]
-    .map(([label, value, color]) => `<span><i style="background:${color}"></i>${label} ${value} 题</span>`)
-    .join("");
+  renderForgettingCurve();
+  renderReviewQueue();
 };
 
 const renderTabs = () => {
@@ -299,6 +404,8 @@ const renderQuizCards = (items) => {
       state.quiz.wrong += 1;
       const stats = (state.quiz.sectionStats[item.section] ||= { right: 0, wrong: 0 });
       stats.wrong += 1;
+      scheduleMemory(item, "wrong");
+      saveProgress();
       saveQuiz();
       renderSummary();
       renderAnalysis();
@@ -311,6 +418,7 @@ const renderQuizCards = (items) => {
       stats.right += 1;
       const progress = itemProgress(item.id);
       progress.review += 1;
+      scheduleMemory(item, "right");
       saveProgress();
       saveQuiz();
       renderSummary();
@@ -649,9 +757,23 @@ const applyCloudPayload = (payload) => {
   const cloudProgress = payload.progress || {};
   const mergedProgress = {};
   new Set([...Object.keys(cloudProgress), ...Object.keys(state.progress || {})]).forEach((id) => {
+    const cloud = cloudProgress[id] || {};
+    const local = state.progress[id] || {};
+    const cloudDue = Date.parse(cloud.nextReviewAt || "");
+    const localDue = Date.parse(local.nextReviewAt || "");
+    const validDueDates = [cloudDue, localDue].filter((date) => !Number.isNaN(date));
+    const cloudTested = Date.parse(cloud.lastTestedAt || "");
+    const localTested = Date.parse(local.lastTestedAt || "");
+    const cloudIsLatest = !Number.isNaN(cloudTested) && (Number.isNaN(localTested) || cloudTested >= localTested);
     mergedProgress[id] = {
-      review: Math.max(cloudProgress[id]?.review || 0, state.progress[id]?.review || 0),
-      mastered: Boolean(cloudProgress[id]?.mastered || state.progress[id]?.mastered),
+      review: Math.max(cloud.review || 0, local.review || 0),
+      mastered: Boolean(cloud.mastered || local.mastered),
+      memoryStage: cloudIsLatest ? (cloud.memoryStage ?? local.memoryStage ?? -1) : (local.memoryStage ?? cloud.memoryStage ?? -1),
+      nextReviewAt: validDueDates.length ? new Date(Math.min(...validDueDates)).toISOString() : undefined,
+      lastTestedAt: cloudIsLatest ? cloud.lastTestedAt : local.lastTestedAt,
+      lastResult: cloudIsLatest ? cloud.lastResult : local.lastResult,
+      testAttempts: Math.max(cloud.testAttempts || 0, local.testAttempts || 0),
+      testWrong: Math.max(cloud.testWrong || 0, local.testWrong || 0),
     };
   });
   const cloudStats = payload.quiz?.sectionStats || {};
@@ -778,7 +900,7 @@ document.querySelectorAll(".mode-switch button").forEach((button) => {
     button.classList.add("active");
     state.mode = button.dataset.mode;
     state.quizPage = 0;
-    renderCards();
+    render();
   });
 });
 

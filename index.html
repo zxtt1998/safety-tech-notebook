@@ -54,42 +54,33 @@
           </article>
         </section>
 
-        <section id="analysisPanel" class="analysis-panel collapsed" aria-label="错题分析">
+        <section id="analysisPanel" class="analysis-panel collapsed" aria-label="测试分析" hidden>
           <button id="analysisToggle" class="analysis-toggle" type="button" aria-expanded="false">
             <span>
-              <small>错题分析</small>
-              <strong>薄弱章节雷达</strong>
+              <small>测试分析</small>
+              <strong>测试薄弱雷达</strong>
             </span>
-            <em id="analysisSignal">等待学习记录</em>
+            <em id="analysisSignal">等待测试记录</em>
           </button>
           <div id="analysisBody" class="analysis-body" hidden>
             <p class="analysis-rule">
-              背诵复习按备忘录错题量、未掌握数、复习次数评判；测试模式按每章答错率、答错次数和答题覆盖率评判。
+              薄弱度只按测试正确程度评判；答错题会进入艾宾浩斯巩固队列，答对后按 20 分钟、1 小时、9 小时、1 天、2 天、6 天、31 天逐步拉长复习间隔。
             </p>
             <div class="analysis-grid">
               <article class="chart-card">
                 <div class="chart-title">
-                  <strong>背诵复习薄弱度</strong>
-                  <span>备忘录错题量 / 未掌握 / 复习覆盖</span>
-                </div>
-                <div id="reviewBarChart" class="bar-chart"></div>
-              </article>
-              <article class="chart-card">
-                <div class="chart-title">
-                  <strong>测试结果薄弱度</strong>
-                  <span>答错率 / 错题数 / 覆盖率</span>
+                  <strong>章节薄弱度</strong>
+                  <span>仅按测试错误率</span>
                 </div>
                 <div id="quizBarChart" class="bar-chart"></div>
               </article>
-              <article class="chart-card">
+              <article class="chart-card review-queue-card">
                 <div class="chart-title">
-                  <strong>背诵掌握结构</strong>
-                  <span>已掌握 / 待巩固 / 需攻克</span>
+                  <strong>艾宾浩斯巩固</strong>
+                  <span>错题优先 · 间隔复现</span>
                 </div>
-                <div class="pie-wrap">
-                  <div id="pieChart" class="pie-chart"></div>
-                  <div id="pieLegend" class="pie-legend"></div>
-                </div>
+                <div id="forgettingCurve" class="forgetting-curve" aria-label="艾宾浩斯遗忘曲线"></div>
+                <div id="reviewQueue" class="review-queue"></div>
               </article>
             </div>
           </div>
