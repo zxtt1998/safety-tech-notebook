@@ -14,8 +14,9 @@
           <input id="titleInput" class="title-input" type="text" value="安全技术错题本" aria-label="错题本标题" />
           <div class="title-actions">
             <button id="saveTitleBtn" type="button">保存标题</button>
-            <button id="syncTitleBtn" type="button">云同步</button>
-            <span id="titleSyncStatus">读取云标题</span>
+            <button id="syncDataBtn" type="button">云同步全部</button>
+            <button id="loadCloudBtn" type="button">读取云端</button>
+            <span id="titleSyncStatus">读取云端学习数据</span>
           </div>
         </div>
         <div class="honor">
@@ -53,32 +54,44 @@
           </article>
         </section>
 
-        <section class="analysis-panel" aria-label="错题分析">
-          <div class="analysis-head">
-            <div>
-              <p>错题分析</p>
-              <h2>薄弱章节雷达</h2>
+        <section id="analysisPanel" class="analysis-panel collapsed" aria-label="错题分析">
+          <button id="analysisToggle" class="analysis-toggle" type="button" aria-expanded="false">
+            <span>
+              <small>错题分析</small>
+              <strong>薄弱章节雷达</strong>
+            </span>
+            <em id="analysisSignal">等待学习记录</em>
+          </button>
+          <div id="analysisBody" class="analysis-body" hidden>
+            <p class="analysis-rule">
+              背诵复习按备忘录错题量、未掌握数、复习次数评判；测试模式按每章答错率、答错次数和答题覆盖率评判。
+            </p>
+            <div class="analysis-grid">
+              <article class="chart-card">
+                <div class="chart-title">
+                  <strong>背诵复习薄弱度</strong>
+                  <span>备忘录错题量 / 未掌握 / 复习覆盖</span>
+                </div>
+                <div id="reviewBarChart" class="bar-chart"></div>
+              </article>
+              <article class="chart-card">
+                <div class="chart-title">
+                  <strong>测试结果薄弱度</strong>
+                  <span>答错率 / 错题数 / 覆盖率</span>
+                </div>
+                <div id="quizBarChart" class="bar-chart"></div>
+              </article>
+              <article class="chart-card">
+                <div class="chart-title">
+                  <strong>背诵掌握结构</strong>
+                  <span>已掌握 / 待巩固 / 需攻克</span>
+                </div>
+                <div class="pie-wrap">
+                  <div id="pieChart" class="pie-chart"></div>
+                  <div id="pieLegend" class="pie-legend"></div>
+                </div>
+              </article>
             </div>
-            <span id="analysisSignal">等待学习记录</span>
-          </div>
-          <div class="analysis-grid">
-            <article class="chart-card">
-              <div class="chart-title">
-                <strong>章节薄弱度</strong>
-                <span>未掌握 + 答错权重</span>
-              </div>
-              <div id="barChart" class="bar-chart"></div>
-            </article>
-            <article class="chart-card">
-              <div class="chart-title">
-                <strong>掌握结构</strong>
-                <span>已掌握 / 待巩固 / 需攻克</span>
-              </div>
-              <div class="pie-wrap">
-                <div id="pieChart" class="pie-chart"></div>
-                <div id="pieLegend" class="pie-legend"></div>
-              </div>
-            </article>
           </div>
         </section>
 
@@ -106,7 +119,7 @@
           </div>
           <div id="quizPager" class="quiz-pager" data-quiz-pager hidden></div>
           <div class="sync-note">
-            当前网页从 <code>data.json</code> 读取内容。备忘录更新后需要重新导出并发布，线上页面才会更新。
+            题库从 <code>data.json</code> 读取；标题、自定义命题、背诵记录和测试记录可通过顶部按钮同步到 <code>user-data.json</code>。
           </div>
           <div id="cards" class="cards"></div>
           <div id="quizPagerBottom" class="quiz-pager quiz-pager-bottom" data-quiz-pager hidden></div>

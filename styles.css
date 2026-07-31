@@ -262,8 +262,7 @@ main {
 
 .analysis-panel {
   grid-column: 2;
-  grid-row: 2;
-  margin-top: 118px;
+  grid-row: 3;
   padding: 22px;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -271,26 +270,69 @@ main {
   box-shadow: var(--shadow);
 }
 
-.analysis-head {
+.analysis-toggle {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 18px;
+  width: 100%;
+  color: inherit;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }
 
-.analysis-head p,
+.analysis-toggle span {
+  display: grid;
+  gap: 4px;
+}
+
+.analysis-toggle small {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.analysis-toggle strong {
+  font-size: 28px;
+}
+
+.analysis-toggle::after {
+  content: "收起";
+  min-width: max-content;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.analysis-panel.collapsed .analysis-toggle::after {
+  content: "展开";
+}
+
+.analysis-body {
+  margin-top: 18px;
+}
+
+.analysis-rule {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  color: #425168;
+  background: var(--soft);
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 800;
+}
+
 .chart-title span {
   color: var(--muted);
   font-size: 13px;
   font-weight: 800;
 }
 
-.analysis-head h2 {
-  margin-top: 4px;
-  font-size: 28px;
-}
-
-#analysisSignal {
+#analysisSignal,
+.analysis-toggle em {
   align-self: start;
   padding: 9px 12px;
   color: white;
@@ -298,12 +340,17 @@ main {
   border-radius: 999px;
   font-size: 13px;
   font-weight: 900;
+  font-style: normal;
 }
 
 .analysis-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+}
+
+.analysis-grid .chart-card:last-child {
+  grid-column: 1 / -1;
 }
 
 .chart-card {
@@ -469,11 +516,10 @@ main {
 
 .section-tabs {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 3 / span 2;
   display: grid;
   gap: 10px;
   align-self: start;
-  margin-top: 480px;
   padding: 6px;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -514,8 +560,7 @@ main {
 
 .content {
   grid-column: 2;
-  grid-row: 2;
-  margin-top: 550px;
+  grid-row: 4;
   min-width: 0;
   padding: 24px;
 }
@@ -768,6 +813,80 @@ main {
   border-radius: 8px;
 }
 
+.empty.mini {
+  padding: 22px 12px;
+  font-size: 13px;
+}
+
+.edit-quiz-btn {
+  min-width: max-content;
+  height: 30px;
+  padding: 0 10px;
+  color: var(--blue);
+  background: #edf5ff;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.quiz-editor {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 12px;
+  background: #f7faff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.quiz-editor label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.quiz-editor textarea {
+  width: 100%;
+  min-height: 72px;
+  resize: vertical;
+  padding: 10px;
+  color: var(--ink);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+  line-height: 1.45;
+}
+
+.quiz-editor-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.quiz-editor-actions button {
+  height: 38px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.quiz-editor-actions button:first-child {
+  color: white;
+  background: var(--teal);
+}
+
+.quiz-editor-actions button:nth-child(2) {
+  color: var(--red);
+  background: #feecec;
+}
+
 @media (max-width: 760px) {
   body {
     background:
@@ -869,16 +988,16 @@ main {
     padding: 16px;
   }
 
-  .analysis-head {
+  .analysis-toggle {
     display: grid;
     gap: 10px;
   }
 
-  .analysis-head h2 {
+  .analysis-toggle strong {
     font-size: 24px;
   }
 
-  #analysisSignal {
+  .analysis-toggle em {
     width: fit-content;
     font-size: 12px;
   }
@@ -907,6 +1026,10 @@ main {
 
   .pie-chart {
     width: 120px;
+  }
+
+  .quiz-editor-actions {
+    grid-template-columns: 1fr;
   }
 
   .controls {

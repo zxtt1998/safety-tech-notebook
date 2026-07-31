@@ -9,6 +9,8 @@ const state = {
   appTitle: localStorage.getItem("safetyNotebookTitle") || "安全技术错题本",
   progress: JSON.parse(localStorage.getItem("safetyNotebookProgress") || "{}"),
   quiz: JSON.parse(localStorage.getItem("safetyNotebookQuiz") || '{"right":0,"wrong":0}'),
+  customQuiz: JSON.parse(localStorage.getItem("safetyNotebookCustomQuiz") || "{}"),
+  analysisCollapsed: localStorage.getItem("safetyNotebookAnalysisCollapsed") !== "false",
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -19,6 +21,9 @@ const quizTemplate = $("#quizTemplate");
 const quizPagers = document.querySelectorAll("[data-quiz-pager]");
 const titleInput = $("#titleInput");
 const titleSyncStatus = $("#titleSyncStatus");
+const analysisPanel = $("#analysisPanel");
+const analysisBody = $("#analysisBody");
+const analysisToggle = $("#analysisToggle");
 
 state.quiz.sectionStats ||= {};
 
@@ -28,6 +33,17 @@ const saveProgress = () => {
 
 const saveQuiz = () => {
   localStorage.setItem("safetyNotebookQuiz", JSON.stringify(state.quiz));
+};
+
+const saveCustomQuiz = () => {
+  localStorage.setItem("safetyNotebookCustomQuiz", JSON.stringify(state.customQuiz));
+};
+
+const saveAllLocal = () => {
+  saveProgress();
+  saveQuiz();
+  saveCustomQuiz();
+  localStorage.setItem("safetyNotebookTitle", state.appTitle);
 };
 
 const saveTitleLocal = (title) => {
@@ -67,57 +83,93 @@ const renderSummary = () => {
   $("#updatedAt").textContent = `已同步 ${state.data.items.length} 条`;
 };
 
-const sectionInsight = () =>
+const reviewInsight = () =>
   state.data.sections
     .map((section) => {
       const items = state.data.items.filter((item) => item.section === section.section);
-      const stats = state.quiz.sectionStats[section.section] || { right: 0, wrong: 0 };
       const mastered = items.filter((item) => itemProgress(item.id).mastered).length;
       const reviewed = items.reduce((sum, item) => sum + itemProgress(item.id).review, 0);
       const unmastered = items.length - mastered;
-      const weakness = unmastered + stats.wrong * 2 - stats.right * 0.6;
+      const reviewCoverage = items.length ? Math.min(1, reviewed / items.length) : 0;
+      const weakness = items.length * 0.6 + unmastered * 1.4 + (1 - reviewCoverage) * items.length * 0.5;
       return {
         section: section.section,
         total: items.length,
         mastered,
         reviewed,
-        right: stats.right || 0,
-        wrong: stats.wrong || 0,
+        coverage: reviewCoverage,
         weakness: Math.max(0, weakness),
       };
     })
     .sort((a, b) => b.weakness - a.weakness);
 
-const renderAnalysis = () => {
-  const insights = sectionInsight();
-  const top = insights.slice(0, 6);
-  const max = Math.max(...top.map((item) => item.weakness), 1);
-  const mastered = state.data.items.filter((item) => itemProgress(item.id).mastered).length;
-  const reviewed = state.data.items.filter((item) => itemProgress(item.id).review > 0 && !itemProgress(item.id).mastered).length;
-  const untouched = Math.max(0, state.data.items.length - mastered - reviewed);
-  const total = Math.max(1, state.data.items.length);
-  const masteredDeg = (mastered / total) * 360;
-  const reviewedDeg = ((mastered + reviewed) / total) * 360;
-  const weakest = top[0];
+const quizInsight = () =>
+  state.data.sections
+    .map((section) => {
+      const items = state.data.items.filter((item) => item.section === section.section);
+      const stats = state.quiz.sectionStats[section.section] || { right: 0, wrong: 0 };
+      const attempts = (stats.right || 0) + (stats.wrong || 0);
+      const wrongRate = attempts ? (stats.wrong || 0) / attempts : 0;
+      const coverage = items.length ? Math.min(1, attempts / items.length) : 0;
+      const weakness = attempts ? wrongRate * 70 + (stats.wrong || 0) * 8 + (1 - coverage) * 12 : 0;
+      return {
+        section: section.section,
+        total: items.length,
+        attempts,
+        right: stats.right || 0,
+        wrong: stats.wrong || 0,
+        wrongRate,
+        coverage,
+        weakness: Math.max(0, weakness),
+      };
+    })
+    .sort((a, b) => b.weakness - a.weakness);
 
-  $("#analysisSignal").textContent = weakest
-    ? `当前最需巩固：${weakest.section} · ${Math.round(weakest.weakness)}`
-    : "等待学习记录";
-
-  $("#barChart").innerHTML = top
+const renderBarChart = (target, rows, max, formatter) => {
+  target.innerHTML = rows
     .map((item) => {
       const width = Math.max(8, Math.round((item.weakness / max) * 100));
       return `
         <div class="bar-row">
           <div class="bar-label">
             <strong>${escapeHtml(item.section)}</strong>
-            <span>${item.mastered}/${item.total} 掌握 · 错 ${item.wrong}</span>
+            <span>${escapeHtml(formatter(item))}</span>
           </div>
           <div class="bar-track"><span style="width: ${width}%"></span></div>
         </div>
       `;
     })
     .join("");
+};
+
+const renderAnalysis = () => {
+  const reviewRows = reviewInsight().slice(0, 6);
+  const quizRows = quizInsight().filter((item) => item.attempts > 0).slice(0, 6);
+  const reviewMax = Math.max(...reviewRows.map((item) => item.weakness), 1);
+  const quizMax = Math.max(...quizRows.map((item) => item.weakness), 1);
+  const mastered = state.data.items.filter((item) => itemProgress(item.id).mastered).length;
+  const reviewed = state.data.items.filter((item) => itemProgress(item.id).review > 0 && !itemProgress(item.id).mastered).length;
+  const untouched = Math.max(0, state.data.items.length - mastered - reviewed);
+  const total = Math.max(1, state.data.items.length);
+  const masteredDeg = (mastered / total) * 360;
+  const reviewedDeg = ((mastered + reviewed) / total) * 360;
+  const weakest = reviewRows[0];
+  const quizWeakest = quizRows[0];
+
+  $("#analysisSignal").textContent = weakest
+    ? `背诵：${weakest.section} · 测试：${quizWeakest?.section || "暂无"}`
+    : "等待学习记录";
+
+  renderBarChart($("#reviewBarChart"), reviewRows, reviewMax, (item) =>
+    `${item.mastered}/${item.total} 掌握 · 复习 ${item.reviewed} 次 · 分 ${Math.round(item.weakness)}`,
+  );
+  if (quizRows.length) {
+    renderBarChart($("#quizBarChart"), quizRows, quizMax, (item) =>
+      `错 ${item.wrong}/${item.attempts} · 错误率 ${Math.round(item.wrongRate * 100)}% · 分 ${Math.round(item.weakness)}`,
+    );
+  } else {
+    $("#quizBarChart").innerHTML = '<div class="empty mini">还没有测试记录，答题后会生成测试雷达。</div>';
+  }
 
   $("#pieChart").style.background = `conic-gradient(#078b7f 0 ${masteredDeg}deg, #1d63d8 ${masteredDeg}deg ${reviewedDeg}deg, #d92d36 ${reviewedDeg}deg 360deg)`;
   $("#pieLegend").innerHTML = [
@@ -227,6 +279,12 @@ const renderQuizCards = (items) => {
     node.querySelector(".quiz-prompt").textContent = quiz.prompt;
     node.querySelector(".quiz-hint").textContent = quiz.hint;
     node.querySelector(".quiz-answer").innerHTML = `<strong>应填：</strong>${escapeHtml(quiz.answer)}<br><strong>完整句：</strong>${escapeHtml(item.text)}`;
+    const editBtn = document.createElement("button");
+    editBtn.className = "edit-quiz-btn";
+    editBtn.type = "button";
+    editBtn.textContent = state.customQuiz[item.id] ? "已自定义" : "编辑命题";
+    editBtn.addEventListener("click", () => openQuizEditor(item, node, quiz));
+    node.querySelector(".card-meta").appendChild(editBtn);
     node.querySelector(".reveal-btn").addEventListener("click", () => {
       node.querySelector(".quiz-answer").hidden = false;
       node.querySelector(".quiz-actions").hidden = false;
@@ -269,6 +327,7 @@ const renderQuizPager = (count, totalPages) => {
     prev.addEventListener("click", () => {
       state.quizPage = Math.max(0, state.quizPage - 1);
       renderCards();
+      scrollToFirstQuiz();
     });
 
     const page = document.createElement("span");
@@ -281,10 +340,20 @@ const renderQuizPager = (count, totalPages) => {
     next.addEventListener("click", () => {
       state.quizPage = Math.min(totalPages - 1, state.quizPage + 1);
       renderCards();
+      scrollToFirstQuiz();
     });
 
     pager.append(prev, page, next);
   });
+};
+
+const scrollToFirstQuiz = () => {
+  window.setTimeout(() => {
+    const first = cards.firstElementChild;
+    if (!first) return;
+    const top = first.getBoundingClientRect().top + window.scrollY - 14;
+    window.scrollTo({ top, behavior: "auto" });
+  }, 50);
 };
 
 const lockQuizCard = (node) => {
@@ -294,6 +363,14 @@ const lockQuizCard = (node) => {
 };
 
 const makeQuiz = (item) => {
+  const custom = state.customQuiz[item.id];
+  if (custom?.prompt) {
+    return {
+      prompt: custom.prompt,
+      answer: custom.answer || item.text,
+      hint: custom.hint || "自定义命题",
+    };
+  }
   if (item.kind === "数值题") {
     const numericPattern = /\d+(?:\.\d+)?\s*(?:dB\(A\)|dB|kN|mm|ms|min|米|伏|千伏|千欧|%|度)?/gi;
     const answers = item.text.match(numericPattern) || [];
@@ -309,6 +386,49 @@ const makeQuiz = (item) => {
     answer: cloze.answer,
     hint: `提示：${item.memory}`,
   };
+};
+
+const openQuizEditor = (item, node, quiz) => {
+  const existing = node.querySelector(".quiz-editor");
+  if (existing) {
+    existing.remove();
+    return;
+  }
+
+  const editor = document.createElement("div");
+  editor.className = "quiz-editor";
+  editor.innerHTML = `
+    <label>题干<textarea data-edit-field="prompt">${escapeHtml(quiz.prompt)}</textarea></label>
+    <label>答案<textarea data-edit-field="answer">${escapeHtml(quiz.answer)}</textarea></label>
+    <label>提示<textarea data-edit-field="hint">${escapeHtml(quiz.hint)}</textarea></label>
+    <div class="quiz-editor-actions">
+      <button type="button" data-editor-save>保存命题</button>
+      <button type="button" data-editor-reset>恢复默认</button>
+      <button type="button" data-editor-close>收起</button>
+    </div>
+  `;
+
+  editor.querySelector("[data-editor-save]").addEventListener("click", () => {
+    state.customQuiz[item.id] = {
+      prompt: editor.querySelector('[data-edit-field="prompt"]').value.trim() || quiz.prompt,
+      answer: editor.querySelector('[data-edit-field="answer"]').value.trim() || quiz.answer,
+      hint: editor.querySelector('[data-edit-field="hint"]').value.trim() || quiz.hint,
+      updated: new Date().toISOString(),
+    };
+    saveCustomQuiz();
+    renderCards();
+    setTitleStatus("命题已本地保存，可云同步", "ok");
+  });
+
+  editor.querySelector("[data-editor-reset]").addEventListener("click", () => {
+    delete state.customQuiz[item.id];
+    saveCustomQuiz();
+    renderCards();
+    setTitleStatus("已恢复默认命题，可云同步", "ok");
+  });
+
+  editor.querySelector("[data-editor-close]").addEventListener("click", () => editor.remove());
+  node.querySelector(".quiz-hint").after(editor);
 };
 
 const makeCloze = (text) => {
@@ -354,56 +474,118 @@ const render = () => {
   renderCards();
 };
 
-const loadCloudTitle = () => {
-  saveTitleLocal(state.appTitle);
-  fetch(`title-config.json?_=${Date.now()}`)
-    .then((response) => (response.ok ? response.json() : null))
-    .then((config) => {
-      if (config?.title) {
-        saveTitleLocal(config.title);
-        setTitleStatus("云标题已加载", "ok");
-      } else {
-        setTitleStatus("使用本地标题", "");
-      }
-    })
-    .catch(() => setTitleStatus("使用本地标题", ""));
+const cloudPayload = () => ({
+  title: state.appTitle,
+  progress: state.progress,
+  quiz: state.quiz,
+  customQuiz: state.customQuiz,
+  updated: new Date().toISOString(),
+});
+
+const applyCloudPayload = (payload) => {
+  if (!payload || typeof payload !== "object") return;
+  if (payload.title) saveTitleLocal(payload.title);
+  const cloudProgress = payload.progress || {};
+  const mergedProgress = {};
+  new Set([...Object.keys(cloudProgress), ...Object.keys(state.progress || {})]).forEach((id) => {
+    mergedProgress[id] = {
+      review: Math.max(cloudProgress[id]?.review || 0, state.progress[id]?.review || 0),
+      mastered: Boolean(cloudProgress[id]?.mastered || state.progress[id]?.mastered),
+    };
+  });
+  const cloudStats = payload.quiz?.sectionStats || {};
+  const localStats = state.quiz.sectionStats || {};
+  const mergedStats = {};
+  new Set([...Object.keys(cloudStats), ...Object.keys(localStats)]).forEach((section) => {
+    mergedStats[section] = {
+      right: Math.max(cloudStats[section]?.right || 0, localStats[section]?.right || 0),
+      wrong: Math.max(cloudStats[section]?.wrong || 0, localStats[section]?.wrong || 0),
+    };
+  });
+  const cloudCustom = payload.customQuiz || {};
+  const mergedCustom = { ...state.customQuiz };
+  Object.entries(cloudCustom).forEach(([id, value]) => {
+    const localUpdated = Date.parse(mergedCustom[id]?.updated || "");
+    const cloudUpdated = Date.parse(value?.updated || "");
+    if (!mergedCustom[id] || cloudUpdated >= localUpdated || Number.isNaN(localUpdated)) {
+      mergedCustom[id] = value;
+    }
+  });
+  state.progress = mergedProgress;
+  state.quiz = {
+    right: Math.max(state.quiz.right || 0, payload.quiz?.right || 0),
+    wrong: Math.max(state.quiz.wrong || 0, payload.quiz?.wrong || 0),
+    sectionStats: mergedStats,
+  };
+  state.customQuiz = mergedCustom;
+  state.quiz.sectionStats ||= {};
+  saveAllLocal();
 };
 
-const syncTitleToGithub = async () => {
-  const title = titleInput.value.trim() || "安全技术错题本";
-  saveTitleLocal(title);
+const loadCloudData = async ({ rerender = true } = {}) => {
+  saveTitleLocal(state.appTitle);
+  try {
+    const response = await fetch(`user-data.json?_=${Date.now()}`);
+    if (response.ok) {
+      applyCloudPayload(await response.json());
+      setTitleStatus("云端学习数据已加载", "ok");
+    } else {
+      setTitleStatus("使用本地学习数据", "");
+    }
+  } catch (error) {
+    setTitleStatus("使用本地学习数据", "");
+  }
+  if (rerender && state.data) render();
+};
+
+const githubToken = () => {
   let token = localStorage.getItem("safetyNotebookGithubToken") || "";
   if (!token) {
     token = window.prompt("粘贴 GitHub Token，需要 repo contents 写入权限。Token 只保存在本机浏览器。") || "";
-    if (!token.trim()) {
-      setTitleStatus("已本地保存", "");
-      return;
-    }
+    if (!token.trim()) return "";
     localStorage.setItem("safetyNotebookGithubToken", token.trim());
   }
+  return token.trim();
+};
 
-  setTitleStatus("云同步中...", "");
-  const api = "https://api.github.com/repos/zxtt1998/safety-tech-notebook/contents/title-config.json";
+const putGithubJson = async (path, payload, message, token) => {
+  const api = `https://api.github.com/repos/zxtt1998/safety-tech-notebook/contents/${path}`;
   const headers = {
-    Authorization: `Bearer ${token.trim()}`,
+    Authorization: `Bearer ${token}`,
     Accept: "application/vnd.github+json",
     "Content-Type": "application/json",
   };
+  const current = await fetch(api, { headers }).then((response) => (response.ok ? response.json() : null));
+  const content = `${JSON.stringify(payload, null, 2)}\n`;
+  const encoded = btoa(unescape(encodeURIComponent(content)));
+  const body = {
+    message,
+    content: encoded,
+  };
+  if (current?.sha) body.sha = current.sha;
+  const response = await fetch(api, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+  });
+  if (!response.ok) throw new Error(`GitHub API failed: ${path}`);
+};
+
+const syncAllToGithub = async () => {
+  saveTitleLocal(titleInput.value);
+  saveAllLocal();
+  const token = githubToken();
+  if (!token) {
+    setTitleStatus("已本地保存，未云同步", "warn");
+    return;
+  }
+
+  setTitleStatus("云同步中...", "");
   try {
-    const current = await fetch(api, { headers }).then((response) => response.json());
-    const content = `${JSON.stringify({ title, updated: new Date().toISOString() }, null, 2)}\n`;
-    const encoded = btoa(unescape(encodeURIComponent(content)));
-    const response = await fetch(api, {
-      method: "PUT",
-      headers,
-      body: JSON.stringify({
-        message: `Update notebook title to ${title}`,
-        content: encoded,
-        sha: current.sha,
-      }),
-    });
-    if (!response.ok) throw new Error("GitHub API failed");
-    setTitleStatus("标题已云同步", "ok");
+    const payload = cloudPayload();
+    await putGithubJson("user-data.json", payload, "Sync notebook learning data", token);
+    await putGithubJson("title-config.json", { title: state.appTitle, updated: payload.updated }, `Update notebook title to ${state.appTitle}`, token);
+    setTitleStatus("学习数据已云同步", "ok");
   } catch (error) {
     setTitleStatus("云同步失败，已本地保存", "warn");
   }
@@ -441,6 +623,7 @@ $("#shuffleBtn").addEventListener("click", () => {
     const totalPages = Math.max(1, Math.ceil(items.length / state.pageSize));
     state.quizPage = Math.min(totalPages - 1, state.quizPage + 1);
     renderCards();
+    scrollToFirstQuiz();
     return;
   }
   const pick = items[Math.floor(Math.random() * items.length)];
@@ -455,7 +638,15 @@ $("#saveTitleBtn").addEventListener("click", () => {
   setTitleStatus("已本地保存", "ok");
 });
 
-$("#syncTitleBtn").addEventListener("click", syncTitleToGithub);
+$("#syncDataBtn").addEventListener("click", syncAllToGithub);
+
+$("#loadCloudBtn").addEventListener("click", () => loadCloudData());
+
+analysisToggle.addEventListener("click", () => {
+  state.analysisCollapsed = !state.analysisCollapsed;
+  localStorage.setItem("safetyNotebookAnalysisCollapsed", String(state.analysisCollapsed));
+  renderAnalysisCollapse();
+});
 
 titleInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
@@ -465,13 +656,19 @@ titleInput.addEventListener("keydown", (event) => {
   }
 });
 
-loadCloudTitle();
+const renderAnalysisCollapse = () => {
+  analysisPanel.classList.toggle("collapsed", state.analysisCollapsed);
+  analysisBody.hidden = state.analysisCollapsed;
+  analysisToggle.setAttribute("aria-expanded", String(!state.analysisCollapsed));
+};
+
+renderAnalysisCollapse();
 
 fetch("data.json")
   .then((response) => response.json())
   .then((data) => {
     state.data = data;
-    render();
+    loadCloudData({ rerender: false }).finally(render);
   })
   .catch(() => {
     cards.innerHTML = '<div class="empty">data.json 读取失败</div>';
