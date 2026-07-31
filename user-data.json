@@ -78,31 +78,31 @@
       "mastered": false
     },
     "001": {
-      "review": 0,
+      "review": 2,
       "mastered": false
     },
     "002": {
-      "review": 0,
+      "review": 2,
       "mastered": false
     },
     "003": {
-      "review": 0,
+      "review": 5,
       "mastered": false
     },
     "004": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "005": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "006": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "007": {
-      "review": 0,
+      "review": 2,
       "mastered": false
     },
     "008": {
@@ -110,31 +110,31 @@
       "mastered": false
     },
     "009": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "010": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "011": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "012": {
-      "review": 0,
+      "review": 2,
       "mastered": false
     },
     "013": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "014": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "015": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "016": {
@@ -142,7 +142,7 @@
       "mastered": false
     },
     "017": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "018": {
@@ -314,7 +314,7 @@
       "mastered": false
     },
     "060": {
-      "review": 0,
+      "review": 1,
       "mastered": false
     },
     "061": {
@@ -475,17 +475,30 @@
     }
   },
   "quiz": {
-    "right": 0,
-    "wrong": 0,
-    "sectionStats": {}
-  },
-  "customQuiz": {
-    "097": {
-      "prompt": "填空：短路会导致发热，____。",
-      "answer": "断路不会导致发热",
-      "hint": "提示：根据原始错题自动反推空格内容。",
-      "updated": "2026-07-31T11:37:00.613Z"
+    "right": 20,
+    "wrong": 5,
+    "sectionStats": {
+      "机械基础": {
+        "right": 10,
+        "wrong": 0
+      },
+      "金属切削机床": {
+        "right": 5,
+        "wrong": 1
+      },
+      "木工平刨床": {
+        "right": 2,
+        "wrong": 2
+      }
     }
   },
-  "updated": "2026-07-31T11:58:56.206Z"
+  "customQuiz": {
+    "013": {
+      "prompt": "填空：1类机床，停止或紧急停止时，____应不迟于____停止。",
+      "answer": "进给运动  主运动",
+      "hint": "提示：重点核对数值、单位、上下限和适用对象。",
+      "updated": "2026-07-31T03:29:56.419Z"
+    }
+  },
+  "updated": "2026-07-31T11:59:29.980Z"
 }
