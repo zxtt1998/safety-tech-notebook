@@ -11,6 +11,7 @@ const state = {
   quiz: JSON.parse(localStorage.getItem("safetyNotebookQuiz") || '{"right":0,"wrong":0}'),
   customQuiz: JSON.parse(localStorage.getItem("safetyNotebookCustomQuiz") || "{}"),
   analysisCollapsed: localStorage.getItem("safetyNotebookAnalysisCollapsed") !== "false",
+  referenceTexts: [],
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -71,6 +72,11 @@ const filteredItems = () => {
     const queryMatch = !query || [item.text, item.section, item.domain, item.kind].join(" ").toLowerCase().includes(query);
     return sectionMatch && kindMatch && queryMatch;
   });
+};
+
+const buildReferenceTexts = (extra = []) => {
+  const base = state.data.items.map((item) => item.text);
+  state.referenceTexts = [...new Set([...base, ...extra].filter(Boolean))];
 };
 
 const renderSummary = () => {
@@ -407,26 +413,103 @@ const makeDefaultQuiz = (text, memory = "自定义命题") => {
   };
 };
 
+const normalizeForMatch = (value) => String(value)
+  .replace(/^填空[:：]\s*/, "")
+  .replace(/_{2,}|＿{2,}|（\s*）|\(\s*\)/g, "")
+  .replace(/[押微]/g, "")
+  .replace(/[，。；：、,.!?！？;:\s"'“”‘’（）()【】《》\-—]/g, "")
+  .toLowerCase();
+
+const normalizeWithMap = (value) => {
+  let text = "";
+  const map = [];
+  [...String(value)].forEach((char, index) => {
+    const normalized = normalizeForMatch(char);
+    if (!normalized) return;
+    text += normalized;
+    map.push(index);
+  });
+  return { text, map };
+};
+
+const cleanInferredAnswer = (value) => String(value)
+  .replace(/^[:：，。,；;\s]+|[:：，。,；;\s]+$/g, "")
+  .replace(/([\u4e00-\u9fa5])\1/g, "$1")
+  .trim();
+
+const matchingNgrams = (value) => {
+  const normalized = normalizeForMatch(value);
+  const grams = new Set();
+  for (let size = Math.min(12, normalized.length); size >= 4; size -= 1) {
+    for (let index = 0; index <= normalized.length - size; index += 1) {
+      grams.add(normalized.slice(index, index + size));
+    }
+  }
+  return [...grams].sort((a, b) => b.length - a.length);
+};
+
+const inferBlankFromReference = (prompt, referenceText) => {
+  const cleaned = prompt.replace(/^填空[:：]\s*/, "").trim();
+  const blankPattern = /_{2,}|＿{2,}|（\s*）|\(\s*\)/;
+  if (!blankPattern.test(cleaned)) return "";
+
+  const [before = "", after = ""] = cleaned.split(blankPattern);
+  const beforeNorm = normalizeForMatch(before);
+  const afterNorm = normalizeForMatch(after);
+  if (!beforeNorm && !afterNorm) return "";
+
+  const ref = normalizeWithMap(referenceText);
+  let start = beforeNorm ? ref.text.indexOf(beforeNorm) : 0;
+  if (start < 0 && beforeNorm.length > 8) start = ref.text.indexOf(beforeNorm.slice(-8));
+  let matchedBeforeLength = beforeNorm.length;
+  if (start < 0 && beforeNorm) {
+    const gram = matchingNgrams(before).find((entry) => ref.text.includes(entry));
+    if (gram) {
+      start = ref.text.indexOf(gram);
+      matchedBeforeLength = gram.length;
+    }
+  }
+  if (start < 0) return "";
+
+  const answerStartNorm = start + (beforeNorm && ref.text.startsWith(beforeNorm, start) ? beforeNorm.length : matchedBeforeLength);
+  let answerEndNorm = afterNorm ? ref.text.indexOf(afterNorm, answerStartNorm) : ref.text.length;
+  if (answerEndNorm < 0 && afterNorm.length > 8) answerEndNorm = ref.text.indexOf(afterNorm.slice(0, 8), answerStartNorm);
+  if (answerEndNorm < answerStartNorm) return "";
+
+  const rawStart = ref.map[answerStartNorm] ?? 0;
+  const rawEnd = ref.map[answerEndNorm] ?? String(referenceText).length;
+  const answer = cleanInferredAnswer(String(referenceText).slice(rawStart, rawEnd));
+  return answer.length <= 80 ? answer : "";
+};
+
+const referenceScore = (prompt, referenceText) => {
+  const query = normalizeForMatch(prompt);
+  const ref = normalizeForMatch(referenceText);
+  if (!query || !ref) return 0;
+  const grams = matchingNgrams(prompt).filter((part) => part.length >= 4).slice(0, 80);
+  return grams.reduce((score, part) => score + (ref.includes(part) ? Math.min(part.length, 10) : 0), 0);
+};
+
+const sortedReferencesForPrompt = (prompt, item) =>
+  [item.text, ...state.referenceTexts]
+    .filter(Boolean)
+    .map((text) => ({ text, score: referenceScore(prompt, text) }))
+    .sort((a, b) => b.score - a.score)
+    .map((entry) => entry.text);
+
 const inferQuizFromPrompt = (prompt, item, fallback) => {
   const cleaned = prompt.replace(/^填空[:：]\s*/, "").trim();
   const blankPattern = /_{2,}|＿{2,}|（\s*）|\(\s*\)/;
   const blankMatch = cleaned.match(blankPattern);
 
   if (blankMatch) {
-    const [before, after] = cleaned.split(blankPattern);
-    const source = item.text;
-    const start = before ? source.indexOf(before) : 0;
-    if (start >= 0) {
-      const answerStart = start + before.length;
-      const answerEnd = after ? source.indexOf(after, answerStart) : source.length;
-      if (answerEnd >= answerStart) {
-        const answer = source.slice(answerStart, answerEnd).replace(/[。；，,.]$/, "").trim();
-        if (answer) {
-          return {
-            answer,
-            hint: `提示：根据原始错题自动反推空格内容。`,
-          };
-        }
+    for (const referenceText of sortedReferencesForPrompt(prompt, item).slice(0, 80)) {
+      const answer = inferBlankFromReference(prompt, referenceText);
+      if (answer) {
+        return {
+          answer,
+          hint: referenceText === item.text ? "提示：根据原始错题自动反推空格内容。" : "提示：根据题库/PDF参考内容自动匹配。",
+        };
       }
     }
   }
@@ -616,10 +699,21 @@ const loadCloudData = async ({ rerender = true } = {}) => {
   if (rerender && state.data) render();
 };
 
+const loadOptionalPdfReference = async () => {
+  try {
+    const response = await fetch(`pdf-reference.json?_=${Date.now()}`);
+    if (!response.ok) return [];
+    const reference = await response.json();
+    return (reference.chunks || []).map((chunk) => chunk.text).filter(Boolean);
+  } catch (error) {
+    return [];
+  }
+};
+
 const githubToken = () => {
   let token = localStorage.getItem("safetyNotebookGithubToken") || "";
   if (!token) {
-    token = window.prompt("粘贴 GitHub Token，需要 repo contents 写入权限。Token 只保存在本机浏览器。") || "";
+    token = window.prompt("粘贴你在 GitHub 生成的 Personal access token。权限选 Repository contents: Read and write，只授权 zxtt1998/safety-tech-notebook。Token 只保存在本机浏览器。") || "";
     if (!token.trim()) return "";
     localStorage.setItem("safetyNotebookGithubToken", token.trim());
   }
@@ -744,8 +838,9 @@ renderAnalysisCollapse();
 
 fetch("data.json")
   .then((response) => response.json())
-  .then((data) => {
+  .then(async (data) => {
     state.data = data;
+    buildReferenceTexts(await loadOptionalPdfReference());
     loadCloudData({ rerender: false }).finally(render);
   })
   .catch(() => {

@@ -19,6 +19,8 @@
 
 顶部标题和学习数据会优先读取 `user-data.json`。页面里的“保存标题”和“编辑命题”会先保存到本机浏览器；“云同步全部”需要输入具备仓库 Contents 写入权限的 GitHub Token，用于更新 `user-data.json`，同时同步 `title-config.json` 以保持兼容。
 
+建议使用 GitHub fine-grained token：只选择仓库 `zxtt1998/safety-tech-notebook`，Repository permissions 里把 Contents 设置为 Read and write。Token 只保存在本机浏览器。
+
 薄弱章节雷达分两套：
 
 - 背诵复习薄弱度：按备忘录中的章节错题量、未掌握数量、复习覆盖率计算。
