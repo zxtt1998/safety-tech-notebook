@@ -388,6 +388,56 @@ const makeQuiz = (item) => {
   };
 };
 
+const makeDefaultQuiz = (text, memory = "自定义命题") => {
+  const kind = /\d/.test(text) ? "数值题" : "概念题";
+  if (kind === "数值题") {
+    const numericPattern = /\d+(?:\.\d+)?\s*(?:dB\(A\)|dB|kN|mm|ms|min|米|伏|千伏|千欧|%|度)?/gi;
+    const answers = text.match(numericPattern) || [];
+    return {
+      prompt: `填空：${text.replace(numericPattern, "____")}`,
+      answer: answers.join("、"),
+      hint: "提示：重点核对数值、单位、上下限和适用对象。",
+    };
+  }
+  const cloze = makeCloze(text);
+  return {
+    prompt: `填空：${cloze.prompt}`,
+    answer: cloze.answer,
+    hint: `提示：${memory}`,
+  };
+};
+
+const inferQuizFromPrompt = (prompt, item, fallback) => {
+  const cleaned = prompt.replace(/^填空[:：]\s*/, "").trim();
+  const blankPattern = /_{2,}|＿{2,}|（\s*）|\(\s*\)/;
+  const blankMatch = cleaned.match(blankPattern);
+
+  if (blankMatch) {
+    const [before, after] = cleaned.split(blankPattern);
+    const source = item.text;
+    const start = before ? source.indexOf(before) : 0;
+    if (start >= 0) {
+      const answerStart = start + before.length;
+      const answerEnd = after ? source.indexOf(after, answerStart) : source.length;
+      if (answerEnd >= answerStart) {
+        const answer = source.slice(answerStart, answerEnd).replace(/[。；，,.]$/, "").trim();
+        if (answer) {
+          return {
+            answer,
+            hint: `提示：根据原始错题自动反推空格内容。`,
+          };
+        }
+      }
+    }
+  }
+
+  const regenerated = makeDefaultQuiz(cleaned || item.text, item.memory);
+  return {
+    answer: regenerated.answer || fallback.answer,
+    hint: regenerated.hint || fallback.hint,
+  };
+};
+
 const openQuizEditor = (item, node, quiz) => {
   const existing = node.querySelector(".quiz-editor");
   if (existing) {
@@ -403,21 +453,49 @@ const openQuizEditor = (item, node, quiz) => {
     <label>提示<textarea data-edit-field="hint">${escapeHtml(quiz.hint)}</textarea></label>
     <div class="quiz-editor-actions">
       <button type="button" data-editor-save>保存命题</button>
+      <button type="button" data-editor-auto>重新生成答案</button>
       <button type="button" data-editor-reset>恢复默认</button>
       <button type="button" data-editor-close>收起</button>
     </div>
   `;
 
+  const promptField = editor.querySelector('[data-edit-field="prompt"]');
+  const answerField = editor.querySelector('[data-edit-field="answer"]');
+  const hintField = editor.querySelector('[data-edit-field="hint"]');
+  let answerTouched = false;
+  let hintTouched = false;
+
+  const applyAutoAnswer = ({ force = false } = {}) => {
+    const inferred = inferQuizFromPrompt(promptField.value, item, quiz);
+    if (force || !answerTouched) answerField.value = inferred.answer;
+    if (force || !hintTouched) hintField.value = inferred.hint;
+  };
+
+  promptField.addEventListener("input", () => applyAutoAnswer());
+  answerField.addEventListener("input", () => {
+    answerTouched = true;
+  });
+  hintField.addEventListener("input", () => {
+    hintTouched = true;
+  });
+
   editor.querySelector("[data-editor-save]").addEventListener("click", () => {
     state.customQuiz[item.id] = {
-      prompt: editor.querySelector('[data-edit-field="prompt"]').value.trim() || quiz.prompt,
-      answer: editor.querySelector('[data-edit-field="answer"]').value.trim() || quiz.answer,
-      hint: editor.querySelector('[data-edit-field="hint"]').value.trim() || quiz.hint,
+      prompt: promptField.value.trim() || quiz.prompt,
+      answer: answerField.value.trim() || quiz.answer,
+      hint: hintField.value.trim() || quiz.hint,
       updated: new Date().toISOString(),
     };
     saveCustomQuiz();
     renderCards();
     setTitleStatus("命题已本地保存，可云同步", "ok");
+  });
+
+  editor.querySelector("[data-editor-auto]").addEventListener("click", () => {
+    answerTouched = false;
+    hintTouched = false;
+    applyAutoAnswer({ force: true });
+    setTitleStatus("答案已按题干重新生成", "ok");
   });
 
   editor.querySelector("[data-editor-reset]").addEventListener("click", () => {

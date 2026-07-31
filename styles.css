@@ -864,7 +864,7 @@ main {
 
 .quiz-editor-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 8px;
 }
 
@@ -883,6 +883,11 @@ main {
 }
 
 .quiz-editor-actions button:nth-child(2) {
+  color: white;
+  background: var(--blue);
+}
+
+.quiz-editor-actions button:nth-child(3) {
   color: var(--red);
   background: #feecec;
 }
