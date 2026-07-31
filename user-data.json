@@ -3,483 +3,1127 @@
   "progress": {
     "100": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "101": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "102": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "103": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "104": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "105": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "106": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "107": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "108": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "109": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "110": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "111": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "112": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "113": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "114": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "115": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "116": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "117": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "118": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "001": {
-      "review": 2,
-      "mastered": false
+      "review": 3,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:39:13.136Z",
+      "lastTestedAt": "2026-07-31T15:19:13.136Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "002": {
       "review": 2,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "003": {
-      "review": 5,
-      "mastered": false
+      "review": 7,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:39:38.742Z",
+      "lastTestedAt": "2026-07-31T15:19:38.742Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "004": {
-      "review": 1,
-      "mastered": false
+      "review": 2,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "005": {
-      "review": 1,
-      "mastered": false
+      "review": 2,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:39:46.026Z",
+      "lastTestedAt": "2026-07-31T15:19:46.026Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "006": {
-      "review": 1,
-      "mastered": false
+      "review": 2,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:39:48.168Z",
+      "lastTestedAt": "2026-07-31T15:19:48.168Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "007": {
-      "review": 2,
-      "mastered": false
+      "review": 3,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:40:35.198Z",
+      "lastTestedAt": "2026-07-31T15:20:35.198Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "008": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:41:12.271Z",
+      "lastTestedAt": "2026-07-31T15:21:12.271Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "009": {
       "review": 1,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "010": {
       "review": 1,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "011": {
       "review": 1,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "012": {
       "review": 2,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "013": {
       "review": 1,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "014": {
       "review": 1,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "015": {
       "review": 1,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "016": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "017": {
       "review": 1,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "018": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "019": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "020": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "021": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "022": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "023": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "024": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "025": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "026": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "027": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "028": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "029": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "030": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "031": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "032": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "033": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "034": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "035": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "036": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "037": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "038": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "039": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "040": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "041": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "042": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "043": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "044": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "045": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "046": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "047": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "048": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "049": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "050": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "051": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "052": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "053": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "054": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "055": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "056": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "057": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "058": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "059": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "060": {
       "review": 1,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "061": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "062": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "063": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "064": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "065": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "066": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "067": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "068": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "069": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "070": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "071": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "072": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "073": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "074": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "075": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "076": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "077": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "078": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "079": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "080": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "081": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "082": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "083": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "084": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "085": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "086": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "087": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "088": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "089": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "090": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "091": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "092": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "093": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "094": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "095": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "096": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "097": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "098": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "099": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF18": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF19": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF22": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF25": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF26": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF27": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF28": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF29": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF30": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF31": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF33": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF37": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF39": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF40": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF42": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF45": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF46": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF47": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF48": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF49": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF52": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF53": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF54": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF60": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF61": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF63": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF64": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF65": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF67": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF68": {
       "review": 0,
       "mastered": false
     }
   },
   "quiz": {
-    "right": 20,
+    "right": 28,
     "wrong": 5,
     "sectionStats": {
       "机械基础": {
-        "right": 10,
+        "right": 18,
         "wrong": 0
       },
       "金属切削机床": {
@@ -498,7 +1142,13 @@
       "answer": "进给运动  主运动",
       "hint": "提示：重点核对数值、单位、上下限和适用对象。",
       "updated": "2026-07-31T03:29:56.419Z"
+    },
+    "003": {
+      "prompt": "填空：____的道路应环形布置",
+      "answer": "主要生产区、仓库区、动力区",
+      "hint": "提示：根据原始错题自动反推空格内容。",
+      "updated": "2026-07-31T12:00:08.380Z"
     }
   },
-  "updated": "2026-07-31T11:59:34.141Z"
+  "updated": "2026-07-31T15:35:30.579Z"
 }
