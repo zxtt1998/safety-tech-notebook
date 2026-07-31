@@ -49,6 +49,8 @@ const FORGETTING_POINTS = [
   ["31天", 10],
 ];
 
+const isTestMode = () => state.mode === "quiz" || state.mode === "liyutian";
+
 const saveProgress = () => {
   localStorage.setItem("safetyNotebookProgress", JSON.stringify(state.progress));
 };
@@ -119,14 +121,18 @@ const dueLabel = (iso) => {
 };
 
 const memoryQueue = () =>
-  state.data.items
+  activeItems()
     .map((item) => ({ item, progress: itemProgress(item.id), due: Date.parse(itemProgress(item.id).nextReviewAt || "") }))
     .filter((entry) => entry.progress.nextReviewAt && !Number.isNaN(entry.due))
     .sort((a, b) => a.due - b.due);
 
+const activeItems = () => (state.mode === "liyutian" ? state.data.highFrequencyItems || [] : state.data.items);
+
+const activeSections = () => (state.mode === "liyutian" ? state.data.highFrequencySections || [] : state.data.sections);
+
 const filteredItems = () => {
   const query = state.query.trim().toLowerCase();
-  return state.data.items.filter((item) => {
+  return activeItems().filter((item) => {
     const sectionMatch = state.section === "all" || item.section === state.section;
     const kindMatch = state.kind === "all" || item.kind === state.kind;
     const queryMatch = !query || [item.text, item.section, item.domain, item.kind].join(" ").toLowerCase().includes(query);
@@ -135,22 +141,24 @@ const filteredItems = () => {
 };
 
 const buildReferenceTexts = (extra = []) => {
-  const base = state.data.items.map((item) => item.text);
+  const base = [...state.data.items, ...(state.data.highFrequencyItems || [])].map((item) => item.text);
   state.referenceTexts = [...new Set([...base, ...extra].filter(Boolean))];
 };
 
 const renderSummary = () => {
-  const mastered = state.data.items.filter((item) => itemProgress(item.id).mastered).length;
+  const items = activeItems();
+  const sections = activeSections();
+  const mastered = items.filter((item) => itemProgress(item.id).mastered).length;
   const attempts = state.quiz.right + state.quiz.wrong;
-  $("#totalCount").textContent = state.data.items.length;
-  $("#sectionCount").textContent = state.data.sections.length;
+  $("#totalCount").textContent = items.length;
+  $("#sectionCount").textContent = sections.length;
   $("#masteredCount").textContent = mastered;
   $("#quizScore").textContent = attempts ? `${Math.round((state.quiz.right / attempts) * 100)}%` : "0%";
-  $("#updatedAt").textContent = `已同步 ${state.data.items.length} 条`;
+  $("#updatedAt").textContent = `已同步 ${items.length} 条`;
 };
 
 const quizInsight = () =>
-  state.data.sections
+  activeSections()
     .map((section) => {
       const stats = state.quiz.sectionStats[section.section] || { right: 0, wrong: 0 };
       const attempts = (stats.right || 0) + (stats.wrong || 0);
@@ -267,7 +275,7 @@ const renderReviewQueue = () => {
 };
 
 const renderAnalysis = () => {
-  if (state.mode !== "quiz") {
+  if (!isTestMode()) {
     analysisPanel.hidden = true;
     return;
   }
@@ -294,10 +302,12 @@ const renderAnalysis = () => {
 
 const renderTabs = () => {
   tabs.innerHTML = "";
+  const items = activeItems();
+  const sections = activeSections();
   const all = document.createElement("button");
   all.type = "button";
   all.className = state.section === "all" ? "active" : "";
-  all.innerHTML = `<strong>全部错题</strong><span>${state.data.items.length} 条</span>`;
+  all.innerHTML = `<strong>${state.mode === "liyutian" ? "全部高频" : "全部错题"}</strong><span>${items.length} 条</span>`;
   all.addEventListener("click", () => {
     state.section = "all";
     state.quizPage = 0;
@@ -305,7 +315,7 @@ const renderTabs = () => {
   });
   tabs.appendChild(all);
 
-  state.data.sections.forEach((section) => {
+  sections.forEach((section) => {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = state.section === section.section ? "active" : "";
@@ -322,13 +332,15 @@ const renderTabs = () => {
 const renderCards = () => {
   cards.innerHTML = "";
   const items = filteredItems();
-  const section = state.data.sections.find((entry) => entry.section === state.section);
-  $("#domainName").textContent = section?.domain || "全部章节";
-  $("#sectionName").textContent = state.mode === "quiz" ? "测试模式" : section?.section || "错题总览";
-  $("#shuffleBtn").textContent = state.mode === "quiz" ? "下一页" : "随机背诵";
-  $("#shuffleBtn").disabled = state.mode === "quiz" && state.quizPage >= Math.ceil(items.length / state.pageSize) - 1;
+  const section = activeSections().find((entry) => entry.section === state.section);
+  $("#domainName").textContent = section?.domain || (state.mode === "liyutian" ? "李天宇高频" : "全部章节");
+  $("#sectionName").textContent = isTestMode()
+    ? (state.mode === "liyutian" ? "李天宇高频模块测试" : "测试模式")
+    : section?.section || "错题总览";
+  $("#shuffleBtn").textContent = isTestMode() ? "下一页" : "随机背诵";
+  $("#shuffleBtn").disabled = isTestMode() && state.quizPage >= Math.ceil(items.length / state.pageSize) - 1;
   quizPagers.forEach((pager) => {
-    pager.hidden = state.mode !== "quiz";
+    pager.hidden = !isTestMode();
   });
 
   if (!items.length) {
@@ -342,7 +354,7 @@ const renderCards = () => {
     return;
   }
 
-  if (state.mode === "quiz") {
+  if (isTestMode()) {
     renderQuizCards(items);
     return;
   }
@@ -485,6 +497,7 @@ const makeQuiz = (item) => {
       hint: custom.hint || "自定义命题",
     };
   }
+  if (item.quiz?.prompt) return item.quiz;
   if (item.kind === "数值题") {
     const numericPattern = /\d+(?:\.\d+)?\s*(?:dB\(A\)|dB|kN|mm|ms|min|米|伏|千伏|千欧|%|度)?/gi;
     const answers = item.text.match(numericPattern) || [];
@@ -899,7 +912,10 @@ document.querySelectorAll(".mode-switch button").forEach((button) => {
     document.querySelectorAll(".mode-switch button").forEach((entry) => entry.classList.remove("active"));
     button.classList.add("active");
     state.mode = button.dataset.mode;
+    state.section = "all";
+    state.query = "";
     state.quizPage = 0;
+    $("#searchInput").value = "";
     render();
   });
 });
@@ -913,7 +929,7 @@ $("#searchInput").addEventListener("input", (event) => {
 $("#shuffleBtn").addEventListener("click", () => {
   const items = filteredItems();
   if (!items.length) return;
-  if (state.mode === "quiz") {
+  if (isTestMode()) {
     const totalPages = Math.max(1, Math.ceil(items.length / state.pageSize));
     state.quizPage = Math.min(totalPages - 1, state.quizPage + 1);
     renderCards();

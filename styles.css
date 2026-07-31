@@ -196,11 +196,14 @@ main {
 .mode-switch button {
   flex: 1;
   height: 52px;
+  min-width: 0;
+  padding: 0 10px;
   border: 0;
   border-radius: 6px;
   color: var(--muted);
   background: transparent;
   cursor: pointer;
+  line-height: 1.2;
   font-weight: 900;
 }
 
@@ -1037,7 +1040,10 @@ main {
   }
 
   .mode-switch button {
-    height: 48px;
+    min-height: 48px;
+    height: auto;
+    padding: 8px 6px;
+    font-size: 13px;
   }
 
   .summary {
