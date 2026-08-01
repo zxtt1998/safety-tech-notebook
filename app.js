@@ -64,6 +64,11 @@ const saveCustomQuiz = () => {
   localStorage.setItem("safetyNotebookCustomQuiz", JSON.stringify(state.customQuiz));
 };
 
+const normalizeImages = (images) => {
+  if (!images) return [];
+  return Array.isArray(images) ? images.filter(Boolean) : [images];
+};
+
 const saveDeletedItems = () => {
   localStorage.setItem("safetyNotebookDeletedItems", JSON.stringify(state.deletedItems));
 };
@@ -384,6 +389,8 @@ const renderCards = () => {
     node.querySelector("strong").textContent = item.id;
     node.querySelector(".card-meta span").textContent = `${item.section} · ${item.kind} · 复习 ${progress.review} 次`;
     node.querySelector(".question").textContent = item.text;
+    const imageGallery = createImageGallery(itemImages(item));
+    if (imageGallery) node.querySelector(".question").after(imageGallery);
     node.querySelector(".memory").textContent = item.memory;
     node.querySelector(".review-btn").addEventListener("click", () => {
       progress.review += 1;
@@ -420,6 +427,8 @@ const renderQuizCards = (items) => {
     node.querySelector(".card-meta span").textContent = `${item.section} · ${item.kind}`;
     node.querySelector(".quiz-prompt").textContent = quiz.prompt;
     node.querySelector(".quiz-hint").textContent = quiz.hint;
+    const imageGallery = createImageGallery(itemImages(item, quiz));
+    if (imageGallery) node.querySelector(".quiz-hint").after(imageGallery);
     node.querySelector(".quiz-answer").innerHTML = `<strong>应填：</strong>${escapeHtml(quiz.answer)}<br><strong>完整句：</strong>${escapeHtml(item.text)}`;
     const editBtn = document.createElement("button");
     editBtn.className = "edit-quiz-btn";
@@ -525,6 +534,7 @@ const makeQuiz = (item) => {
       prompt: custom.prompt,
       answer: custom.answer || item.text,
       hint: custom.hint || "自定义命题",
+      images: normalizeImages(custom.images || custom.image),
     };
   }
   if (item.quiz?.prompt) return item.quiz;
@@ -543,6 +553,90 @@ const makeQuiz = (item) => {
     answer: cloze.answer,
     hint: `提示：${item.memory}`,
   };
+};
+
+const itemImages = (item, quiz = {}) => {
+  const custom = state.customQuiz[item.id];
+  if (custom && Object.prototype.hasOwnProperty.call(custom, "images")) return normalizeImages(custom.images);
+  if (custom?.image) return normalizeImages(custom.image);
+  return normalizeImages(quiz.images || item.images || item.image);
+};
+
+const createImageGallery = (images) => {
+  const validImages = normalizeImages(images).filter((image) => image?.src);
+  if (!validImages.length) return null;
+  const gallery = document.createElement("div");
+  gallery.className = "quiz-image-gallery";
+  validImages.forEach((image, index) => {
+    const figure = document.createElement("figure");
+    figure.className = "quiz-image";
+    const img = document.createElement("img");
+    img.src = image.src;
+    img.alt = image.name || `题目图片 ${index + 1}`;
+    img.loading = "lazy";
+    figure.appendChild(img);
+    if (image.name) {
+      const caption = document.createElement("figcaption");
+      caption.textContent = image.name;
+      figure.appendChild(caption);
+    }
+    gallery.appendChild(figure);
+  });
+  return gallery;
+};
+
+const readImage = (file, maxSide = 1280, quality = 0.82) => new Promise((resolve, reject) => {
+  const reader = new FileReader();
+  reader.onerror = () => reject(new Error("图片读取失败"));
+  reader.onload = () => {
+    const img = new Image();
+    img.onerror = () => reject(new Error("图片解析失败"));
+    img.onload = () => {
+      const scale = Math.min(1, maxSide / Math.max(img.width, img.height));
+      const width = Math.max(1, Math.round(img.width * scale));
+      const height = Math.max(1, Math.round(img.height * scale));
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      const context = canvas.getContext("2d");
+      context.drawImage(img, 0, 0, width, height);
+      const src = canvas.toDataURL("image/jpeg", quality);
+      resolve({
+        src,
+        name: file.name || "题目图片",
+        type: "image/jpeg",
+        width,
+        height,
+        updated: new Date().toISOString(),
+      });
+    };
+    img.src = reader.result;
+  };
+  reader.readAsDataURL(file);
+});
+
+const compressImageFile = async (file) => {
+  if (!file?.type?.startsWith("image/")) throw new Error("请选择图片文件");
+  let image = await readImage(file);
+  if (image.src.length > 1300000) image = await readImage(file, 980, 0.72);
+  if (image.src.length > 1800000) throw new Error("图片仍然太大，请先裁剪或压缩后再插入");
+  return image;
+};
+
+const renderImagePreview = (target, image) => {
+  if (!image?.src) {
+    target.hidden = true;
+    target.innerHTML = "";
+    return;
+  }
+  target.hidden = false;
+  target.innerHTML = `
+    <img src="${image.src}" alt="${escapeHtml(image.name || "题目图片")}" />
+    <div>
+      <strong>${escapeHtml(image.name || "题目图片")}</strong>
+      <span>将跟随命题一起本地保存，点击云同步后会同步到手机。</span>
+    </div>
+  `;
 };
 
 const makeDefaultQuiz = (text, memory = "自定义命题") => {
@@ -685,6 +779,17 @@ const openQuizEditor = (item, node, quiz) => {
     <label>题干<textarea data-edit-field="prompt">${escapeHtml(quiz.prompt)}</textarea></label>
     <label>答案<textarea data-edit-field="answer">${escapeHtml(quiz.answer)}</textarea></label>
     <label>提示<textarea data-edit-field="hint">${escapeHtml(quiz.hint)}</textarea></label>
+    <div class="quiz-image-editor">
+      <div class="image-editor-head">
+        <strong>题目图片</strong>
+        <label class="image-upload">
+          插入图片
+          <input type="file" accept="image/*" data-edit-image />
+        </label>
+      </div>
+      <div class="image-preview" data-image-preview hidden></div>
+      <button type="button" class="remove-image-btn" data-editor-remove-image>移除图片</button>
+    </div>
     <div class="quiz-editor-actions">
       <button type="button" data-editor-save>保存命题</button>
       <button type="button" data-editor-auto>重新生成答案</button>
@@ -697,8 +802,16 @@ const openQuizEditor = (item, node, quiz) => {
   const promptField = editor.querySelector('[data-edit-field="prompt"]');
   const answerField = editor.querySelector('[data-edit-field="answer"]');
   const hintField = editor.querySelector('[data-edit-field="hint"]');
+  const imageInput = editor.querySelector("[data-edit-image]");
+  const imagePreview = editor.querySelector("[data-image-preview]");
+  const removeImageButton = editor.querySelector("[data-editor-remove-image]");
+  let imageDraft = itemImages(item, quiz)[0] || null;
+  let imageRemoved = false;
   let answerTouched = false;
   let hintTouched = false;
+
+  renderImagePreview(imagePreview, imageDraft);
+  removeImageButton.hidden = !imageDraft;
 
   const applyAutoAnswer = ({ force = false } = {}) => {
     const inferred = inferQuizFromPrompt(promptField.value, item, quiz);
@@ -714,12 +827,48 @@ const openQuizEditor = (item, node, quiz) => {
     hintTouched = true;
   });
 
+  imageInput.addEventListener("change", async () => {
+    const file = imageInput.files?.[0];
+    if (!file) return;
+    removeImageButton.disabled = true;
+    imageInput.disabled = true;
+    setTitleStatus("正在压缩题目图片…", "");
+    try {
+      imageDraft = await compressImageFile(file);
+      imageRemoved = false;
+      renderImagePreview(imagePreview, imageDraft);
+      removeImageButton.hidden = false;
+      setTitleStatus("图片已插入，保存命题后生效", "ok");
+    } catch (error) {
+      setTitleStatus(error.message || "图片插入失败", "bad");
+    } finally {
+      removeImageButton.disabled = false;
+      imageInput.disabled = false;
+      imageInput.value = "";
+    }
+  });
+
+  removeImageButton.addEventListener("click", () => {
+    imageDraft = null;
+    imageRemoved = true;
+    renderImagePreview(imagePreview, null);
+    removeImageButton.hidden = true;
+    setTitleStatus("图片已移除，保存命题后生效", "ok");
+  });
+
   editor.querySelector("[data-editor-save]").addEventListener("click", () => {
-    state.customQuiz[item.id] = {
+    const nextCustom = {
+      ...state.customQuiz[item.id],
       prompt: promptField.value.trim() || quiz.prompt,
       answer: answerField.value.trim() || quiz.answer,
       hint: hintField.value.trim() || quiz.hint,
       updated: new Date().toISOString(),
+    };
+    if (imageDraft) nextCustom.images = [imageDraft];
+    if (imageRemoved) nextCustom.images = [];
+    if (!imageDraft && !imageRemoved) delete nextCustom.images;
+    state.customQuiz[item.id] = {
+      ...nextCustom,
     };
     saveCustomQuiz();
     renderCards();
