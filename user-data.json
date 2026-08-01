@@ -5339,63 +5339,108 @@
     },
     "N071": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N082": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N083": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N084": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N085": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N086": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N087": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N088": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N089": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N090": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N091": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N092": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N093": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N094": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N095": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     }
   },
   "quiz": {
@@ -5464,6 +5509,13 @@
       "hint": "提示：这是备忘录中的参考图。",
       "updated": "2026-08-01T03:52:57.179Z",
       "images": []
+    },
+    "031": {
+      "prompt": "填空：圆锯片连续断裂两齿，应____。",
+      "answer": "应停止使用",
+      "hint": "提示：图片参考题，先看图表再核对关键要求",
+      "updated": "2026-08-01T09:26:19.809Z",
+      "images": []
     }
   },
   "deletedItems": {
@@ -5479,5 +5531,5 @@
     "HF06-04": "2026-08-01T01:46:06.842Z",
     "HF07-03": "2026-08-01T01:46:40.882Z"
   },
-  "updated": "2026-08-01T03:53:25.170Z"
+  "updated": "2026-08-01T09:26:31.179Z"
 }
