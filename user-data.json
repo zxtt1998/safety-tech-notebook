@@ -293,10 +293,13 @@
       "testWrong": 0
     },
     "021": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:56:02.787Z",
+      "lastTestedAt": "2026-07-31T15:36:02.787Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "022": {
@@ -847,279 +850,2771 @@
     },
     "HF01": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF02": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF03": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF04": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF05": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF06": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF07": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF08": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF09": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF10": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF11": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF12": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF13": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF14": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF15": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF16": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF17": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF18": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF19": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF20": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF21": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF22": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF23": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF24": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF25": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF26": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF27": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF28": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF29": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF30": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF31": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF32": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF33": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF34": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF35": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF36": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF37": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF38": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF39": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF40": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF41": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF42": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF43": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF44": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF45": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF46": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF47": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF48": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF49": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF50": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF51": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF52": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF53": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF54": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF55": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF56": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF57": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF58": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF59": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF60": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF61": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF62": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF63": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF64": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF65": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF66": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF67": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "HF68": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF01-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF02-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF03-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF04-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF05-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF06-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF06-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF06-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF06-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF06-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF06-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF06-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF06-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF07-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF07-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF07-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF07-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF08-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF08-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF08-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF08-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF08-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF09-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF09-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF09-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF09-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF09-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF09-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF09-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF09-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF09-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF10-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF11-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF11-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF11-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF11-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF11-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF11-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF11-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF11-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF11-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF12-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF13-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF14-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF15-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF16-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF17-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF18-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF18-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF18-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF18-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF18-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF18-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF18-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF19-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF19-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF19-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF19-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF20-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF21-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF22-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF22-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF23-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF24-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF25-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF25-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF25-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF25-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF25-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF25-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF26-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF26-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF26-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF27-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF27-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF27-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF27-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF27-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF28-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF29-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF29-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF29-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF29-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF29-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF29-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF30-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF30-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF30-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF30-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF30-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF30-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF31-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF31-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF32-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF33-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF33-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF33-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF34-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF35-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF36-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF37-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF38-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF39-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF40-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF40-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF40-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF40-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF40-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF40-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF40-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF40-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF40-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF41-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF42-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF43-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF44-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF45-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF45-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF45-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF45-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF45-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF45-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF45-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF45-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF45-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF46-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF46-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF46-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF46-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF46-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF46-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF46-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF46-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF46-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF47-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF47-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF47-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF47-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF47-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF47-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF47-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF47-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF47-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF48-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF49-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF50-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF51-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF52-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF52-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF52-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF53-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF53-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF53-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF53-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF53-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF53-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF54-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF54-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF54-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF54-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF55-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF56-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF57-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF58-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF59-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF60-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF60-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF60-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF60-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF60-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF60-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF60-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF60-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF60-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF61-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF61-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF61-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF61-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF61-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF62-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF63-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF64-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF64-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF64-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF64-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF64-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF64-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF65-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF66-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF67-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF67-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF67-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF67-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF67-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF67-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF67-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF67-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF67-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF68-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF68-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF68-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF68-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF68-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "HF68-06": {
       "review": 0,
       "mastered": false
     }
   },
   "quiz": {
-    "right": 28,
+    "right": 29,
     "wrong": 5,
     "sectionStats": {
       "机械基础": {
@@ -1131,7 +3626,7 @@
         "wrong": 1
       },
       "木工平刨床": {
-        "right": 2,
+        "right": 3,
         "wrong": 2
       }
     }
@@ -1148,7 +3643,25 @@
       "answer": "主要生产区、仓库区、动力区",
       "hint": "提示：根据原始错题自动反推空格内容。",
       "updated": "2026-07-31T12:00:08.380Z"
+    },
+    "022": {
+      "prompt": "填空：木工平刨床刀轴须经____。",
+      "answer": "强度试验和离心试验",
+      "hint": "提示：根据原始错题自动反推空格内容。",
+      "updated": "2026-07-31T15:36:24.804Z"
+    },
+    "HF01-02": {
+      "prompt": "简答：转动轴（有凸起部分） 应设置__",
+      "answer": "全面封闭的防护罩",
+      "hint": "提示：根据原始错题自动反推空格内容。",
+      "updated": "2026-08-01T00:41:11.929Z"
+    },
+    "HF01-03": {
+      "prompt": "简答：对旋式轧辊、牵引辊应设置__",
+      "answer": "钳型防护罩",
+      "hint": "提示：根据原始错题自动反推空格内容。",
+      "updated": "2026-08-01T01:02:16.473Z"
     }
   },
-  "updated": "2026-07-31T15:35:30.579Z"
+  "updated": "2026-08-01T01:02:55.453Z"
 }
