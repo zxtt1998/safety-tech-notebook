@@ -16,17 +16,23 @@
       "testWrong": 0
     },
     "102": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T14:55:43.830Z",
+      "lastTestedAt": "2026-08-01T14:35:43.830Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "103": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T14:55:42.732Z",
+      "lastTestedAt": "2026-08-01T14:35:42.732Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "104": {
@@ -51,10 +57,13 @@
       "testWrong": 0
     },
     "107": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T14:56:34.937Z",
+      "lastTestedAt": "2026-08-01T14:36:34.937Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "108": {
@@ -522,10 +531,13 @@
       "testWrong": 0
     },
     "052": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T14:39:19.925Z",
+      "lastTestedAt": "2026-08-01T14:19:19.925Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "053": {
@@ -543,10 +555,13 @@
       "testWrong": 0
     },
     "055": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T14:40:41.173Z",
+      "lastTestedAt": "2026-08-01T14:20:41.173Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "056": {
@@ -753,17 +768,23 @@
       "testWrong": 0
     },
     "085": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T14:57:27.834Z",
+      "lastTestedAt": "2026-08-01T14:37:27.834Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "086": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T14:57:55.682Z",
+      "lastTestedAt": "2026-08-01T14:37:55.682Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "087": {
@@ -774,10 +795,13 @@
       "testWrong": 0
     },
     "088": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T14:57:54.591Z",
+      "lastTestedAt": "2026-08-01T14:37:54.591Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "089": {
@@ -5375,7 +5399,7 @@
       "testWrong": 0
     },
     "N085": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
       "memoryStage": -1,
       "testAttempts": 0,
@@ -5453,7 +5477,7 @@
     }
   },
   "quiz": {
-    "right": 35,
+    "right": 43,
     "wrong": 6,
     "sectionStats": {
       "机械基础": {
@@ -5479,10 +5503,27 @@
       "人机工程学": {
         "right": 1,
         "wrong": 0
+      },
+      "砂轮机": {
+        "right": 2,
+        "wrong": 0
+      },
+      "静电防护": {
+        "right": 3,
+        "wrong": 0
+      },
+      "电气安全技术": {
+        "right": 3,
+        "wrong": 0
       }
     }
   },
   "customQuiz": {
+    "107": {
+      "prompt": "填空：热继电器通过控制____。",
+      "answer": "触头使控制电路断开",
+      "updated": "2026-08-01T14:36:24.444Z"
+    },
     "013": {
       "prompt": "填空：1类机床，停止或紧急停止时，____应不迟于____停止。",
       "answer": "进给运动  主运动",
@@ -5520,13 +5561,6 @@
       "updated": "2026-08-01T03:52:42.949Z",
       "images": []
     },
-    "N095": {
-      "prompt": "查看图片：特种设备安全技术 备忘录参考图",
-      "answer": "结合图片复习本章节关键要求。",
-      "hint": "提示：这是备忘录中的参考图。",
-      "updated": "2026-08-01T03:52:57.179Z",
-      "images": []
-    },
     "031": {
       "prompt": "填空：圆锯片连续断裂两齿，应____。",
       "answer": "应停止使用",
@@ -5537,6 +5571,26 @@
     "016": {
       "text": "爪形护指件的相邻间距应小于 8mm。",
       "updated": "2026-08-01T09:37:43.670Z"
+    },
+    "032": {
+      "prompt": "填空：圆锯片有裂纹____",
+      "answer": "不允许修复使用",
+      "updated": "2026-08-01T10:19:36.608Z"
+    },
+    "053": {
+      "prompt": "填空：目测检查未通过的砂轮____。",
+      "answer": "不允许使用",
+      "updated": "2026-08-01T14:19:33.802Z"
+    },
+    "N071": {
+      "prompt": "填空：IP 等级附加字母表示对人接近危险部件的防护等级。字母A表示防止手背接近；字母B表示防止____",
+      "answer": "手指接近，字母C表示防止工具接近；字母D表示防止金属线接近。手背手指工具线",
+      "updated": "2026-08-01T14:37:11.104Z"
+    },
+    "HF04-07": {
+      "prompt": "填空：夹紧过程的结束与____",
+      "answer": "机床运转的开始相联锁",
+      "updated": "2026-08-01T14:42:01.026Z"
     }
   },
   "deletedItems": {
@@ -5550,7 +5604,10 @@
     "HF03-10": "2026-08-01T01:39:06.701Z",
     "HF06-01": "2026-08-01T01:45:53.145Z",
     "HF06-04": "2026-08-01T01:46:06.842Z",
-    "HF07-03": "2026-08-01T01:46:40.882Z"
+    "HF07-03": "2026-08-01T01:46:40.882Z",
+    "N095": "2026-08-01T14:31:43.207Z",
+    "HF02-02": "2026-08-01T14:41:02.784Z",
+    "HF03-08": "2026-08-01T14:41:21.060Z"
   },
-  "updated": "2026-08-01T09:57:49.195Z"
+  "updated": "2026-08-01T14:43:37.641Z"
 }
