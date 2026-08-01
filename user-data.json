@@ -5336,6 +5336,66 @@
       "memoryStage": -1,
       "testAttempts": 0,
       "testWrong": 0
+    },
+    "N071": {
+      "review": 0,
+      "mastered": false
+    },
+    "N082": {
+      "review": 0,
+      "mastered": false
+    },
+    "N083": {
+      "review": 0,
+      "mastered": false
+    },
+    "N084": {
+      "review": 0,
+      "mastered": false
+    },
+    "N085": {
+      "review": 0,
+      "mastered": false
+    },
+    "N086": {
+      "review": 0,
+      "mastered": false
+    },
+    "N087": {
+      "review": 0,
+      "mastered": false
+    },
+    "N088": {
+      "review": 0,
+      "mastered": false
+    },
+    "N089": {
+      "review": 0,
+      "mastered": false
+    },
+    "N090": {
+      "review": 0,
+      "mastered": false
+    },
+    "N091": {
+      "review": 0,
+      "mastered": false
+    },
+    "N092": {
+      "review": 0,
+      "mastered": false
+    },
+    "N093": {
+      "review": 0,
+      "mastered": false
+    },
+    "N094": {
+      "review": 0,
+      "mastered": false
+    },
+    "N095": {
+      "review": 0,
+      "mastered": false
     }
   },
   "quiz": {
@@ -5390,6 +5450,20 @@
       "answer": "钳型防护罩",
       "hint": "提示：根据原始错题自动反推空格内容。",
       "updated": "2026-08-01T01:02:16.473Z"
+    },
+    "010": {
+      "prompt": "填空：机床显示器的视距应至少为____，安装高度距地面或操作站台面，应为____到____。",
+      "answer": "0.3米、1.3、2米",
+      "hint": "提示：重点核对数值、单位、上下限和适用对象。",
+      "updated": "2026-08-01T03:52:42.949Z",
+      "images": []
+    },
+    "N095": {
+      "prompt": "查看图片：特种设备安全技术 备忘录参考图",
+      "answer": "结合图片复习本章节关键要求。",
+      "hint": "提示：这是备忘录中的参考图。",
+      "updated": "2026-08-01T03:52:57.179Z",
+      "images": []
     }
   },
   "deletedItems": {
@@ -5405,5 +5479,5 @@
     "HF06-04": "2026-08-01T01:46:06.842Z",
     "HF07-03": "2026-08-01T01:46:40.882Z"
   },
-  "updated": "2026-08-01T03:49:52.887Z"
+  "updated": "2026-08-01T03:53:25.170Z"
 }
