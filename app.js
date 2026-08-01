@@ -10,6 +10,7 @@ const state = {
   progress: JSON.parse(localStorage.getItem("safetyNotebookProgress") || "{}"),
   quiz: JSON.parse(localStorage.getItem("safetyNotebookQuiz") || '{"right":0,"wrong":0}'),
   customQuiz: JSON.parse(localStorage.getItem("safetyNotebookCustomQuiz") || "{}"),
+  deletedItems: JSON.parse(localStorage.getItem("safetyNotebookDeletedItems") || "{}"),
   analysisCollapsed: localStorage.getItem("safetyNotebookAnalysisCollapsed") !== "false",
   referenceTexts: [],
 };
@@ -63,10 +64,15 @@ const saveCustomQuiz = () => {
   localStorage.setItem("safetyNotebookCustomQuiz", JSON.stringify(state.customQuiz));
 };
 
+const saveDeletedItems = () => {
+  localStorage.setItem("safetyNotebookDeletedItems", JSON.stringify(state.deletedItems));
+};
+
 const saveAllLocal = () => {
   saveProgress();
   saveQuiz();
   saveCustomQuiz();
+  saveDeletedItems();
   localStorage.setItem("safetyNotebookTitle", state.appTitle);
 };
 
@@ -126,9 +132,21 @@ const memoryQueue = () =>
     .filter((entry) => entry.progress.nextReviewAt && !Number.isNaN(entry.due))
     .sort((a, b) => a.due - b.due);
 
-const activeItems = () => (state.mode === "liyutian" ? state.data.highFrequencyItems || [] : state.data.items);
+const isDeleted = (id) => Boolean(state.deletedItems[id]);
 
-const activeSections = () => (state.mode === "liyutian" ? state.data.highFrequencySections || [] : state.data.sections);
+const activeItems = () => (state.mode === "liyutian" ? state.data.highFrequencyItems || [] : state.data.items)
+  .filter((item) => !isDeleted(item.id));
+
+const activeSections = () => {
+  const source = state.mode === "liyutian" ? state.data.highFrequencySections || [] : state.data.sections;
+  const visibleItems = activeItems();
+  return source
+    .map((section) => ({
+      ...section,
+      items: visibleItems.filter((item) => item.section === section.section).map((item) => item.id),
+    }))
+    .filter((section) => section.items.length > 0);
+};
 
 const filteredItems = () => {
   const query = state.query.trim().toLowerCase();
@@ -397,6 +415,7 @@ const renderQuizCards = (items) => {
   pageItems.forEach((item, index) => {
     const quiz = makeQuiz(item);
     const node = quizTemplate.content.firstElementChild.cloneNode(true);
+    node.style.setProperty("--card-index", index);
     node.querySelector("strong").textContent = `Q${state.quizPage * state.pageSize + index + 1}`;
     node.querySelector(".card-meta span").textContent = `${item.section} · ${item.kind}`;
     node.querySelector(".quiz-prompt").textContent = quiz.prompt;
@@ -440,6 +459,9 @@ const renderQuizCards = (items) => {
     });
     cards.appendChild(node);
   });
+  cards.classList.remove("page-enter");
+  void cards.offsetWidth;
+  cards.classList.add("page-enter");
 };
 
 const renderQuizPager = (count, totalPages) => {
@@ -659,6 +681,7 @@ const openQuizEditor = (item, node, quiz) => {
       <button type="button" data-editor-save>保存命题</button>
       <button type="button" data-editor-auto>重新生成答案</button>
       <button type="button" data-editor-reset>恢复默认</button>
+      <button type="button" data-editor-delete>删除题目</button>
       <button type="button" data-editor-close>收起</button>
     </div>
   `;
@@ -707,6 +730,18 @@ const openQuizEditor = (item, node, quiz) => {
     saveCustomQuiz();
     renderCards();
     setTitleStatus("已恢复默认命题，可云同步", "ok");
+  });
+
+  editor.querySelector("[data-editor-delete]").addEventListener("click", () => {
+    const ok = window.confirm(`确定删除这道题吗？\n${item.id} · ${item.text}\n\n删除后会从当前题库隐藏，并可通过“云同步全部”同步到其他设备。`);
+    if (!ok) return;
+    state.deletedItems[item.id] = new Date().toISOString();
+    delete state.customQuiz[item.id];
+    saveDeletedItems();
+    saveCustomQuiz();
+    state.quizPage = Math.max(0, state.quizPage);
+    render();
+    setTitleStatus("题目已删除，可云同步", "ok");
   });
 
   editor.querySelector("[data-editor-close]").addEventListener("click", () => editor.remove());
@@ -761,6 +796,7 @@ const cloudPayload = () => ({
   progress: state.progress,
   quiz: state.quiz,
   customQuiz: state.customQuiz,
+  deletedItems: state.deletedItems,
   updated: new Date().toISOString(),
 });
 
@@ -807,6 +843,15 @@ const applyCloudPayload = (payload) => {
       mergedCustom[id] = value;
     }
   });
+  const cloudDeleted = payload.deletedItems || {};
+  const mergedDeleted = { ...state.deletedItems };
+  Object.entries(cloudDeleted).forEach(([id, value]) => {
+    const localDeletedAt = Date.parse(mergedDeleted[id] || "");
+    const cloudDeletedAt = Date.parse(value || "");
+    if (!mergedDeleted[id] || cloudDeletedAt >= localDeletedAt || Number.isNaN(localDeletedAt)) {
+      mergedDeleted[id] = value || new Date().toISOString();
+    }
+  });
   state.progress = mergedProgress;
   state.quiz = {
     right: Math.max(state.quiz.right || 0, payload.quiz?.right || 0),
@@ -814,6 +859,7 @@ const applyCloudPayload = (payload) => {
     sectionStats: mergedStats,
   };
   state.customQuiz = mergedCustom;
+  state.deletedItems = mergedDeleted;
   state.quiz.sectionStats ||= {};
   saveAllLocal();
 };
