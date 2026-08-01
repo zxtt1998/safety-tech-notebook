@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#13243b" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="安全技术错题本" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <title>安全技术错题本</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css?v=20260801-pwa-stable" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="title-editor">
+          <p class="source">Apple Notes · 26技术</p>
+          <input id="titleInput" class="title-input" type="text" value="安全技术错题本" aria-label="错题本标题" />
+          <div class="title-actions">
+            <button id="saveTitleBtn" type="button">保存标题</button>
+            <button id="syncDataBtn" type="button">云同步全部</button>
+            <button id="loadCloudBtn" type="button">读取云端</button>
+            <span id="titleSyncStatus">读取云端学习数据</span>
+          </div>
+        </div>
+        <div class="honor">
+          <strong>错题攻克中</strong>
+          <span>稳步提升</span>
+        </div>
+        <div class="sync">
+          <span class="sync-dot"></span>
+          <span id="updatedAt">读取中</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="mode-switch" aria-label="学习模式">
+          <button class="active" type="button" data-mode="review">背诵复习</button>
+          <button type="button" data-mode="quiz">测试模式</button>
+          <button type="button" data-mode="liyutian">李天宇高频模块测试</button>
+        </section>
+
+        <section class="summary" aria-label="学习概览">
+          <article>
+            <span id="totalCount">0</span>
+            <p>错题</p>
+          </article>
+          <article>
+            <span id="sectionCount">0</span>
+            <p>章节</p>
+          </article>
+          <article>
+            <span id="masteredCount">0</span>
+            <p>已掌握</p>
+          </article>
+          <article>
+            <span id="quizScore">0%</span>
+            <p>测试正确率</p>
+          </article>
+        </section>
+
+        <section id="analysisPanel" class="analysis-panel collapsed" aria-label="测试分析" hidden>
+          <button id="analysisToggle" class="analysis-toggle" type="button" aria-expanded="false">
+            <span>
+              <small>测试分析</small>
+              <strong>测试薄弱雷达</strong>
+            </span>
+            <em id="analysisSignal">等待测试记录</em>
+          </button>
+          <div id="analysisBody" class="analysis-body" hidden>
+            <p class="analysis-rule">
+              薄弱度只按测试正确程度评判；答错题会进入艾宾浩斯巩固队列，答对后按 20 分钟、1 小时、9 小时、1 天、2 天、6 天、31 天逐步拉长复习间隔。
+            </p>
+            <div class="analysis-grid">
+              <article class="chart-card">
+                <div class="chart-title">
+                  <strong>章节薄弱度</strong>
+                  <span>仅按测试错误率</span>
+                </div>
+                <div id="quizBarChart" class="bar-chart"></div>
+              </article>
+              <article class="chart-card review-queue-card">
+                <div class="chart-title">
+                  <strong>艾宾浩斯巩固</strong>
+                  <span>错题优先 · 间隔复现</span>
+                </div>
+                <div id="forgettingCurve" class="forgetting-curve" aria-label="艾宾浩斯遗忘曲线"></div>
+                <div id="reviewQueue" class="review-queue"></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="controls" aria-label="筛选">
+          <label class="search">
+            <span>搜索</span>
+            <input id="searchInput" type="search" placeholder="输入关键词、数值、设备名" />
+          </label>
+          <div class="segments" role="tablist" aria-label="题型">
+            <button class="active" data-kind="all">全部</button>
+            <button data-kind="数值题">数值题</button>
+            <button data-kind="概念题">概念题</button>
+          </div>
+        </section>
+
+        <nav id="sectionTabs" class="section-tabs" aria-label="章节"></nav>
+
+        <section class="content">
+          <div class="section-head">
+            <div>
+              <p id="domainName">机械</p>
+              <h2 id="sectionName">机械基础</h2>
+            </div>
+            <button id="shuffleBtn" type="button">随机背诵</button>
+          </div>
+          <div id="quizPager" class="quiz-pager" data-quiz-pager hidden></div>
+          <div class="sync-note">
+            题库从 <code>data.json</code> 读取；标题、自定义命题、背诵记录和测试记录可通过顶部按钮同步到 <code>user-data.json</code>。
+          </div>
+          <div id="cards" class="cards"></div>
+          <div id="quizPagerBottom" class="quiz-pager quiz-pager-bottom" data-quiz-pager hidden></div>
+        </section>
+      </main>
+      <footer class="site-footer"><span>Copyright © 2026 Shelton Chu. All rights reserved.</span></footer>
+    </div>
+
+    <template id="cardTemplate">
+      <article class="mistake-card">
+        <div class="card-meta">
+          <strong></strong>
+          <span></span>
+        </div>
+        <p class="question"></p>
+        <div class="actions">
+          <button class="review-btn" type="button">复习 +1</button>
+          <button class="master-btn" type="button">标记掌握</button>
+        </div>
+      </article>
+    </template>
+
+    <template id="quizTemplate">
+      <article class="quiz-card">
+        <div class="card-meta">
+          <strong></strong>
+          <span></span>
+        </div>
+        <p class="quiz-prompt"></p>
+        <button class="reveal-btn" type="button">显示答案</button>
+        <div class="quiz-answer" hidden></div>
+        <div class="quiz-actions" hidden>
+          <button class="wrong-btn" type="button">答错</button>
+          <button class="right-btn" type="button">答对</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js?v=20260801-pwa-stable"></script>
+  </body>
+</html>

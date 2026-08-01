@@ -1,0 +1,5556 @@
+{
+  "title": "安全技术错题本",
+  "progress": {
+    "100": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "101": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "102": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "103": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "104": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "105": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "106": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "107": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "108": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "109": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "110": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "111": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "112": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "113": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "114": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "115": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "116": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "117": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "118": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "001": {
+      "review": 3,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:39:13.136Z",
+      "lastTestedAt": "2026-07-31T15:19:13.136Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "002": {
+      "review": 2,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "003": {
+      "review": 7,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:39:38.742Z",
+      "lastTestedAt": "2026-07-31T15:19:38.742Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "004": {
+      "review": 2,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "005": {
+      "review": 2,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:39:46.026Z",
+      "lastTestedAt": "2026-07-31T15:19:46.026Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "006": {
+      "review": 2,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:39:48.168Z",
+      "lastTestedAt": "2026-07-31T15:19:48.168Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "007": {
+      "review": 4,
+      "mastered": false,
+      "memoryStage": 1,
+      "nextReviewAt": "2026-07-31T15:40:35.198Z",
+      "lastTestedAt": "2026-08-01T01:14:33.709Z",
+      "lastResult": "right",
+      "testAttempts": 2,
+      "testWrong": 0
+    },
+    "008": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:41:12.271Z",
+      "lastTestedAt": "2026-07-31T15:21:12.271Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "009": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "010": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "011": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "012": {
+      "review": 2,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "013": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "014": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "015": {
+      "review": 2,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "016": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "017": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "018": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "019": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "020": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "021": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-07-31T15:56:02.787Z",
+      "lastTestedAt": "2026-07-31T15:36:02.787Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "022": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "023": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "024": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "025": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "026": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "027": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "028": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "029": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "030": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "031": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "032": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "033": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "034": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "035": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T09:47:09.782Z",
+      "lastTestedAt": "2026-08-01T09:27:09.782Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "036": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T09:47:10.446Z",
+      "lastTestedAt": "2026-08-01T09:27:10.446Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "037": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "038": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "039": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "040": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "041": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "042": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "043": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "044": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "045": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "046": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "047": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "048": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "049": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T10:07:06.635Z",
+      "lastTestedAt": "2026-08-01T09:47:06.635Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "050": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "051": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "052": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "053": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "054": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "055": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "056": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "057": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "058": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "059": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "060": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "061": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "062": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "063": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "064": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "065": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "066": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "067": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "068": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "069": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "070": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "071": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "072": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "073": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "074": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "075": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "076": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "077": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "078": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "079": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "080": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "081": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "082": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "083": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "084": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "085": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "086": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "087": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "088": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "089": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "090": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "091": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "092": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "093": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "094": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "095": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "096": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "097": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "098": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "099": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF18": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF19": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF22": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF25": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF26": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF27": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF28": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF29": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF30": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF31": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF33": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF37": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF39": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF40": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF42": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF45": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF46": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF47": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF48": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF49": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF52": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF53": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF54": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF60": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF61": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF63": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF64": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF65": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF67": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF68": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01-01": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T01:33:04.643Z",
+      "lastTestedAt": "2026-08-01T01:13:04.643Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "HF01-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01-08": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T01:33:42.238Z",
+      "lastTestedAt": "2026-08-01T01:13:42.238Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "HF01-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "nextReviewAt": "2026-08-01T01:13:36.776Z",
+      "lastTestedAt": "2026-08-01T01:13:36.776Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
+    },
+    "HF01-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF01-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF02-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF03-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF04-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF05-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF06-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF06-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF06-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF06-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF06-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF06-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF06-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF06-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF07-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF07-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF07-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF07-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF08-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF08-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF08-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF08-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF08-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF09-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF09-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF09-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF09-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF09-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF09-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF09-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF09-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF09-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF10-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF11-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF11-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF11-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF11-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF11-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF11-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF11-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF11-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF11-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF12-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF13-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF14-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF15-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF16-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF17-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF18-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF18-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF18-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF18-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF18-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF18-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF18-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF19-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF19-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF19-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF19-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF20-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF21-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF22-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF22-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF23-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF24-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF25-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF25-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF25-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF25-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF25-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF25-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF26-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF26-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF26-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF27-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF27-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF27-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF27-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF27-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF28-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF29-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF29-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF29-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF29-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF29-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF29-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF30-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF30-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF30-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF30-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF30-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF30-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF31-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF31-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF32-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF33-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF33-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF33-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF34-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF35-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF36-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF37-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF38-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF39-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF40-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF40-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF40-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF40-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF40-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF40-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF40-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF40-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF40-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF41-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF42-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF43-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF44-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF45-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF45-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF45-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF45-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF45-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF45-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF45-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF45-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF45-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF46-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF46-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF46-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF46-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF46-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF46-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF46-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF46-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF46-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF47-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF47-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF47-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF47-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF47-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF47-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF47-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF47-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF47-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF48-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF49-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF50-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF51-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF52-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF52-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF52-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF53-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF53-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF53-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF53-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF53-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF53-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF54-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF54-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF54-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF54-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF55-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF56-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF57-14": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF58-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF59-13": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF60-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF60-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF60-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF60-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF60-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF60-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF60-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF60-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF60-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF61-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF61-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF61-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF61-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF61-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF62-12": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF63-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF64-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF64-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF64-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF64-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF64-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF64-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF65-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-10": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF66-11": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF67-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF67-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF67-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF67-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF67-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF67-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF67-07": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF67-08": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF67-09": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF68-01": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF68-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF68-03": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF68-04": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF68-05": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "HF68-06": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N071": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N082": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N083": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N084": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N085": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N086": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N087": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N088": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N089": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N090": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N091": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N092": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N093": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N094": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N095": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    }
+  },
+  "quiz": {
+    "right": 35,
+    "wrong": 6,
+    "sectionStats": {
+      "机械基础": {
+        "right": 19,
+        "wrong": 0
+      },
+      "金属切削机床": {
+        "right": 5,
+        "wrong": 1
+      },
+      "木工平刨床": {
+        "right": 3,
+        "wrong": 2
+      },
+      "机械高频": {
+        "right": 2,
+        "wrong": 1
+      },
+      "铸造": {
+        "right": 2,
+        "wrong": 0
+      },
+      "人机工程学": {
+        "right": 1,
+        "wrong": 0
+      }
+    }
+  },
+  "customQuiz": {
+    "013": {
+      "prompt": "填空：1类机床，停止或紧急停止时，____应不迟于____停止。",
+      "answer": "进给运动  主运动",
+      "hint": "提示：重点核对数值、单位、上下限和适用对象。",
+      "updated": "2026-07-31T03:29:56.419Z"
+    },
+    "003": {
+      "prompt": "填空：____的道路应环形布置",
+      "answer": "主要生产区、仓库区、动力区",
+      "hint": "提示：根据原始错题自动反推空格内容。",
+      "updated": "2026-07-31T12:00:08.380Z"
+    },
+    "022": {
+      "prompt": "填空：木工平刨床刀轴须经____。",
+      "answer": "强度试验和离心试验",
+      "hint": "提示：根据原始错题自动反推空格内容。",
+      "updated": "2026-07-31T15:36:24.804Z"
+    },
+    "HF01-02": {
+      "prompt": "简答：转动轴（有凸起部分） 应设置__",
+      "answer": "全面封闭的防护罩",
+      "hint": "提示：根据原始错题自动反推空格内容。",
+      "updated": "2026-08-01T00:41:11.929Z"
+    },
+    "HF01-03": {
+      "prompt": "简答：对旋式轧辊、牵引辊应设置__",
+      "answer": "钳型防护罩",
+      "hint": "提示：根据原始错题自动反推空格内容。",
+      "updated": "2026-08-01T01:02:16.473Z"
+    },
+    "010": {
+      "prompt": "填空：机床显示器的视距应至少为____，安装高度距地面或操作站台面，应为____到____。",
+      "answer": "0.3米、1.3、2米",
+      "hint": "提示：重点核对数值、单位、上下限和适用对象。",
+      "updated": "2026-08-01T03:52:42.949Z",
+      "images": []
+    },
+    "N095": {
+      "prompt": "查看图片：特种设备安全技术 备忘录参考图",
+      "answer": "结合图片复习本章节关键要求。",
+      "hint": "提示：这是备忘录中的参考图。",
+      "updated": "2026-08-01T03:52:57.179Z",
+      "images": []
+    },
+    "031": {
+      "prompt": "填空：圆锯片连续断裂两齿，应____。",
+      "answer": "应停止使用",
+      "hint": "提示：图片参考题，先看图表再核对关键要求",
+      "updated": "2026-08-01T09:26:19.809Z",
+      "images": []
+    },
+    "016": {
+      "text": "爪形护指件的相邻间距应小于 8mm。",
+      "updated": "2026-08-01T09:37:43.670Z"
+    }
+  },
+  "deletedItems": {
+    "HF02-01": "2026-08-01T01:38:19.264Z",
+    "HF02-05": "2026-08-01T01:38:29.484Z",
+    "HF03-04": "2026-08-01T01:38:35.556Z",
+    "HF03-05": "2026-08-01T01:38:43.057Z",
+    "HF03-03": "2026-08-01T01:38:49.590Z",
+    "HF03-02": "2026-08-01T01:38:54.318Z",
+    "HF03-09": "2026-08-01T01:39:02.275Z",
+    "HF03-10": "2026-08-01T01:39:06.701Z",
+    "HF06-01": "2026-08-01T01:45:53.145Z",
+    "HF06-04": "2026-08-01T01:46:06.842Z",
+    "HF07-03": "2026-08-01T01:46:40.882Z"
+  },
+  "updated": "2026-08-01T09:57:49.195Z"
+}
