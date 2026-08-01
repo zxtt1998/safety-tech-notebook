@@ -251,7 +251,7 @@
       "testWrong": 0
     },
     "015": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
       "memoryStage": -1,
       "testAttempts": 0,
@@ -394,17 +394,23 @@
       "testWrong": 0
     },
     "035": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T09:47:09.782Z",
+      "lastTestedAt": "2026-08-01T09:27:09.782Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "036": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T09:47:10.446Z",
+      "lastTestedAt": "2026-08-01T09:27:10.446Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "037": {
@@ -492,10 +498,13 @@
       "testWrong": 0
     },
     "049": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-01T10:07:06.635Z",
+      "lastTestedAt": "2026-08-01T09:47:06.635Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "050": {
@@ -5444,7 +5453,7 @@
     }
   },
   "quiz": {
-    "right": 32,
+    "right": 35,
     "wrong": 6,
     "sectionStats": {
       "机械基础": {
@@ -5462,6 +5471,14 @@
       "机械高频": {
         "right": 2,
         "wrong": 1
+      },
+      "铸造": {
+        "right": 2,
+        "wrong": 0
+      },
+      "人机工程学": {
+        "right": 1,
+        "wrong": 0
       }
     }
   },
@@ -5516,6 +5533,10 @@
       "hint": "提示：图片参考题，先看图表再核对关键要求",
       "updated": "2026-08-01T09:26:19.809Z",
       "images": []
+    },
+    "016": {
+      "text": "爪形护指件的相邻间距应小于 8mm。",
+      "updated": "2026-08-01T09:37:43.670Z"
     }
   },
   "deletedItems": {
@@ -5531,5 +5552,5 @@
     "HF06-04": "2026-08-01T01:46:06.842Z",
     "HF07-03": "2026-08-01T01:46:40.882Z"
   },
-  "updated": "2026-08-01T09:26:31.179Z"
+  "updated": "2026-08-01T09:57:49.195Z"
 }
