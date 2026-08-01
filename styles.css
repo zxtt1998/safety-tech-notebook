@@ -1,20 +1,27 @@
 :root {
   color-scheme: light;
-  --bg: #f3f7fb;
-  --ink: #121826;
-  --muted: #687486;
-  --soft: #eef4fb;
-  --line: #dce5ef;
-  --surface: #ffffff;
-  --navy: #0f1c2f;
-  --navy-2: #142842;
-  --blue: #1d63d8;
-  --teal: #078b7f;
+  --bg: #eef5ff;
+  --ink: #111827;
+  --muted: #66758a;
+  --soft: rgba(235, 244, 255, 0.82);
+  --line: rgba(129, 151, 178, 0.28);
+  --surface: rgba(255, 255, 255, 0.78);
+  --navy: #102033;
+  --navy-2: #173352;
+  --blue: #2563eb;
+  --teal: #05998b;
   --green: #20bf75;
   --red: #d92d36;
-  --amber: #f3b33d;
-  --shadow: 0 18px 46px rgba(16, 31, 52, 0.09);
-  --shadow-strong: 0 30px 80px rgba(8, 18, 33, 0.24);
+  --amber: #f0a735;
+  --rose: #d94682;
+  --glass: rgba(255, 255, 255, 0.54);
+  --glass-strong: rgba(255, 255, 255, 0.72);
+  --glass-dark: rgba(13, 29, 49, 0.48);
+  --glass-line: rgba(255, 255, 255, 0.52);
+  --glass-shadow: 0 18px 55px rgba(30, 64, 108, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  --glass-shadow-strong: 0 34px 90px rgba(12, 27, 46, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  --shadow: 0 18px 46px rgba(16, 31, 52, 0.08);
+  --shadow-strong: 0 30px 80px rgba(8, 18, 33, 0.22);
 }
 
 * {
@@ -30,9 +37,23 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(circle at 82% 0%, rgba(29, 99, 216, 0.26), transparent 34%),
-    linear-gradient(180deg, #0d1a2d 0, #0d1a2d 340px, var(--bg) 341px);
+    linear-gradient(115deg, rgba(37, 99, 235, 0.18), transparent 34%),
+    linear-gradient(245deg, rgba(217, 70, 130, 0.16), transparent 36%),
+    linear-gradient(180deg, #13243b 0, #163754 285px, #e7f1ff 286px, var(--bg) 100%);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 58%);
 }
 
 button,
@@ -56,6 +77,8 @@ p {
 }
 
 .topbar {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
@@ -64,11 +87,28 @@ p {
   padding: 30px;
   color: white;
   background:
-    radial-gradient(circle at 74% 22%, rgba(243, 179, 61, 0.22), transparent 20%),
-    linear-gradient(135deg, #152840 0%, #0c1728 60%, #102d4c 100%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 8px;
-  box-shadow: var(--shadow-strong);
+    linear-gradient(125deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.06) 28%, rgba(255, 255, 255, 0.12)),
+    linear-gradient(135deg, rgba(15, 38, 64, 0.86) 0%, rgba(9, 18, 32, 0.78) 52%, rgba(22, 67, 93, 0.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px;
+  box-shadow: var(--glass-shadow-strong);
+  backdrop-filter: blur(26px) saturate(1.35);
+  -webkit-backdrop-filter: blur(26px) saturate(1.35);
+}
+
+.topbar::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  pointer-events: none;
+  border-radius: 27px;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.26), transparent 22%, transparent 74%, rgba(255, 255, 255, 0.12));
+  opacity: 0.9;
+}
+
+.topbar > * {
+  position: relative;
+  z-index: 1;
 }
 
 .source {
@@ -84,9 +124,12 @@ p {
   min-width: 142px;
   padding: 16px 18px;
   color: #fff4c7;
-  background: rgba(255, 255, 255, 0.09);
-  border: 1px solid rgba(243, 179, 61, 0.36);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(18px) saturate(1.25);
+  -webkit-backdrop-filter: blur(18px) saturate(1.25);
 }
 
 .title-editor {
@@ -122,12 +165,15 @@ p {
   height: 30px;
   padding: 0 11px;
   color: #dbe6f4;
-  background: rgba(255, 255, 255, 0.11);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
   cursor: pointer;
   font-size: 12px;
   font-weight: 900;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
 }
 
 .title-actions button:last-of-type {
@@ -166,10 +212,14 @@ p {
   min-width: max-content;
   padding: 10px 14px;
   color: #dbe6f4;
-  background: rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   font-size: 14px;
   font-weight: 800;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px) saturate(1.25);
+  -webkit-backdrop-filter: blur(14px) saturate(1.25);
 }
 
 .sync-dot {
@@ -191,10 +241,12 @@ main {
   display: flex;
   gap: 8px;
   padding: 7px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+  background: var(--glass);
+  border: 1px solid var(--glass-line);
+  border-radius: 22px;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(24px) saturate(1.28);
+  -webkit-backdrop-filter: blur(24px) saturate(1.28);
 }
 
 .mode-switch button {
@@ -203,18 +255,27 @@ main {
   min-width: 0;
   padding: 0 10px;
   border: 0;
-  border-radius: 6px;
+  border-radius: 17px;
   color: var(--muted);
   background: transparent;
   cursor: pointer;
   line-height: 1.2;
   font-weight: 900;
+  transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .mode-switch button.active {
   color: white;
-  background: linear-gradient(135deg, #1f6fff, #0a9387);
-  box-shadow: 0 12px 32px rgba(29, 99, 216, 0.22);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.28), transparent 38%),
+    linear-gradient(135deg, #3478ff, #0aa99a);
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+.mode-switch button:not(.active):active,
+.title-actions button:active,
+.sync:active {
+  transform: scale(0.985);
 }
 
 .summary {
@@ -229,10 +290,12 @@ main {
 .summary article,
 .content,
 .controls {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: 0 10px 28px rgba(16, 31, 52, 0.05);
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-line);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(1.22);
+  -webkit-backdrop-filter: blur(22px) saturate(1.22);
 }
 
 .summary article {
@@ -248,8 +311,9 @@ main {
   right: 14px;
   width: 28px;
   height: 4px;
-  background: linear-gradient(90deg, var(--blue), var(--teal));
+  background: linear-gradient(90deg, var(--blue), var(--teal), var(--amber));
   border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.2);
 }
 
 .summary span {
@@ -271,10 +335,12 @@ main {
   grid-column: 2;
   grid-row: 3;
   padding: 22px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-line);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(1.22);
+  -webkit-backdrop-filter: blur(22px) saturate(1.22);
 }
 
 .analysis-toggle {
@@ -325,8 +391,9 @@ main {
   margin-bottom: 14px;
   padding: 12px 14px;
   color: #425168;
-  background: var(--soft);
-  border-radius: 8px;
+  background: rgba(238, 246, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 16px;
   font-size: 13px;
   line-height: 1.5;
   font-weight: 800;
@@ -359,9 +426,10 @@ main {
 .chart-card {
   min-width: 0;
   padding: 18px;
-  background: #fbfdff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .chart-title {
@@ -422,9 +490,9 @@ main {
   margin-bottom: 14px;
   background:
     linear-gradient(180deg, rgba(29, 99, 216, 0.07), transparent 68%),
-    #ffffff;
-  border: 1px solid #e5edf7;
-  border-radius: 8px;
+    rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
 }
 
 .curve-svg {
@@ -467,9 +535,9 @@ main {
 .queue-summary {
   padding: 10px 12px;
   color: #0f665e;
-  background: #edf9f6;
-  border: 1px solid #ccebe5;
-  border-radius: 8px;
+  background: rgba(237, 249, 246, 0.72);
+  border: 1px solid rgba(204, 235, 229, 0.8);
+  border-radius: 16px;
   font-size: 13px;
   font-weight: 900;
 }
@@ -481,9 +549,9 @@ main {
   gap: 12px;
   padding: 12px;
   color: var(--ink);
-  background: white;
-  border: 1px solid #e7eef7;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 16px;
 }
 
 .queue-item.due {
@@ -558,10 +626,11 @@ main {
   height: 46px;
   padding: 0 14px;
   color: var(--ink);
-  background: #fbfdff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 16px;
   outline: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.68);
 }
 
 .search input:focus {
@@ -572,8 +641,9 @@ main {
 .segments {
   display: flex;
   padding: 4px;
-  background: var(--soft);
-  border-radius: 8px;
+  background: rgba(230, 240, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 16px;
 }
 
 .segments button,
@@ -587,7 +657,7 @@ main {
   min-width: 76px;
   height: 38px;
   padding: 0 12px;
-  border-radius: 6px;
+  border-radius: 12px;
   color: var(--muted);
   background: transparent;
   font-size: 14px;
@@ -596,7 +666,10 @@ main {
 
 .segments button.active {
   color: white;
-  background: var(--teal);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 40%),
+    linear-gradient(135deg, var(--teal), #087b96);
+  box-shadow: 0 10px 22px rgba(5, 153, 139, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.32);
 }
 
 .section-tabs {
@@ -606,10 +679,12 @@ main {
   gap: 10px;
   align-self: start;
   padding: 6px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  box-shadow: var(--shadow);
+  background: var(--glass);
+  border: 1px solid var(--glass-line);
+  border-radius: 24px;
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(22px) saturate(1.22);
+  -webkit-backdrop-filter: blur(22px) saturate(1.22);
 }
 
 .section-tabs button {
@@ -621,16 +696,26 @@ main {
   padding: 11px 12px;
   color: var(--ink);
   text-align: left;
-  background: white;
-  border: 0;
+  background: rgba(255, 255, 255, 0.46);
+  border: 1px solid transparent;
   border-left: 5px solid transparent;
-  border-radius: 6px;
+  border-radius: 17px;
   cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
 }
 
 .section-tabs button.active {
   border-left-color: var(--blue);
-  background: linear-gradient(90deg, #edf5ff, #f5fffc);
+  border-top-color: rgba(255, 255, 255, 0.72);
+  border-right-color: rgba(255, 255, 255, 0.72);
+  border-bottom-color: rgba(255, 255, 255, 0.72);
+  background:
+    linear-gradient(90deg, rgba(237, 245, 255, 0.9), rgba(245, 255, 252, 0.72));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.section-tabs button:active {
+  transform: scale(0.99);
 }
 
 .section-tabs strong {
@@ -675,9 +760,11 @@ main {
   height: 42px;
   padding: 0 14px;
   color: white;
-  background: linear-gradient(135deg, #1f6fff, #0a9387);
-  border-radius: 8px;
-  box-shadow: 0 10px 24px rgba(29, 99, 216, 0.18);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 42%),
+    linear-gradient(135deg, #3478ff, #0a9387);
+  border-radius: 999px;
+  box-shadow: 0 14px 30px rgba(29, 99, 216, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.36);
   font-weight: 900;
 }
 
@@ -695,9 +782,12 @@ main {
   gap: 12px;
   margin-bottom: 16px;
   padding: 12px;
-  background: #f7faff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(1.22);
+  -webkit-backdrop-filter: blur(18px) saturate(1.22);
 }
 
 .quiz-pager-bottom {
@@ -715,11 +805,14 @@ main {
 .quiz-pager button {
   height: 40px;
   color: white;
-  background: var(--navy);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 42%),
+    linear-gradient(135deg, #132642, #081525);
   border: 0;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   font-weight: 900;
+  box-shadow: 0 12px 24px rgba(15, 28, 47, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.24);
 }
 
 .quiz-pager button:disabled {
@@ -732,8 +825,9 @@ main {
   margin-bottom: 16px;
   padding: 12px 14px;
   color: #425168;
-  background: var(--soft);
-  border-radius: 8px;
+  background: rgba(238, 246, 255, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 16px;
   font-size: 13px;
   line-height: 1.45;
 }
@@ -775,10 +869,11 @@ main {
 .mistake-card,
 .quiz-card {
   padding: 18px;
-  background: linear-gradient(180deg, #ffffff, #fbfcff);
-  border: 1px solid #edf1f5;
-  border-radius: 8px;
-  box-shadow: 0 12px 30px rgba(16, 31, 52, 0.05);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(249, 252, 255, 0.94));
+  border: 1px solid rgba(220, 231, 244, 0.82);
+  border-radius: 18px;
+  box-shadow: 0 14px 36px rgba(16, 31, 52, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.84);
 }
 
 .mistake-card.mastered,
@@ -807,7 +902,9 @@ main {
   width: 48px;
   height: 31px;
   color: white;
-  background: linear-gradient(135deg, var(--red), #f05252);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 42%),
+    linear-gradient(135deg, var(--red), #f05252);
   border-radius: 999px;
   font-size: 13px;
   font-weight: 900;
@@ -855,7 +952,7 @@ main {
   height: 40px;
   padding: 0 14px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 900;
@@ -863,20 +960,27 @@ main {
 
 .actions button {
   color: var(--ink);
-  background: var(--soft);
+  background: rgba(235, 244, 255, 0.88);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
 }
 
 .actions button:last-child,
 .right-btn {
   color: white;
-  background: var(--teal);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 42%),
+    linear-gradient(135deg, var(--teal), #087b96);
+  box-shadow: 0 12px 24px rgba(5, 153, 139, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .reveal-btn {
   width: 100%;
   margin-top: 14px;
   color: white;
-  background: linear-gradient(135deg, #1f6fff, #1456b8);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.22), transparent 42%),
+    linear-gradient(135deg, #3478ff, #1456b8);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.34);
 }
 
 .quiz-actions {
@@ -922,9 +1026,9 @@ main {
   min-width: max-content;
   height: 30px;
   padding: 0 10px;
-  color: var(--blue);
-  background: #edf5ff;
-  border: 0;
+  color: #1556ca;
+  background: rgba(237, 245, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.82);
   border-radius: 999px;
   cursor: pointer;
   font-size: 12px;
@@ -936,9 +1040,12 @@ main {
   gap: 10px;
   margin-top: 12px;
   padding: 12px;
-  background: #f7faff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  background: rgba(247, 251, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(1.18);
+  -webkit-backdrop-filter: blur(18px) saturate(1.18);
 }
 
 .quiz-editor label {
@@ -955,9 +1062,9 @@ main {
   resize: vertical;
   padding: 10px;
   color: var(--ink);
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(215, 227, 241, 0.9);
+  border-radius: 14px;
   font: inherit;
   line-height: 1.45;
 }
@@ -971,9 +1078,9 @@ main {
 .quiz-image {
   overflow: hidden;
   margin: 0;
-  background: #f8fafc;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  background: rgba(248, 250, 252, 0.82);
+  border: 1px solid rgba(215, 227, 241, 0.86);
+  border-radius: 16px;
 }
 
 .quiz-image img {
@@ -995,9 +1102,9 @@ main {
   display: grid;
   gap: 10px;
   padding: 10px;
-  background: white;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.64);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 16px;
 }
 
 .image-editor-head {
@@ -1019,8 +1126,10 @@ main {
   height: 34px;
   padding: 0 12px;
   color: white !important;
-  background: var(--blue);
-  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 42%),
+    linear-gradient(135deg, var(--blue), #1556ca);
+  border-radius: 999px;
   cursor: pointer;
 }
 
@@ -1037,9 +1146,9 @@ main {
   gap: 10px;
   align-items: center;
   padding: 8px;
-  background: #f7faff;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  background: rgba(247, 250, 255, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 16px;
 }
 
 .image-preview img {
@@ -1049,7 +1158,7 @@ main {
   object-fit: cover;
   background: white;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 14px;
 }
 
 .image-preview strong,
@@ -1076,7 +1185,7 @@ main {
   color: var(--red);
   background: #feecec;
   border: 0;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   font-size: 13px;
   font-weight: 900;
@@ -1091,7 +1200,7 @@ main {
 .quiz-editor-actions button {
   height: 38px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
   font-size: 13px;
   font-weight: 900;
@@ -1099,12 +1208,16 @@ main {
 
 .quiz-editor-actions button:first-child {
   color: white;
-  background: var(--teal);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 42%),
+    linear-gradient(135deg, var(--teal), #087b96);
 }
 
 .quiz-editor-actions button:nth-child(2) {
   color: white;
-  background: var(--blue);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 42%),
+    linear-gradient(135deg, var(--blue), #1556ca);
 }
 
 .quiz-editor-actions button:nth-child(3) {
@@ -1158,6 +1271,48 @@ main {
   max-width: 100%;
 }
 
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .topbar,
+  .mode-switch,
+  .summary article,
+  .analysis-panel,
+  .chart-card,
+  .controls,
+  .section-tabs,
+  .content,
+  .quiz-pager,
+  .quiz-editor {
+    background: #ffffff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .topbar {
+    background: linear-gradient(135deg, #152840, #102d4c);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .topbar,
+  .mode-switch,
+  .summary article,
+  .analysis-panel,
+  .chart-card,
+  .controls,
+  .section-tabs,
+  .content,
+  .quiz-pager,
+  .quiz-editor {
+    background: #ffffff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .topbar {
+    background: linear-gradient(135deg, #152840, #102d4c);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cards.page-enter .mistake-card,
   .cards.page-enter .quiz-card,
@@ -1170,8 +1325,9 @@ main {
 @media (max-width: 760px) {
   body {
     background:
-      radial-gradient(circle at 80% 0%, rgba(29, 99, 216, 0.25), transparent 28%),
-      linear-gradient(180deg, #0d1a2d 0, #0d1a2d 310px, var(--bg) 311px);
+      linear-gradient(135deg, rgba(37, 99, 235, 0.18), transparent 36%),
+      linear-gradient(245deg, rgba(217, 70, 130, 0.12), transparent 38%),
+      linear-gradient(180deg, #13243b 0, #163754 280px, #e7f1ff 281px, var(--bg) 100%);
   }
 
   .app {
@@ -1183,7 +1339,7 @@ main {
     align-items: start;
     gap: 12px;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 24px;
   }
 
   .title-input {
@@ -1231,6 +1387,7 @@ main {
 
   .mode-switch {
     margin-bottom: 12px;
+    border-radius: 20px;
   }
 
   .mode-switch button {
@@ -1269,6 +1426,7 @@ main {
   .analysis-panel {
     margin: 0 0 12px;
     padding: 16px;
+    border-radius: 22px;
   }
 
   .analysis-toggle {
@@ -1396,6 +1554,7 @@ main {
   .content {
     margin-top: 0;
     padding: 16px;
+    border-radius: 22px;
   }
 
   .section-head {
