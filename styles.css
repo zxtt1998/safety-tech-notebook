@@ -748,6 +748,7 @@ main {
   gap: 14px;
 }
 
+.cards.page-enter .mistake-card,
 .cards.page-enter .quiz-card {
   animation: card-page-enter 0.42s cubic-bezier(0.19, 1, 0.22, 1) both;
   animation-delay: calc(var(--card-index, 0) * 22ms);
@@ -826,15 +827,6 @@ main {
   font-weight: 900;
 }
 
-.quiz-hint {
-  margin-top: 10px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.45;
-  font-weight: 700;
-}
-
-.memory,
 .quiz-answer {
   margin-top: 12px;
   padding: 12px 14px;
@@ -1130,6 +1122,25 @@ main {
   background: #feecec;
 }
 
+.review-editor-actions {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.review-editor-actions button:nth-child(2) {
+  color: var(--ink);
+  background: var(--soft);
+}
+
+.review-editor-actions button:nth-child(3) {
+  color: var(--muted);
+  background: #eef2f7;
+}
+
+.review-editor-actions button:nth-child(4) {
+  color: var(--red);
+  background: #feecec;
+}
+
 .site-footer {
   display: flex;
   justify-content: center;
@@ -1148,6 +1159,7 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .cards.page-enter .mistake-card,
   .cards.page-enter .quiz-card,
   .cards.page-leave {
     animation: none;
@@ -1307,6 +1319,11 @@ main {
   }
 
   .quiz-editor-actions button:nth-child(5) {
+    color: white;
+    background: linear-gradient(135deg, var(--red), #f05252);
+  }
+
+  .review-editor-actions button:nth-child(4) {
     color: white;
     background: linear-gradient(135deg, var(--red), #f05252);
   }

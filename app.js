@@ -142,6 +142,8 @@ const isDeleted = (id) => Boolean(state.deletedItems[id]);
 const activeItems = () => (state.mode === "liyutian" ? state.data.highFrequencyItems || [] : state.data.items)
   .filter((item) => !isDeleted(item.id));
 
+const displayText = (item) => state.customQuiz[item.id]?.text || item.text;
+
 const activeSections = () => {
   const source = state.mode === "liyutian" ? state.data.highFrequencySections || [] : state.data.sections;
   const visibleItems = activeItems();
@@ -158,13 +160,13 @@ const filteredItems = () => {
   return activeItems().filter((item) => {
     const sectionMatch = state.section === "all" || item.section === state.section;
     const kindMatch = state.kind === "all" || item.kind === state.kind;
-    const queryMatch = !query || [item.text, item.section, item.domain, item.kind].join(" ").toLowerCase().includes(query);
+    const queryMatch = !query || [displayText(item), item.text, item.section, item.domain, item.kind].join(" ").toLowerCase().includes(query);
     return sectionMatch && kindMatch && queryMatch;
   });
 };
 
 const buildReferenceTexts = (extra = []) => {
-  const base = [...state.data.items, ...(state.data.highFrequencyItems || [])].map((item) => item.text);
+  const base = [...state.data.items, ...(state.data.highFrequencyItems || [])].map((item) => displayText(item));
   state.referenceTexts = [...new Set([...base, ...extra].filter(Boolean))];
 };
 
@@ -363,7 +365,7 @@ const renderCards = () => {
   $("#shuffleBtn").textContent = isTestMode() ? "下一页" : "随机背诵";
   $("#shuffleBtn").disabled = isTestMode() && state.quizPage >= Math.ceil(items.length / state.pageSize) - 1;
   quizPagers.forEach((pager) => {
-    pager.hidden = !isTestMode();
+    pager.hidden = false;
   });
 
   if (!items.length) {
@@ -382,16 +384,26 @@ const renderCards = () => {
     return;
   }
 
-  items.forEach((item) => {
+  const totalPages = Math.max(1, Math.ceil(items.length / state.pageSize));
+  const pageItems = pageItemsFor(items);
+  renderPager(items.length, totalPages);
+
+  pageItems.forEach((item, index) => {
     const progress = itemProgress(item.id);
     const node = template.content.firstElementChild.cloneNode(true);
+    node.style.setProperty("--card-index", index);
     node.classList.toggle("mastered", progress.mastered);
     node.querySelector("strong").textContent = item.id;
     node.querySelector(".card-meta span").textContent = `${item.section} · ${item.kind} · 复习 ${progress.review} 次`;
-    node.querySelector(".question").textContent = item.text;
+    node.querySelector(".question").textContent = displayText(item);
     const imageGallery = createImageGallery(itemImages(item));
     if (imageGallery) node.querySelector(".question").after(imageGallery);
-    node.querySelector(".memory").textContent = item.memory;
+    const editBtn = document.createElement("button");
+    editBtn.className = "edit-quiz-btn";
+    editBtn.type = "button";
+    editBtn.textContent = state.customQuiz[item.id] ? "已自定义" : "编辑题目";
+    editBtn.addEventListener("click", () => openReviewEditor(item, node));
+    node.querySelector(".card-meta").appendChild(editBtn);
     node.querySelector(".review-btn").addEventListener("click", () => {
       progress.review += 1;
       saveProgress();
@@ -405,9 +417,12 @@ const renderCards = () => {
     });
     cards.appendChild(node);
   });
+  cards.classList.remove("page-enter");
+  void cards.offsetWidth;
+  cards.classList.add("page-enter");
 };
 
-const quizItems = (items) => {
+const pageItemsFor = (items) => {
   const totalPages = Math.max(1, Math.ceil(items.length / state.pageSize));
   state.quizPage = Math.min(state.quizPage, totalPages - 1);
   const start = state.quizPage * state.pageSize;
@@ -416,8 +431,8 @@ const quizItems = (items) => {
 
 const renderQuizCards = (items) => {
   const totalPages = Math.max(1, Math.ceil(items.length / state.pageSize));
-  const pageItems = quizItems(items);
-  renderQuizPager(items.length, totalPages);
+  const pageItems = pageItemsFor(items);
+  renderPager(items.length, totalPages);
 
   pageItems.forEach((item, index) => {
     const quiz = makeQuiz(item);
@@ -426,10 +441,9 @@ const renderQuizCards = (items) => {
     node.querySelector("strong").textContent = `Q${state.quizPage * state.pageSize + index + 1}`;
     node.querySelector(".card-meta span").textContent = `${item.section} · ${item.kind}`;
     node.querySelector(".quiz-prompt").textContent = quiz.prompt;
-    node.querySelector(".quiz-hint").textContent = quiz.hint;
     const imageGallery = createImageGallery(itemImages(item, quiz));
-    if (imageGallery) node.querySelector(".quiz-hint").after(imageGallery);
-    node.querySelector(".quiz-answer").innerHTML = `<strong>应填：</strong>${escapeHtml(quiz.answer)}<br><strong>完整句：</strong>${escapeHtml(item.text)}`;
+    if (imageGallery) node.querySelector(".quiz-prompt").after(imageGallery);
+    node.querySelector(".quiz-answer").innerHTML = `<strong>应填：</strong>${escapeHtml(quiz.answer)}<br><strong>完整句：</strong>${escapeHtml(displayText(item))}`;
     const editBtn = document.createElement("button");
     editBtn.className = "edit-quiz-btn";
     editBtn.type = "button";
@@ -473,7 +487,7 @@ const renderQuizCards = (items) => {
   cards.classList.add("page-enter");
 };
 
-const renderQuizPager = (count, totalPages) => {
+const renderPager = (count, totalPages) => {
   quizPagers.forEach((pager) => {
     pager.innerHTML = "";
 
@@ -532,26 +546,24 @@ const makeQuiz = (item) => {
   if (custom?.prompt) {
     return {
       prompt: custom.prompt,
-      answer: custom.answer || item.text,
-      hint: custom.hint || "自定义命题",
+      answer: custom.answer || displayText(item),
       images: normalizeImages(custom.images || custom.image),
     };
   }
   if (item.quiz?.prompt) return item.quiz;
+  const sourceText = displayText(item);
   if (item.kind === "数值题") {
     const numericPattern = /\d+(?:\.\d+)?\s*(?:dB\(A\)|dB|kN|mm|ms|min|米|伏|千伏|千欧|%|度)?/gi;
-    const answers = item.text.match(numericPattern) || [];
+    const answers = sourceText.match(numericPattern) || [];
     return {
-      prompt: `填空：${item.text.replace(numericPattern, "____")}`,
+      prompt: `填空：${sourceText.replace(numericPattern, "____")}`,
       answer: answers.join("、"),
-      hint: "提示：重点核对数值、单位、上下限和适用对象。",
     };
   }
-  const cloze = makeCloze(item.text);
+  const cloze = makeCloze(sourceText);
   return {
     prompt: `填空：${cloze.prompt}`,
     answer: cloze.answer,
-    hint: `提示：${item.memory}`,
   };
 };
 
@@ -639,7 +651,134 @@ const renderImagePreview = (target, image) => {
   `;
 };
 
-const makeDefaultQuiz = (text, memory = "自定义命题") => {
+const imageEditorTemplate = `
+  <div class="quiz-image-editor">
+    <div class="image-editor-head">
+      <strong>题目图片</strong>
+      <label class="image-upload">
+        插入图片
+        <input type="file" accept="image/*" data-edit-image />
+      </label>
+    </div>
+    <div class="image-preview" data-image-preview hidden></div>
+    <button type="button" class="remove-image-btn" data-editor-remove-image>移除图片</button>
+  </div>
+`;
+
+const bindImageEditor = (editor, item, quiz = {}) => {
+  const imageInput = editor.querySelector("[data-edit-image]");
+  const imagePreview = editor.querySelector("[data-image-preview]");
+  const removeImageButton = editor.querySelector("[data-editor-remove-image]");
+  let imageDraft = itemImages(item, quiz)[0] || null;
+  let imageRemoved = false;
+
+  renderImagePreview(imagePreview, imageDraft);
+  removeImageButton.hidden = !imageDraft;
+
+  imageInput.addEventListener("change", async () => {
+    const file = imageInput.files?.[0];
+    if (!file) return;
+    removeImageButton.disabled = true;
+    imageInput.disabled = true;
+    setTitleStatus("正在压缩题目图片…", "");
+    try {
+      imageDraft = await compressImageFile(file);
+      imageRemoved = false;
+      renderImagePreview(imagePreview, imageDraft);
+      removeImageButton.hidden = false;
+      setTitleStatus("图片已插入，保存后生效", "ok");
+    } catch (error) {
+      setTitleStatus(error.message || "图片插入失败", "bad");
+    } finally {
+      removeImageButton.disabled = false;
+      imageInput.disabled = false;
+      imageInput.value = "";
+    }
+  });
+
+  removeImageButton.addEventListener("click", () => {
+    imageDraft = null;
+    imageRemoved = true;
+    renderImagePreview(imagePreview, null);
+    removeImageButton.hidden = true;
+    setTitleStatus("图片已移除，保存后生效", "ok");
+  });
+
+  return {
+    apply(nextCustom) {
+      if (imageDraft) nextCustom.images = [imageDraft];
+      if (imageRemoved) nextCustom.images = [];
+      if (!imageDraft && !imageRemoved) delete nextCustom.images;
+      return nextCustom;
+    },
+  };
+};
+
+const applyCustomItem = (item, nextCustom) => {
+  state.customQuiz[item.id] = {
+    ...state.customQuiz[item.id],
+    ...nextCustom,
+    updated: new Date().toISOString(),
+  };
+  saveCustomQuiz();
+  renderCards();
+  setTitleStatus("题目已本地保存，可云同步", "ok");
+};
+
+const deleteItemFromEditor = (item) => {
+  const ok = window.confirm(`确定删除这道题吗？\n${item.id} · ${displayText(item)}\n\n删除后会从当前题库隐藏，并可通过“云同步全部”同步到其他设备。`);
+  if (!ok) return;
+  state.deletedItems[item.id] = new Date().toISOString();
+  delete state.customQuiz[item.id];
+  saveDeletedItems();
+  saveCustomQuiz();
+  state.quizPage = Math.max(0, state.quizPage);
+  render();
+  setTitleStatus("题目已删除，可云同步", "ok");
+};
+
+const openReviewEditor = (item, node) => {
+  const existing = node.querySelector(".quiz-editor");
+  if (existing) {
+    existing.remove();
+    return;
+  }
+
+  const editor = document.createElement("div");
+  editor.className = "quiz-editor";
+  editor.innerHTML = `
+    <label>题目<textarea data-edit-field="text">${escapeHtml(displayText(item))}</textarea></label>
+    ${imageEditorTemplate}
+    <div class="quiz-editor-actions review-editor-actions">
+      <button type="button" data-editor-save>保存题目</button>
+      <button type="button" data-editor-reset>恢复默认</button>
+      <button type="button" data-editor-close>收起</button>
+      <button type="button" data-editor-delete>删除题目</button>
+    </div>
+  `;
+
+  const textField = editor.querySelector('[data-edit-field="text"]');
+  const imageEditor = bindImageEditor(editor, item);
+
+  editor.querySelector("[data-editor-save]").addEventListener("click", () => {
+    applyCustomItem(item, imageEditor.apply({
+      text: textField.value.trim() || item.text,
+    }));
+  });
+
+  editor.querySelector("[data-editor-reset]").addEventListener("click", () => {
+    delete state.customQuiz[item.id];
+    saveCustomQuiz();
+    renderCards();
+    setTitleStatus("已恢复默认题目，可云同步", "ok");
+  });
+
+  editor.querySelector("[data-editor-delete]").addEventListener("click", () => deleteItemFromEditor(item));
+  editor.querySelector("[data-editor-close]").addEventListener("click", () => editor.remove());
+  node.querySelector(".question").after(editor);
+};
+
+const makeDefaultQuiz = (text) => {
   const kind = /\d/.test(text) ? "数值题" : "概念题";
   if (kind === "数值题") {
     const numericPattern = /\d+(?:\.\d+)?\s*(?:dB\(A\)|dB|kN|mm|ms|min|米|伏|千伏|千欧|%|度)?/gi;
@@ -647,14 +786,12 @@ const makeDefaultQuiz = (text, memory = "自定义命题") => {
     return {
       prompt: `填空：${text.replace(numericPattern, "____")}`,
       answer: answers.join("、"),
-      hint: "提示：重点核对数值、单位、上下限和适用对象。",
     };
   }
   const cloze = makeCloze(text);
   return {
     prompt: `填空：${cloze.prompt}`,
     answer: cloze.answer,
-    hint: `提示：${memory}`,
   };
 };
 
@@ -736,7 +873,7 @@ const referenceScore = (prompt, referenceText) => {
 };
 
 const sortedReferencesForPrompt = (prompt, item) =>
-  [item.text, ...state.referenceTexts]
+  [displayText(item), item.text, ...state.referenceTexts]
     .filter(Boolean)
     .map((text) => ({ text, score: referenceScore(prompt, text) }))
     .sort((a, b) => b.score - a.score)
@@ -753,16 +890,14 @@ const inferQuizFromPrompt = (prompt, item, fallback) => {
       if (answer) {
         return {
           answer,
-          hint: referenceText === item.text ? "提示：根据原始错题自动反推空格内容。" : "提示：根据题库/PDF参考内容自动匹配。",
         };
       }
     }
   }
 
-  const regenerated = makeDefaultQuiz(cleaned || item.text, item.memory);
+  const regenerated = makeDefaultQuiz(cleaned || displayText(item));
   return {
     answer: regenerated.answer || fallback.answer,
-    hint: regenerated.hint || fallback.hint,
   };
 };
 
@@ -778,18 +913,7 @@ const openQuizEditor = (item, node, quiz) => {
   editor.innerHTML = `
     <label>题干<textarea data-edit-field="prompt">${escapeHtml(quiz.prompt)}</textarea></label>
     <label>答案<textarea data-edit-field="answer">${escapeHtml(quiz.answer)}</textarea></label>
-    <label>提示<textarea data-edit-field="hint">${escapeHtml(quiz.hint)}</textarea></label>
-    <div class="quiz-image-editor">
-      <div class="image-editor-head">
-        <strong>题目图片</strong>
-        <label class="image-upload">
-          插入图片
-          <input type="file" accept="image/*" data-edit-image />
-        </label>
-      </div>
-      <div class="image-preview" data-image-preview hidden></div>
-      <button type="button" class="remove-image-btn" data-editor-remove-image>移除图片</button>
-    </div>
+    ${imageEditorTemplate}
     <div class="quiz-editor-actions">
       <button type="button" data-editor-save>保存命题</button>
       <button type="button" data-editor-auto>重新生成答案</button>
@@ -801,59 +925,17 @@ const openQuizEditor = (item, node, quiz) => {
 
   const promptField = editor.querySelector('[data-edit-field="prompt"]');
   const answerField = editor.querySelector('[data-edit-field="answer"]');
-  const hintField = editor.querySelector('[data-edit-field="hint"]');
-  const imageInput = editor.querySelector("[data-edit-image]");
-  const imagePreview = editor.querySelector("[data-image-preview]");
-  const removeImageButton = editor.querySelector("[data-editor-remove-image]");
-  let imageDraft = itemImages(item, quiz)[0] || null;
-  let imageRemoved = false;
+  const imageEditor = bindImageEditor(editor, item, quiz);
   let answerTouched = false;
-  let hintTouched = false;
-
-  renderImagePreview(imagePreview, imageDraft);
-  removeImageButton.hidden = !imageDraft;
 
   const applyAutoAnswer = ({ force = false } = {}) => {
     const inferred = inferQuizFromPrompt(promptField.value, item, quiz);
     if (force || !answerTouched) answerField.value = inferred.answer;
-    if (force || !hintTouched) hintField.value = inferred.hint;
   };
 
   promptField.addEventListener("input", () => applyAutoAnswer());
   answerField.addEventListener("input", () => {
     answerTouched = true;
-  });
-  hintField.addEventListener("input", () => {
-    hintTouched = true;
-  });
-
-  imageInput.addEventListener("change", async () => {
-    const file = imageInput.files?.[0];
-    if (!file) return;
-    removeImageButton.disabled = true;
-    imageInput.disabled = true;
-    setTitleStatus("正在压缩题目图片…", "");
-    try {
-      imageDraft = await compressImageFile(file);
-      imageRemoved = false;
-      renderImagePreview(imagePreview, imageDraft);
-      removeImageButton.hidden = false;
-      setTitleStatus("图片已插入，保存命题后生效", "ok");
-    } catch (error) {
-      setTitleStatus(error.message || "图片插入失败", "bad");
-    } finally {
-      removeImageButton.disabled = false;
-      imageInput.disabled = false;
-      imageInput.value = "";
-    }
-  });
-
-  removeImageButton.addEventListener("click", () => {
-    imageDraft = null;
-    imageRemoved = true;
-    renderImagePreview(imagePreview, null);
-    removeImageButton.hidden = true;
-    setTitleStatus("图片已移除，保存命题后生效", "ok");
   });
 
   editor.querySelector("[data-editor-save]").addEventListener("click", () => {
@@ -861,23 +943,13 @@ const openQuizEditor = (item, node, quiz) => {
       ...state.customQuiz[item.id],
       prompt: promptField.value.trim() || quiz.prompt,
       answer: answerField.value.trim() || quiz.answer,
-      hint: hintField.value.trim() || quiz.hint,
       updated: new Date().toISOString(),
     };
-    if (imageDraft) nextCustom.images = [imageDraft];
-    if (imageRemoved) nextCustom.images = [];
-    if (!imageDraft && !imageRemoved) delete nextCustom.images;
-    state.customQuiz[item.id] = {
-      ...nextCustom,
-    };
-    saveCustomQuiz();
-    renderCards();
-    setTitleStatus("命题已本地保存，可云同步", "ok");
+    applyCustomItem(item, imageEditor.apply(nextCustom));
   });
 
   editor.querySelector("[data-editor-auto]").addEventListener("click", () => {
     answerTouched = false;
-    hintTouched = false;
     applyAutoAnswer({ force: true });
     setTitleStatus("答案已按题干重新生成", "ok");
   });
@@ -889,20 +961,10 @@ const openQuizEditor = (item, node, quiz) => {
     setTitleStatus("已恢复默认命题，可云同步", "ok");
   });
 
-  editor.querySelector("[data-editor-delete]").addEventListener("click", () => {
-    const ok = window.confirm(`确定删除这道题吗？\n${item.id} · ${item.text}\n\n删除后会从当前题库隐藏，并可通过“云同步全部”同步到其他设备。`);
-    if (!ok) return;
-    state.deletedItems[item.id] = new Date().toISOString();
-    delete state.customQuiz[item.id];
-    saveDeletedItems();
-    saveCustomQuiz();
-    state.quizPage = Math.max(0, state.quizPage);
-    render();
-    setTitleStatus("题目已删除，可云同步", "ok");
-  });
+  editor.querySelector("[data-editor-delete]").addEventListener("click", () => deleteItemFromEditor(item));
 
   editor.querySelector("[data-editor-close]").addEventListener("click", () => editor.remove());
-  node.querySelector(".quiz-hint").after(editor);
+  node.querySelector(".quiz-prompt").after(editor);
 };
 
 const makeCloze = (text) => {
