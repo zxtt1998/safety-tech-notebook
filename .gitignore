@@ -1,1 +1,5 @@
 pdf-reference.json
+.DS_Store
+ios/.DS_Store
+ios/SafetyTechNotebook/SafetyTechNotebook.xcodeproj/project.xcworkspace/
+ios/SafetyTechNotebook/SafetyTechNotebook.xcodeproj/xcuserdata/

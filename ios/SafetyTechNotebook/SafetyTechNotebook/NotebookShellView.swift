@@ -20,6 +20,24 @@ struct NotebookShellView: View {
             NotebookWebView(model: model)
                 .ignoresSafeArea()
 
+            if model.isLoading {
+                VStack(spacing: 14) {
+                    ProgressView()
+                        .controlSize(.large)
+                    Text(model.statusText)
+                        .font(.system(size: 15, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 22)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 28, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 28, style: .continuous)
+                        .strokeBorder(.white.opacity(0.5), lineWidth: 1)
+                }
+                .shadow(color: .black.opacity(0.14), radius: 24, y: 12)
+            }
+
             VStack(spacing: 0) {
                 AppGlassHeader(model: model)
                     .padding(.horizontal, 14)

@@ -10,8 +10,10 @@ final class NotebookWebModel: NSObject, ObservableObject {
     @Published var statusText = "正在打开云端题库"
     @Published var source: Source = .remote
     @Published var canGoBack = false
+    @Published var isLoading = true
 
     fileprivate weak var webView: WKWebView?
+    private var didLoadInitialPage = false
 
     private let remoteURL = URL(string: "https://zxtt1998.github.io/safety-tech-notebook/index.html?v=20260801-pwa-stable")!
 
@@ -19,11 +21,16 @@ final class NotebookWebModel: NSObject, ObservableObject {
         self.webView = webView
         webView.navigationDelegate = self
         webView.uiDelegate = self
-        loadRemote()
+        guard !didLoadInitialPage else { return }
+        didLoadInitialPage = true
+        DispatchQueue.main.async { [weak self] in
+            self?.loadRemote()
+        }
     }
 
     func loadRemote() {
         source = .remote
+        isLoading = true
         statusText = "云端同步可用"
         var request = URLRequest(url: remoteURL)
         request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
@@ -33,6 +40,7 @@ final class NotebookWebModel: NSObject, ObservableObject {
 
     func loadLocal() {
         source = .local
+        isLoading = true
         statusText = "本地题库模式"
         guard
             let fileURL = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "Web"),
@@ -59,17 +67,22 @@ final class NotebookWebModel: NSObject, ObservableObject {
     }
 
     fileprivate func updateNavigationState(_ webView: WKWebView) {
-        canGoBack = webView.canGoBack
+        let nextCanGoBack = webView.canGoBack
+        if canGoBack != nextCanGoBack {
+            canGoBack = nextCanGoBack
+        }
     }
 }
 
 extension NotebookWebModel: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        isLoading = true
         statusText = source == .remote ? "正在读取云端题库" : "正在读取本地题库"
         updateNavigationState(webView)
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        isLoading = false
         statusText = source == .remote ? "云端题库已打开" : "本地题库已打开"
         updateNavigationState(webView)
     }
@@ -89,6 +102,7 @@ extension NotebookWebModel: WKNavigationDelegate {
             statusText = "云端打开失败，切到本地"
             loadLocal()
         } else {
+            isLoading = false
             statusText = "本地页面打开失败"
         }
     }
@@ -144,6 +158,5 @@ struct NotebookWebView: UIViewRepresentable {
     }
 
     func updateUIView(_ webView: WKWebView, context: Context) {
-        model.updateNavigationState(webView)
     }
 }
