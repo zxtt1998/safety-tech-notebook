@@ -1629,3 +1629,294 @@ main {
     font-size: clamp(12px, 3.15vw, 15px);
   }
 }
+
+
+/* 2026-08-02 product polish: stable IDs, batch delete, dark mode */
+body[data-theme="dark"] {
+  color: var(--ink);
+  background:
+    linear-gradient(120deg, rgba(37, 99, 235, 0.12), transparent 34%),
+    linear-gradient(245deg, rgba(20, 184, 166, 0.12), transparent 36%),
+    linear-gradient(180deg, #050a12 0, #0b1625 286px, var(--bg) 287px, var(--bg) 100%);
+}
+
+body[data-theme="dark"]::before {
+  opacity: 0.28;
+  background:
+    linear-gradient(90deg, rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+}
+
+body[data-theme="dark"] {
+  --bg: #09111d;
+  --ink: #e8eef7;
+  --muted: #96a4b8;
+  --soft: rgba(18, 30, 47, 0.88);
+  --line: rgba(118, 139, 165, 0.28);
+  --surface: rgba(14, 25, 41, 0.86);
+  --navy: #e8eef7;
+  --navy-2: #cbd5e1;
+  --blue: #74a7ff;
+  --teal: #2dd4bf;
+  --green: #34d399;
+  --red: #fb7185;
+  --amber: #fbbf24;
+  --glass: rgba(13, 24, 39, 0.72);
+  --glass-strong: rgba(17, 29, 47, 0.88);
+  --glass-line: rgba(148, 163, 184, 0.22);
+  --glass-shadow: 0 18px 55px rgba(0, 0, 0, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --glass-shadow-strong: 0 34px 90px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+body[data-theme="dark"] .topbar {
+  background:
+    linear-gradient(125deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03) 32%),
+    linear-gradient(135deg, rgba(9, 18, 32, 0.96), rgba(6, 12, 22, 0.94));
+}
+
+body[data-theme="dark"] .title-input,
+body[data-theme="dark"] .search input,
+body[data-theme="dark"] .quiz-editor textarea {
+  color: var(--ink);
+  background: rgba(9, 18, 31, 0.78);
+  border-color: rgba(122, 145, 172, 0.28);
+}
+
+body[data-theme="dark"] .mode-switch,
+body[data-theme="dark"] .summary article,
+body[data-theme="dark"] .analysis-panel,
+body[data-theme="dark"] .chart-card,
+body[data-theme="dark"] .controls,
+body[data-theme="dark"] .section-tabs,
+body[data-theme="dark"] .content,
+body[data-theme="dark"] .quiz-pager,
+body[data-theme="dark"] .quiz-editor,
+body[data-theme="dark"] .sync-note,
+body[data-theme="dark"] .bulk-delete-bar {
+  background: var(--glass);
+  border-color: var(--glass-line);
+  box-shadow: var(--glass-shadow);
+}
+
+body[data-theme="dark"] .section-tabs button,
+body[data-theme="dark"] .mistake-card,
+body[data-theme="dark"] .quiz-card,
+body[data-theme="dark"] .quiz-answer,
+body[data-theme="dark"] .quiz-image,
+body[data-theme="dark"] .quiz-image-editor,
+body[data-theme="dark"] .image-preview,
+body[data-theme="dark"] .empty {
+  color: var(--ink);
+  background: linear-gradient(180deg, rgba(17, 30, 48, 0.96), rgba(12, 22, 36, 0.94));
+  border-color: rgba(118, 139, 165, 0.25);
+}
+
+body[data-theme="dark"] .section-tabs button.active {
+  background: linear-gradient(90deg, rgba(30, 58, 138, 0.46), rgba(20, 83, 75, 0.38));
+}
+
+body[data-theme="dark"] .mistake-card.mastered,
+body[data-theme="dark"] .quiz-card.right {
+  background: linear-gradient(180deg, rgba(8, 64, 53, 0.82), rgba(10, 36, 31, 0.88));
+  border-color: rgba(45, 212, 191, 0.34);
+}
+
+body[data-theme="dark"] .quiz-card.wrong {
+  background: linear-gradient(180deg, rgba(88, 28, 35, 0.82), rgba(45, 18, 24, 0.9));
+  border-color: rgba(251, 113, 133, 0.36);
+}
+
+body[data-theme="dark"] .queue-item p,
+body[data-theme="dark"] .quiz-answer,
+body[data-theme="dark"] .sync-note,
+body[data-theme="dark"] .image-preview span {
+  color: #b9c5d6;
+}
+
+body[data-theme="dark"] .quiz-image img,
+body[data-theme="dark"] .image-preview img {
+  background: #0a1220;
+}
+
+body[data-theme="dark"] #shuffleBtn:disabled,
+body[data-theme="dark"] .quiz-pager button:disabled,
+body[data-theme="dark"] .quiz-editor-actions button:nth-child(4),
+body[data-theme="dark"] .review-editor-actions button:nth-child(3) {
+  color: #77869a;
+  background: rgba(31, 41, 55, 0.82);
+}
+
+.card-meta {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.card-meta strong {
+  width: auto;
+  min-width: 70px;
+  max-width: 116px;
+  height: 30px;
+  padding: 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 11px;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.card-meta span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+.edit-quiz-btn {
+  justify-self: end;
+}
+
+#bulkDeleteModeBtn {
+  min-width: 92px;
+  height: 42px;
+  padding: 0 14px;
+  color: var(--red);
+  background: rgba(254, 226, 226, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+#bulkDeleteModeBtn.active {
+  color: white;
+  background: linear-gradient(135deg, var(--red), #f97316);
+  box-shadow: 0 14px 30px rgba(217, 45, 54, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.bulk-delete-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.bulk-delete-bar strong,
+.bulk-delete-bar span {
+  display: block;
+}
+
+.bulk-delete-bar strong {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 950;
+}
+
+.bulk-delete-bar span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.bulk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.bulk-actions button {
+  height: 34px;
+  padding: 0 11px;
+  color: var(--ink);
+  background: var(--soft);
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.bulk-actions #confirmBulkDeleteBtn {
+  color: white;
+  background: linear-gradient(135deg, var(--red), #f97316);
+}
+
+.bulk-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 9px;
+  color: var(--muted);
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.bulk-select input {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--red);
+}
+
+.mistake-card,
+.quiz-card {
+  border-radius: 16px;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.06);
+}
+
+.mode-switch,
+.summary article,
+.controls,
+.section-tabs,
+.content,
+.quiz-pager {
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.07);
+}
+
+@media (max-width: 760px) {
+  .card-meta {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .card-meta .edit-quiz-btn {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .bulk-select {
+    grid-column: 1 / -1;
+    width: fit-content;
+  }
+
+  .bulk-delete-bar {
+    display: grid;
+  }
+
+  .bulk-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: stretch;
+  }
+
+  .bulk-actions button {
+    height: 40px;
+  }
+
+  #bulkDeleteModeBtn {
+    height: 38px;
+    min-width: 82px;
+    font-size: 13px;
+  }
+}

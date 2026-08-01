@@ -11,7 +11,7 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css?v=20260801-liyutian-review" />
+    <link rel="stylesheet" href="styles.css?v=20260802-dark-bulk" />
   </head>
   <body>
     <div class="app">
@@ -23,6 +23,7 @@
             <button id="saveTitleBtn" type="button">保存标题</button>
             <button id="syncDataBtn" type="button">云同步全部</button>
             <button id="loadCloudBtn" type="button">读取云端</button>
+            <button id="themeToggleBtn" type="button" aria-pressed="false">夜间模式</button>
             <span id="titleSyncStatus">读取云端学习数据</span>
           </div>
         </div>
@@ -117,6 +118,18 @@
             </div>
             <button id="shuffleBtn" type="button">随机背诵</button>
           </div>
+          <div id="bulkDeleteBar" class="bulk-delete-bar" hidden>
+            <div>
+              <strong>批量删除</strong>
+              <span id="bulkDeleteCount">已选择 0 题</span>
+            </div>
+            <div class="bulk-actions">
+              <button id="selectPageBtn" type="button">选择本页</button>
+              <button id="selectAllFilteredBtn" type="button">选择当前筛选</button>
+              <button id="confirmBulkDeleteBtn" type="button">删除所选</button>
+              <button id="cancelBulkDeleteBtn" type="button">取消</button>
+            </div>
+          </div>
           <div id="quizPager" class="quiz-pager" data-quiz-pager hidden></div>
           <div class="sync-note">
             题库从 <code>data.json</code> 读取；标题、自定义命题、背诵记录和测试记录可通过顶部按钮同步到 <code>user-data.json</code>。
@@ -158,6 +171,6 @@
       </article>
     </template>
 
-    <script src="app.js?v=20260801-liyutian-review"></script>
+    <script src="app.js?v=20260802-dark-bulk"></script>
   </body>
 </html>

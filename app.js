@@ -12,6 +12,9 @@ const state = {
   customQuiz: JSON.parse(localStorage.getItem("safetyNotebookCustomQuiz") || "{}"),
   deletedItems: JSON.parse(localStorage.getItem("safetyNotebookDeletedItems") || "{}"),
   analysisCollapsed: localStorage.getItem("safetyNotebookAnalysisCollapsed") !== "false",
+  theme: localStorage.getItem("safetyNotebookTheme") || "light",
+  bulkDeleteMode: false,
+  selectedDeleteIds: new Set(),
   referenceTexts: [],
 };
 
@@ -23,11 +26,91 @@ const quizTemplate = $("#quizTemplate");
 const quizPagers = document.querySelectorAll("[data-quiz-pager]");
 const titleInput = $("#titleInput");
 const titleSyncStatus = $("#titleSyncStatus");
+const themeToggleBtn = $("#themeToggleBtn");
+const bulkDeleteBar = $("#bulkDeleteBar");
+const bulkDeleteCount = $("#bulkDeleteCount");
 const analysisPanel = $("#analysisPanel");
 const analysisBody = $("#analysisBody");
 const analysisToggle = $("#analysisToggle");
 
+const applyTheme = () => {
+  document.body.dataset.theme = state.theme;
+  document.documentElement.style.colorScheme = state.theme === "dark" ? "dark" : "light";
+  const isDark = state.theme === "dark";
+  themeToggleBtn.textContent = isDark ? "日间模式" : "夜间模式";
+  themeToggleBtn.setAttribute("aria-pressed", String(isDark));
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", isDark ? "#07111f" : "#13243b");
+};
+
+const setTheme = (theme) => {
+  state.theme = theme === "dark" ? "dark" : "light";
+  localStorage.setItem("safetyNotebookTheme", state.theme);
+  applyTheme();
+};
+
+const currentPageItems = () => {
+  const items = filteredItems();
+  if (isTestMode()) return pageItemsFor(items);
+  return pageItemsFor(items);
+};
+
+const selectedVisibleCount = () => [...state.selectedDeleteIds].filter((id) => !isDeleted(id)).length;
+
+const setBulkDeleteMode = (enabled) => {
+  state.bulkDeleteMode = enabled;
+  if (!enabled) state.selectedDeleteIds.clear();
+  renderCards();
+};
+
+const updateBulkDeleteBar = () => {
+  bulkDeleteBar.hidden = !state.bulkDeleteMode;
+  if (!state.bulkDeleteMode) return;
+  bulkDeleteCount.textContent = `已选择 ${selectedVisibleCount()} 题`;
+};
+
+const toggleDeleteSelection = (id, checked) => {
+  if (checked) state.selectedDeleteIds.add(id);
+  else state.selectedDeleteIds.delete(id);
+  updateBulkDeleteBar();
+};
+
+const selectItemsForDeletion = (items) => {
+  items.forEach((item) => state.selectedDeleteIds.add(item.id));
+  renderCards();
+};
+
+const bulkDeleteSelected = () => {
+  const ids = [...state.selectedDeleteIds].filter((id) => !isDeleted(id));
+  if (!ids.length) {
+    setTitleStatus("请先选择要删除的题目", "warn");
+    return;
+  }
+  const ok = window.confirm(`确定删除已选择的 ${ids.length} 道题吗？\n删除后可通过“云同步全部”同步到其他设备。`);
+  if (!ok) return;
+  const deletedAt = new Date().toISOString();
+  ids.forEach((id) => {
+    state.deletedItems[id] = deletedAt;
+    delete state.customQuiz[id];
+  });
+  state.selectedDeleteIds.clear();
+  state.bulkDeleteMode = false;
+  saveDeletedItems();
+  saveCustomQuiz();
+  render();
+  setTitleStatus(`已删除 ${ids.length} 题，可云同步`, "ok");
+};
+
+const createBulkSelector = (item) => {
+  if (!state.bulkDeleteMode) return null;
+  const label = document.createElement("label");
+  label.className = "bulk-select";
+  label.innerHTML = `<input type="checkbox" ${state.selectedDeleteIds.has(item.id) ? "checked" : ""} aria-label="选择 ${escapeHtml(item.id)}" /><span>选择</span>`;
+  label.querySelector("input").addEventListener("change", (event) => toggleDeleteSelection(item.id, event.target.checked));
+  return label;
+};
+
 state.quiz.sectionStats ||= {};
+applyTheme();
 
 const REVIEW_INTERVALS = [
   { label: "20 分钟", ms: 20 * 60 * 1000 },
@@ -358,6 +441,7 @@ const renderTabs = () => {
 const renderCards = () => {
   cards.innerHTML = "";
   const items = filteredItems();
+  updateBulkDeleteBar();
   const section = activeSections().find((entry) => entry.section === state.section);
   $("#domainName").textContent = section?.domain || (isHighFrequencyMode() ? "李天宇高频" : "全部章节");
   $("#sectionName").textContent = isTestMode()
@@ -365,6 +449,17 @@ const renderCards = () => {
     : (state.mode === "liyutianReview" ? "李天宇高频背诵" : section?.section || "错题总览");
   $("#shuffleBtn").textContent = isTestMode() ? "下一页" : "随机背诵";
   $("#shuffleBtn").disabled = isTestMode() && state.quizPage >= Math.ceil(items.length / state.pageSize) - 1;
+  const sectionHead = document.querySelector(".section-head");
+  let bulkButton = $("#bulkDeleteModeBtn");
+  if (!bulkButton) {
+    bulkButton = document.createElement("button");
+    bulkButton.id = "bulkDeleteModeBtn";
+    bulkButton.type = "button";
+    bulkButton.addEventListener("click", () => setBulkDeleteMode(!state.bulkDeleteMode));
+    sectionHead.appendChild(bulkButton);
+  }
+  bulkButton.textContent = state.bulkDeleteMode ? "退出选择" : "批量删除";
+  bulkButton.classList.toggle("active", state.bulkDeleteMode);
   quizPagers.forEach((pager) => {
     pager.hidden = false;
   });
@@ -395,6 +490,8 @@ const renderCards = () => {
     node.style.setProperty("--card-index", index);
     node.classList.toggle("mastered", progress.mastered);
     node.querySelector("strong").textContent = item.id;
+    const bulkSelector = createBulkSelector(item);
+    if (bulkSelector) node.querySelector(".card-meta").prepend(bulkSelector);
     node.querySelector(".card-meta span").textContent = state.mode === "liyutianReview"
       ? `${item.topic || item.section} · ${item.kind} · 复习 ${progress.review} 次`
       : `${item.section} · ${item.kind} · 复习 ${progress.review} 次`;
@@ -442,6 +539,8 @@ const renderQuizCards = (items) => {
     const node = quizTemplate.content.firstElementChild.cloneNode(true);
     node.style.setProperty("--card-index", index);
     node.querySelector("strong").textContent = `Q${state.quizPage * state.pageSize + index + 1}`;
+    const bulkSelector = createBulkSelector(item);
+    if (bulkSelector) node.querySelector(".card-meta").prepend(bulkSelector);
     node.querySelector(".card-meta span").textContent = `${item.section} · ${item.kind}`;
     node.querySelector(".quiz-prompt").textContent = quiz.prompt;
     const imageGallery = createImageGallery(itemImages(item, quiz));
@@ -491,6 +590,7 @@ const renderQuizCards = (items) => {
 };
 
 const renderPager = (count, totalPages) => {
+  updateBulkDeleteBar();
   quizPagers.forEach((pager) => {
     pager.innerHTML = "";
 
@@ -1183,6 +1283,8 @@ document.querySelectorAll(".mode-switch button").forEach((button) => {
     state.section = "all";
     state.query = "";
     state.quizPage = 0;
+    state.bulkDeleteMode = false;
+    state.selectedDeleteIds.clear();
     $("#searchInput").value = "";
     render();
   });
@@ -1217,6 +1319,13 @@ $("#saveTitleBtn").addEventListener("click", () => {
 $("#syncDataBtn").addEventListener("click", syncAllToGithub);
 
 $("#loadCloudBtn").addEventListener("click", () => loadCloudData());
+
+themeToggleBtn.addEventListener("click", () => setTheme(state.theme === "dark" ? "light" : "dark"));
+
+$("#selectPageBtn").addEventListener("click", () => selectItemsForDeletion(currentPageItems()));
+$("#selectAllFilteredBtn").addEventListener("click", () => selectItemsForDeletion(filteredItems()));
+$("#confirmBulkDeleteBtn").addEventListener("click", bulkDeleteSelected);
+$("#cancelBulkDeleteBtn").addEventListener("click", () => setBulkDeleteMode(false));
 
 analysisToggle.addEventListener("click", () => {
   state.analysisCollapsed = !state.analysisCollapsed;
