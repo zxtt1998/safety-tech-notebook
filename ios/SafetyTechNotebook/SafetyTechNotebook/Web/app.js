@@ -50,6 +50,7 @@ const FORGETTING_POINTS = [
   ["31天", 10],
 ];
 
+const isHighFrequencyMode = () => state.mode === "liyutian" || state.mode === "liyutianReview";
 const isTestMode = () => state.mode === "quiz" || state.mode === "liyutian";
 
 const saveProgress = () => {
@@ -139,13 +140,13 @@ const memoryQueue = () =>
 
 const isDeleted = (id) => Boolean(state.deletedItems[id]);
 
-const activeItems = () => (state.mode === "liyutian" ? state.data.highFrequencyItems || [] : state.data.items)
+const activeItems = () => (isHighFrequencyMode() ? state.data.highFrequencyItems || [] : state.data.items)
   .filter((item) => !isDeleted(item.id));
 
 const displayText = (item) => state.customQuiz[item.id]?.text || item.text;
 
 const activeSections = () => {
-  const source = state.mode === "liyutian" ? state.data.highFrequencySections || [] : state.data.sections;
+  const source = isHighFrequencyMode() ? state.data.highFrequencySections || [] : state.data.sections;
   const visibleItems = activeItems();
   return source
     .map((section) => ({
@@ -332,7 +333,7 @@ const renderTabs = () => {
   const all = document.createElement("button");
   all.type = "button";
   all.className = state.section === "all" ? "active" : "";
-  all.innerHTML = `<strong>${state.mode === "liyutian" ? "全部高频" : "全部错题"}</strong><span>${items.length} 条</span>`;
+  all.innerHTML = `<strong>${isHighFrequencyMode() ? "全部高频" : "全部错题"}</strong><span>${items.length} 条</span>`;
   all.addEventListener("click", () => {
     state.section = "all";
     state.quizPage = 0;
@@ -358,10 +359,10 @@ const renderCards = () => {
   cards.innerHTML = "";
   const items = filteredItems();
   const section = activeSections().find((entry) => entry.section === state.section);
-  $("#domainName").textContent = section?.domain || (state.mode === "liyutian" ? "李天宇高频" : "全部章节");
+  $("#domainName").textContent = section?.domain || (isHighFrequencyMode() ? "李天宇高频" : "全部章节");
   $("#sectionName").textContent = isTestMode()
     ? (state.mode === "liyutian" ? "李天宇高频模块测试" : "测试模式")
-    : section?.section || "错题总览";
+    : (state.mode === "liyutianReview" ? "李天宇高频背诵" : section?.section || "错题总览");
   $("#shuffleBtn").textContent = isTestMode() ? "下一页" : "随机背诵";
   $("#shuffleBtn").disabled = isTestMode() && state.quizPage >= Math.ceil(items.length / state.pageSize) - 1;
   quizPagers.forEach((pager) => {
@@ -394,7 +395,9 @@ const renderCards = () => {
     node.style.setProperty("--card-index", index);
     node.classList.toggle("mastered", progress.mastered);
     node.querySelector("strong").textContent = item.id;
-    node.querySelector(".card-meta span").textContent = `${item.section} · ${item.kind} · 复习 ${progress.review} 次`;
+    node.querySelector(".card-meta span").textContent = state.mode === "liyutianReview"
+      ? `${item.topic || item.section} · ${item.kind} · 复习 ${progress.review} 次`
+      : `${item.section} · ${item.kind} · 复习 ${progress.review} 次`;
     node.querySelector(".question").textContent = displayText(item);
     const imageGallery = createImageGallery(itemImages(item));
     if (imageGallery) node.querySelector(".question").after(imageGallery);
@@ -1200,7 +1203,7 @@ $("#shuffleBtn").addEventListener("click", () => {
     return;
   }
   const pick = items[Math.floor(Math.random() * items.length)];
-  state.query = pick.text.slice(0, 8);
+  state.query = displayText(pick).slice(0, 8);
   $("#searchInput").value = state.query;
   renderCards();
   cards.firstElementChild?.scrollIntoView({ behavior: "smooth", block: "start" });

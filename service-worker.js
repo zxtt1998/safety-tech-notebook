@@ -1,8 +1,8 @@
-const CACHE_NAME = "safety-tech-notebook-pwa-20260801-stable";
+const CACHE_NAME = "safety-tech-notebook-pwa-20260801-liyutian-review";
 const APP_SHELL = [
   "./index.html",
-  "./styles.css?v=20260801-pwa-stable",
-  "./app.js?v=20260801-pwa-stable",
+  "./styles.css?v=20260801-liyutian-review",
+  "./app.js?v=20260801-liyutian-review",
   "./data.json",
   "./manifest.webmanifest",
   "./app-icon.svg",

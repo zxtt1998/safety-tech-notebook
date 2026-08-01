@@ -1614,3 +1614,18 @@ main {
     margin: 0 auto;
   }
 }
+
+
+.mode-switch button[data-mode="liyutianReview"],
+.mode-switch button[data-mode="liyutian"] {
+  letter-spacing: 0;
+}
+
+@media (max-width: 720px) {
+  .mode-switch button {
+    min-height: 50px;
+    height: auto;
+    padding: 9px 6px;
+    font-size: clamp(12px, 3.15vw, 15px);
+  }
+}
