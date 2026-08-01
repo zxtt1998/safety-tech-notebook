@@ -473,9 +473,7 @@ const renderQuizPager = (count, totalPages) => {
     prev.textContent = "上一页";
     prev.disabled = state.quizPage === 0;
     prev.addEventListener("click", () => {
-      state.quizPage = Math.max(0, state.quizPage - 1);
-      renderCards();
-      scrollToFirstQuiz();
+      changeQuizPage(Math.max(0, state.quizPage - 1));
     });
 
     const page = document.createElement("span");
@@ -486,21 +484,31 @@ const renderQuizPager = (count, totalPages) => {
     next.textContent = "下一页";
     next.disabled = state.quizPage >= totalPages - 1;
     next.addEventListener("click", () => {
-      state.quizPage = Math.min(totalPages - 1, state.quizPage + 1);
-      renderCards();
-      scrollToFirstQuiz();
+      changeQuizPage(Math.min(totalPages - 1, state.quizPage + 1));
     });
 
     pager.append(prev, page, next);
   });
 };
 
-const scrollToFirstQuiz = () => {
+const changeQuizPage = (nextPage) => {
+  if (nextPage === state.quizPage) return;
+  cards.classList.remove("page-enter");
+  cards.classList.add("page-leave");
+  window.setTimeout(() => {
+    state.quizPage = nextPage;
+    renderCards();
+    cards.classList.remove("page-leave");
+    scrollToFirstQuiz({ smooth: true });
+  }, 130);
+};
+
+const scrollToFirstQuiz = ({ smooth = false } = {}) => {
   window.setTimeout(() => {
     const first = cards.firstElementChild;
     if (!first) return;
     const top = first.getBoundingClientRect().top + window.scrollY - 14;
-    window.scrollTo({ top, behavior: "auto" });
+    window.scrollTo({ top, behavior: smooth ? "smooth" : "auto" });
   }, 50);
 };
 
@@ -681,8 +689,8 @@ const openQuizEditor = (item, node, quiz) => {
       <button type="button" data-editor-save>保存命题</button>
       <button type="button" data-editor-auto>重新生成答案</button>
       <button type="button" data-editor-reset>恢复默认</button>
-      <button type="button" data-editor-delete>删除题目</button>
       <button type="button" data-editor-close>收起</button>
+      <button type="button" data-editor-delete>删除题目</button>
     </div>
   `;
 
@@ -977,9 +985,7 @@ $("#shuffleBtn").addEventListener("click", () => {
   if (!items.length) return;
   if (isTestMode()) {
     const totalPages = Math.max(1, Math.ceil(items.length / state.pageSize));
-    state.quizPage = Math.min(totalPages - 1, state.quizPage + 1);
-    renderCards();
-    scrollToFirstQuiz();
+    changeQuizPage(Math.min(totalPages - 1, state.quizPage + 1));
     return;
   }
   const pick = items[Math.floor(Math.random() * items.length)];

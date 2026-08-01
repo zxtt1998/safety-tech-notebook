@@ -745,19 +745,25 @@ main {
 }
 
 .cards.page-enter .quiz-card {
-  animation: card-page-enter 0.34s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: card-page-enter 0.42s cubic-bezier(0.19, 1, 0.22, 1) both;
   animation-delay: calc(var(--card-index, 0) * 22ms);
+}
+
+.cards.page-leave {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.992);
+  transition: opacity 0.13s ease, transform 0.13s ease;
 }
 
 @keyframes card-page-enter {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(18px) scale(0.985);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -991,27 +997,37 @@ main {
 }
 
 .quiz-editor-actions button:nth-child(4) {
-  color: var(--red);
-  background: #feecec;
-}
-
-.quiz-editor-actions button:nth-child(5) {
   color: var(--muted);
   background: #eef2f7;
 }
 
+.quiz-editor-actions button:nth-child(5) {
+  color: var(--red);
+  background: #feecec;
+}
+
 .site-footer {
-  margin-top: 22px;
-  padding: 18px 8px 0;
+  display: flex;
+  justify-content: center;
+  width: min(1180px, 100%);
+  margin: 22px auto 0;
+  padding: 18px 16px max(24px, env(safe-area-inset-bottom));
   color: var(--muted);
   text-align: center;
   font-size: 13px;
   font-weight: 800;
 }
 
+.site-footer span {
+  display: block;
+  max-width: 100%;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .cards.page-enter .quiz-card {
+  .cards.page-enter .quiz-card,
+  .cards.page-leave {
     animation: none;
+    transition: none;
   }
 }
 
@@ -1162,6 +1178,15 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .quiz-editor-actions button {
+    height: 44px;
+  }
+
+  .quiz-editor-actions button:nth-child(5) {
+    color: white;
+    background: linear-gradient(135deg, var(--red), #f05252);
+  }
+
   .controls {
     display: grid;
     gap: 12px;
@@ -1250,5 +1275,16 @@ main {
   .actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer {
+    margin-top: 18px;
+    padding: 16px 24px max(86px, env(safe-area-inset-bottom));
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .site-footer span {
+    max-width: 260px;
   }
 }
