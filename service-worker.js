@@ -1,9 +1,8 @@
-const CACHE_NAME = "safety-tech-notebook-pwa-20260801";
+const CACHE_NAME = "safety-tech-notebook-pwa-20260801-stable";
 const APP_SHELL = [
-  "./",
   "./index.html",
-  "./styles.css?v=20260801-liquid-glass",
-  "./app.js?v=20260801-liquid-glass",
+  "./styles.css?v=20260801-pwa-stable",
+  "./app.js?v=20260801-pwa-stable",
   "./data.json",
   "./manifest.webmanifest",
   "./app-icon.svg",
@@ -15,7 +14,7 @@ const APP_SHELL = [
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(APP_SHELL))
+      .then((cache) => Promise.all(APP_SHELL.map((url) => cache.add(url).catch(() => null))))
       .then(() => self.skipWaiting())
   );
 });
@@ -50,12 +49,28 @@ const cacheFirst = async (request) => {
   return response;
 };
 
+const navigationFallback = async (request) => {
+  const cache = await caches.open(CACHE_NAME);
+  try {
+    const response = await fetch(request);
+    if (response.ok) cache.put("./index.html", response.clone());
+    return response;
+  } catch (error) {
+    return (await cache.match("./index.html")) || Response.error();
+  }
+};
+
 self.addEventListener("fetch", (event) => {
   const request = event.request;
   if (request.method !== "GET") return;
 
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
+
+  if (request.mode === "navigate") {
+    event.respondWith(navigationFallback(request));
+    return;
+  }
 
   if (url.pathname.endsWith("/user-data.json") || url.pathname.endsWith("/title-config.json") || url.pathname.endsWith("/data.json")) {
     event.respondWith(networkFirst(request));
