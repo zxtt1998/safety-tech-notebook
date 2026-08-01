@@ -1247,3 +1247,9 @@ fetch("data.json")
   .catch(() => {
     cards.innerHTML = '<div class="empty">data.json 读取失败</div>';
   });
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch(() => {});
+  });
+}
