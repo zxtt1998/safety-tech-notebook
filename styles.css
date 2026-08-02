@@ -1705,10 +1705,31 @@ body[data-theme="dark"] .quiz-answer,
 body[data-theme="dark"] .quiz-image,
 body[data-theme="dark"] .quiz-image-editor,
 body[data-theme="dark"] .image-preview,
+body[data-theme="dark"] .draft-panel,
+body[data-theme="dark"] .draft-text,
+body[data-theme="dark"] .draft-canvas,
 body[data-theme="dark"] .empty {
   color: var(--ink);
   background: linear-gradient(180deg, rgba(17, 30, 48, 0.96), rgba(12, 22, 36, 0.94));
   border-color: rgba(118, 139, 165, 0.25);
+}
+
+body[data-theme="dark"] .draft-btn,
+body[data-theme="dark"] .draft-actions button {
+  color: #dbeafe;
+  background: rgba(30, 41, 59, 0.88);
+  border-color: rgba(118, 139, 165, 0.24);
+}
+
+body[data-theme="dark"] .draft-btn.has-draft,
+body[data-theme="dark"] .draft-actions button:first-child {
+  color: white;
+  background: linear-gradient(135deg, #3b82f6, #14b8a6);
+}
+
+body[data-theme="dark"] .draft-actions button:nth-child(2) {
+  color: #fecdd3;
+  background: rgba(88, 28, 35, 0.76);
 }
 
 body[data-theme="dark"] .section-tabs button.active {
@@ -1774,6 +1795,135 @@ body[data-theme="dark"] .review-editor-actions button:nth-child(3) {
 
 .edit-quiz-btn {
   justify-self: end;
+}
+
+.card-tools {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: max-content;
+}
+
+.draft-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  color: var(--blue);
+  background: rgba(235, 244, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 13px;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.draft-btn svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.draft-btn.has-draft {
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #0aa99a);
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.draft-btn:active {
+  transform: scale(0.96);
+}
+
+.draft-panel {
+  margin-top: 14px;
+  padding: 14px;
+  background:
+    linear-gradient(180deg, rgba(248, 251, 255, 0.96), rgba(239, 246, 255, 0.92));
+  border: 1px solid rgba(214, 226, 242, 0.92);
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.84);
+}
+
+.draft-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.draft-head strong {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 950;
+}
+
+.draft-head span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.draft-text,
+.draft-canvas {
+  width: 100%;
+  border: 1px solid rgba(204, 217, 233, 0.92);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.draft-text {
+  min-height: 92px;
+  margin-bottom: 10px;
+  padding: 12px;
+  color: var(--ink);
+  outline: none;
+  resize: vertical;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 750;
+}
+
+.draft-canvas {
+  display: block;
+  height: 220px;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.draft-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.draft-actions button {
+  height: 36px;
+  padding: 0 12px;
+  color: var(--ink);
+  background: rgba(235, 244, 255, 0.92);
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.draft-actions button:first-child {
+  color: white;
+  background: linear-gradient(135deg, var(--blue), #0aa99a);
+}
+
+.draft-actions button:nth-child(2) {
+  color: var(--red);
+  background: rgba(254, 226, 226, 0.78);
 }
 
 #bulkDeleteModeBtn {
@@ -1885,14 +2035,112 @@ body[data-theme="dark"] .review-editor-actions button:nth-child(3) {
   box-shadow: 0 16px 42px rgba(15, 23, 42, 0.07);
 }
 
+/* HTMLRev-inspired dashboard refinement: quieter chrome, stronger reading focus */
+.app {
+  width: min(1240px, 100%);
+}
+
+.topbar {
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(10, 24, 42, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.title-input {
+  font-size: clamp(31px, 4.4vw, 52px);
+}
+
+.source,
+#titleSyncStatus,
+.honor span,
+.sync {
+  letter-spacing: 0;
+}
+
+.summary article,
+.controls,
+.section-tabs,
+.content,
+.analysis-panel,
+.quiz-pager {
+  border-radius: 20px;
+}
+
+.summary article {
+  padding: 19px 20px;
+}
+
+.summary span {
+  font-size: 31px;
+}
+
+.section-tabs button {
+  border-radius: 16px;
+}
+
+.mistake-card,
+.quiz-card {
+  border-color: rgba(214, 226, 242, 0.96);
+  border-radius: 18px;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.mistake-card:hover,
+.quiz-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.09);
+}
+
+.card-meta strong {
+  min-width: 76px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.16), transparent 42%),
+    linear-gradient(135deg, #f43f5e, #ef4444);
+}
+
+.question,
+.quiz-prompt {
+  font-size: 18px;
+  line-height: 1.68;
+}
+
+.sync-note {
+  border-radius: 15px;
+}
+
+body[data-theme="dark"] .mistake-card:hover,
+body[data-theme="dark"] .quiz-card:hover {
+  border-color: rgba(116, 167, 255, 0.34);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width: 760px) {
   .card-meta {
     grid-template-columns: auto minmax(0, 1fr);
   }
 
+  .card-tools,
   .card-meta .edit-quiz-btn {
     grid-column: 1 / -1;
     justify-self: start;
+  }
+
+  .card-tools {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .card-tools .edit-quiz-btn {
+    flex: 1;
+  }
+
+  .draft-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .draft-canvas {
+    height: 260px;
   }
 
   .bulk-select {

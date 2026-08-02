@@ -10,6 +10,7 @@ const state = {
   progress: JSON.parse(localStorage.getItem("safetyNotebookProgress") || "{}"),
   quiz: JSON.parse(localStorage.getItem("safetyNotebookQuiz") || '{"right":0,"wrong":0}'),
   customQuiz: JSON.parse(localStorage.getItem("safetyNotebookCustomQuiz") || "{}"),
+  drafts: JSON.parse(localStorage.getItem("safetyNotebookDrafts") || "{}"),
   deletedItems: JSON.parse(localStorage.getItem("safetyNotebookDeletedItems") || "{}"),
   analysisCollapsed: localStorage.getItem("safetyNotebookAnalysisCollapsed") !== "false",
   theme: localStorage.getItem("safetyNotebookTheme") || "light",
@@ -91,11 +92,13 @@ const bulkDeleteSelected = () => {
   ids.forEach((id) => {
     state.deletedItems[id] = deletedAt;
     delete state.customQuiz[id];
+    delete state.drafts[id];
   });
   state.selectedDeleteIds.clear();
   state.bulkDeleteMode = false;
   saveDeletedItems();
   saveCustomQuiz();
+  saveDrafts();
   render();
   setTitleStatus(`已删除 ${ids.length} 题，可云同步`, "ok");
 };
@@ -107,6 +110,187 @@ const createBulkSelector = (item) => {
   label.innerHTML = `<input type="checkbox" ${state.selectedDeleteIds.has(item.id) ? "checked" : ""} aria-label="选择 ${escapeHtml(item.id)}" /><span>选择</span>`;
   label.querySelector("input").addEventListener("change", (event) => toggleDeleteSelection(item.id, event.target.checked));
   return label;
+};
+
+const hasDraft = (id) => {
+  const draft = state.drafts[id];
+  return Boolean(draft?.text?.trim() || draft?.ink);
+};
+
+const saveDraft = (id, patch) => {
+  const next = {
+    ...(state.drafts[id] || {}),
+    ...patch,
+    updated: new Date().toISOString(),
+  };
+  if (!next.text?.trim() && !next.ink) delete state.drafts[id];
+  else state.drafts[id] = next;
+  saveDrafts();
+};
+
+const createCardTools = (item, editButton) => {
+  const tools = document.createElement("div");
+  tools.className = "card-tools";
+  const draftButton = document.createElement("button");
+  draftButton.className = `draft-btn${hasDraft(item.id) ? " has-draft" : ""}`;
+  draftButton.type = "button";
+  draftButton.title = "打开草稿";
+  draftButton.setAttribute("aria-label", `打开 ${item.id} 的草稿`);
+  draftButton.innerHTML = `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 20h4.6L19.2 9.4a2.3 2.3 0 0 0 0-3.2l-1.4-1.4a2.3 2.3 0 0 0-3.2 0L4 15.4V20Z"></path>
+      <path d="m13.7 5.7 4.6 4.6"></path>
+    </svg>
+  `;
+  draftButton.addEventListener("click", () => toggleDraftPanel(item, tools.closest(".mistake-card, .quiz-card")));
+  tools.append(draftButton, editButton);
+  return tools;
+};
+
+const setupDraftCanvas = (canvas, item) => {
+  const context = canvas.getContext("2d");
+  let drawing = false;
+  let hasInk = false;
+
+  const paintBackground = () => {
+    context.fillStyle = state.theme === "dark" ? "#0d1726" : "#ffffff";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+  };
+
+  const resizeCanvas = () => {
+    const draft = state.drafts[item.id] || {};
+    const ratio = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = Math.max(1, Math.round(rect.width * ratio));
+    canvas.height = Math.max(1, Math.round(rect.height * ratio));
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    paintBackground();
+    if (!draft.ink) return;
+    const image = new Image();
+    image.onload = () => {
+      context.drawImage(image, 0, 0, rect.width, rect.height);
+      hasInk = true;
+    };
+    image.src = draft.ink;
+  };
+
+  const point = (event) => {
+    const rect = canvas.getBoundingClientRect();
+    return {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    };
+  };
+
+  const saveInk = () => {
+    if (!hasInk) return;
+    saveDraft(item.id, { ink: canvas.toDataURL("image/jpeg", 0.78) });
+    const card = canvas.closest(".mistake-card, .quiz-card");
+    card?.querySelector(".draft-btn")?.classList.add("has-draft");
+    setTitleStatus("草稿已本地保存，可云同步", "ok");
+  };
+
+  canvas.addEventListener("pointerdown", (event) => {
+    event.preventDefault();
+    drawing = true;
+    hasInk = true;
+    canvas.setPointerCapture(event.pointerId);
+    const next = point(event);
+    context.beginPath();
+    context.moveTo(next.x, next.y);
+  });
+
+  canvas.addEventListener("pointermove", (event) => {
+    if (!drawing) return;
+    event.preventDefault();
+    const next = point(event);
+    context.lineTo(next.x, next.y);
+    context.strokeStyle = state.theme === "dark" ? "#dbeafe" : "#0f172a";
+    context.lineWidth = event.pointerType === "pen" ? 2.4 : 3;
+    context.lineCap = "round";
+    context.lineJoin = "round";
+    context.stroke();
+  });
+
+  ["pointerup", "pointercancel", "pointerleave"].forEach((eventName) => {
+    canvas.addEventListener(eventName, () => {
+      if (!drawing) return;
+      drawing = false;
+      saveInk();
+    });
+  });
+
+  window.setTimeout(resizeCanvas, 0);
+
+  return {
+    clear() {
+      hasInk = false;
+      paintBackground();
+    },
+  };
+};
+
+const toggleDraftPanel = (item, card) => {
+  if (!card) return;
+  const existing = card.querySelector(".draft-panel");
+  if (existing) {
+    existing.remove();
+    return;
+  }
+  card.querySelector(".quiz-editor")?.remove();
+  const draft = state.drafts[item.id] || {};
+  const panel = document.createElement("div");
+  panel.className = "draft-panel";
+  panel.innerHTML = `
+    <div class="draft-head">
+      <strong>水笔草稿</strong>
+      <span>${escapeHtml(item.id)}</span>
+    </div>
+    <textarea class="draft-text" placeholder="草稿">${escapeHtml(draft.text || "")}</textarea>
+    <canvas class="draft-canvas" aria-label="手写草稿板"></canvas>
+    <div class="draft-actions">
+      <button type="button" data-draft-save>保存草稿</button>
+      <button type="button" data-draft-clear>清空草稿</button>
+      <button type="button" data-draft-close>收起</button>
+    </div>
+  `;
+  const anchor = card.querySelector(".quiz-answer, .quiz-prompt, .question");
+  anchor.after(panel);
+
+  const textField = panel.querySelector(".draft-text");
+  const canvasApi = setupDraftCanvas(panel.querySelector(".draft-canvas"), item);
+  let textTimer = 0;
+
+  const persistText = () => {
+    saveDraft(item.id, { text: textField.value });
+    card.querySelector(".draft-btn")?.classList.toggle("has-draft", hasDraft(item.id));
+  };
+
+  textField.addEventListener("input", () => {
+    window.clearTimeout(textTimer);
+    textTimer = window.setTimeout(persistText, 450);
+  });
+
+  panel.querySelector("[data-draft-save]").addEventListener("click", () => {
+    persistText();
+    setTitleStatus("草稿已本地保存，可云同步", "ok");
+  });
+
+  panel.querySelector("[data-draft-clear]").addEventListener("click", () => {
+    const ok = window.confirm("确定清空这道题的草稿吗？");
+    if (!ok) return;
+    delete state.drafts[item.id];
+    saveDrafts();
+    textField.value = "";
+    canvasApi.clear();
+    card.querySelector(".draft-btn")?.classList.remove("has-draft");
+    setTitleStatus("草稿已清空，可云同步", "ok");
+  });
+
+  panel.querySelector("[data-draft-close]").addEventListener("click", () => {
+    persistText();
+    panel.remove();
+  });
 };
 
 state.quiz.sectionStats ||= {};
@@ -148,6 +332,10 @@ const saveCustomQuiz = () => {
   localStorage.setItem("safetyNotebookCustomQuiz", JSON.stringify(state.customQuiz));
 };
 
+const saveDrafts = () => {
+  localStorage.setItem("safetyNotebookDrafts", JSON.stringify(state.drafts));
+};
+
 const normalizeImages = (images) => {
   if (!images) return [];
   return Array.isArray(images) ? images.filter(Boolean) : [images];
@@ -161,6 +349,7 @@ const saveAllLocal = () => {
   saveProgress();
   saveQuiz();
   saveCustomQuiz();
+  saveDrafts();
   saveDeletedItems();
   localStorage.setItem("safetyNotebookTitle", state.appTitle);
 };
@@ -503,7 +692,7 @@ const renderCards = () => {
     editBtn.type = "button";
     editBtn.textContent = state.customQuiz[item.id] ? "已自定义" : "编辑题目";
     editBtn.addEventListener("click", () => openReviewEditor(item, node));
-    node.querySelector(".card-meta").appendChild(editBtn);
+    node.querySelector(".card-meta").appendChild(createCardTools(item, editBtn));
     node.querySelector(".review-btn").addEventListener("click", () => {
       progress.review += 1;
       saveProgress();
@@ -551,7 +740,7 @@ const renderQuizCards = (items) => {
     editBtn.type = "button";
     editBtn.textContent = state.customQuiz[item.id] ? "已自定义" : "编辑命题";
     editBtn.addEventListener("click", () => openQuizEditor(item, node, quiz));
-    node.querySelector(".card-meta").appendChild(editBtn);
+    node.querySelector(".card-meta").appendChild(createCardTools(item, editBtn));
     node.querySelector(".reveal-btn").addEventListener("click", () => {
       node.querySelector(".quiz-answer").hidden = false;
       node.querySelector(".quiz-actions").hidden = false;
@@ -833,8 +1022,10 @@ const deleteItemFromEditor = (item) => {
   if (!ok) return;
   state.deletedItems[item.id] = new Date().toISOString();
   delete state.customQuiz[item.id];
+  delete state.drafts[item.id];
   saveDeletedItems();
   saveCustomQuiz();
+  saveDrafts();
   state.quizPage = Math.max(0, state.quizPage);
   render();
   setTitleStatus("题目已删除，可云同步", "ok");
@@ -1118,6 +1309,7 @@ const cloudPayload = () => ({
   progress: state.progress,
   quiz: state.quiz,
   customQuiz: state.customQuiz,
+  drafts: state.drafts,
   deletedItems: state.deletedItems,
   updated: new Date().toISOString(),
 });
@@ -1174,6 +1366,18 @@ const applyCloudPayload = (payload) => {
       mergedDeleted[id] = value || new Date().toISOString();
     }
   });
+  const cloudDrafts = payload.drafts || {};
+  const mergedDrafts = { ...state.drafts };
+  Object.entries(cloudDrafts).forEach(([id, value]) => {
+    const localUpdated = Date.parse(mergedDrafts[id]?.updated || "");
+    const cloudUpdated = Date.parse(value?.updated || "");
+    if (!mergedDrafts[id] || cloudUpdated >= localUpdated || Number.isNaN(localUpdated)) {
+      mergedDrafts[id] = value;
+    }
+  });
+  Object.keys(mergedDeleted).forEach((id) => {
+    delete mergedDrafts[id];
+  });
   state.progress = mergedProgress;
   state.quiz = {
     right: Math.max(state.quiz.right || 0, payload.quiz?.right || 0),
@@ -1181,6 +1385,7 @@ const applyCloudPayload = (payload) => {
     sectionStats: mergedStats,
   };
   state.customQuiz = mergedCustom;
+  state.drafts = mergedDrafts;
   state.deletedItems = mergedDeleted;
   state.quiz.sectionStats ||= {};
   saveAllLocal();
