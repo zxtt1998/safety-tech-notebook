@@ -1,8 +1,8 @@
-const CACHE_NAME = "safety-tech-notebook-pwa-20260802-cockpit-redesign";
+const CACHE_NAME = "safety-tech-notebook-pwa-20260802-premium-study";
 const APP_SHELL = [
   "./index.html",
-  "./styles.css?v=20260802-cockpit-redesign",
-  "./app.js?v=20260802-cockpit-redesign",
+  "./styles.css?v=20260802-premium-study",
+  "./app.js?v=20260802-premium-study",
   "./data.json",
   "./manifest.webmanifest",
   "./app-icon.svg",
