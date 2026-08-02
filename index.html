@@ -11,10 +11,29 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css?v=20260802-draft-ui" />
+    <link rel="stylesheet" href="styles.css?v=20260802-cockpit-redesign" />
   </head>
   <body>
     <div class="app">
+      <aside class="app-sidebar" aria-label="功能导航">
+        <div class="brand-mark">
+          <span>安</span>
+          <strong>安全工程学习</strong>
+        </div>
+        <nav class="side-nav">
+          <a class="active" href="#cards">错题本</a>
+          <a href="#sectionTabs">章节练习</a>
+          <a href="#analysisPanel">统计分析</a>
+          <a href="#cards">学习笔记</a>
+          <a href="#syncDataBtn">云端备份</a>
+        </nav>
+        <div class="study-target">
+          <strong>今日学习进度</strong>
+          <span>60 分钟</span>
+          <i></i>
+          <small>目标 120 分钟</small>
+        </div>
+      </aside>
       <header class="topbar">
         <div class="title-editor">
           <p class="source">Apple Notes · 26技术</p>
@@ -171,6 +190,6 @@
       </article>
     </template>
 
-    <script src="app.js?v=20260802-draft-ui"></script>
+    <script src="app.js?v=20260802-cockpit-redesign"></script>
   </body>
 </html>

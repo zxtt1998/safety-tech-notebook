@@ -141,6 +141,7 @@ const createCardTools = (item, editButton) => {
       <path d="M4 20h4.6L19.2 9.4a2.3 2.3 0 0 0 0-3.2l-1.4-1.4a2.3 2.3 0 0 0-3.2 0L4 15.4V20Z"></path>
       <path d="m13.7 5.7 4.6 4.6"></path>
     </svg>
+    <span>草稿</span>
   `;
   draftButton.addEventListener("click", () => toggleDraftPanel(item, tools.closest(".mistake-card, .quiz-card")));
   tools.append(draftButton, editButton);
@@ -243,7 +244,7 @@ const toggleDraftPanel = (item, card) => {
   panel.className = "draft-panel";
   panel.innerHTML = `
     <div class="draft-head">
-      <strong>水笔草稿</strong>
+      <strong>草稿</strong>
       <span>${escapeHtml(item.id)}</span>
     </div>
     <textarea class="draft-text" placeholder="草稿">${escapeHtml(draft.text || "")}</textarea>
