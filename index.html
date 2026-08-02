@@ -11,7 +11,7 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css?v=20260802-studio-fidelity-2" />
+    <link rel="stylesheet" href="styles.css?v=20260802-study-time-polish-2" />
   </head>
   <body>
     <div class="app">
@@ -32,9 +32,17 @@
         </nav>
         <div class="study-target">
           <strong>今日学习进度</strong>
-          <span>60 分钟</span>
+          <span id="todayStudyTime">0 分钟</span>
           <i></i>
-          <small>目标 120 分钟</small>
+          <label class="study-goal-control">
+            <small>目标</small>
+            <input id="studyGoalInput" type="number" min="10" max="1440" step="10" value="120" aria-label="每日学习目标分钟" />
+            <small>分钟</small>
+          </label>
+          <div class="study-time-stats" aria-label="学习时长统计">
+            <b>本周 <span id="weekStudyTime">0 分钟</span></b>
+            <b>本月 <span id="monthStudyTime">0 分钟</span></b>
+          </div>
         </div>
       </aside>
       <header class="topbar">
@@ -193,6 +201,6 @@
       </article>
     </template>
 
-    <script src="app.js?v=20260802-studio-fidelity-2"></script>
+    <script src="app.js?v=20260802-study-time-polish-2"></script>
   </body>
 </html>

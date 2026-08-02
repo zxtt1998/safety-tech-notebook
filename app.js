@@ -12,11 +12,13 @@ const state = {
   customQuiz: JSON.parse(localStorage.getItem("safetyNotebookCustomQuiz") || "{}"),
   drafts: JSON.parse(localStorage.getItem("safetyNotebookDrafts") || "{}"),
   deletedItems: JSON.parse(localStorage.getItem("safetyNotebookDeletedItems") || "{}"),
+  study: JSON.parse(localStorage.getItem("safetyNotebookStudyTime") || '{"targetMinutes":120,"days":{}}'),
   analysisCollapsed: localStorage.getItem("safetyNotebookAnalysisCollapsed") !== "false",
   theme: localStorage.getItem("safetyNotebookTheme") || "light",
   bulkDeleteMode: false,
   selectedDeleteIds: new Set(),
   referenceTexts: [],
+  studyTickStartedAt: null,
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -33,6 +35,7 @@ const bulkDeleteCount = $("#bulkDeleteCount");
 const analysisPanel = $("#analysisPanel");
 const analysisBody = $("#analysisBody");
 const analysisToggle = $("#analysisToggle");
+const studyGoalInput = $("#studyGoalInput");
 
 const applyTheme = () => {
   document.body.dataset.theme = state.theme;
@@ -321,6 +324,73 @@ const FORGETTING_POINTS = [
 const isHighFrequencyMode = () => state.mode === "liyutian" || state.mode === "liyutianReview";
 const isTestMode = () => state.mode === "quiz" || state.mode === "liyutian";
 
+const localDateKey = (date = new Date()) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
+
+const weekStartKey = (date = new Date()) => {
+  const start = new Date(date);
+  const day = (start.getDay() + 6) % 7;
+  start.setDate(start.getDate() - day);
+  start.setHours(0, 0, 0, 0);
+  return localDateKey(start);
+};
+
+const monthStartKey = (date = new Date()) => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-01`;
+
+const minutesLabel = (ms = 0) => `${Math.floor(ms / 60000)} 分钟`;
+
+const saveStudyTime = () => {
+  state.study.targetMinutes = Math.max(10, Number(state.study.targetMinutes) || 120);
+  state.study.days ||= {};
+  localStorage.setItem("safetyNotebookStudyTime", JSON.stringify(state.study));
+};
+
+const sumStudyFrom = (fromKey) =>
+  Object.entries(state.study.days || {})
+    .filter(([key]) => key >= fromKey)
+    .reduce((sum, [, ms]) => sum + (Number(ms) || 0), 0);
+
+const commitStudyTick = () => {
+  if (!state.studyTickStartedAt) return;
+  const now = Date.now();
+  const elapsed = Math.max(0, now - state.studyTickStartedAt);
+  state.studyTickStartedAt = now;
+  if (!elapsed) return;
+  const today = localDateKey();
+  state.study.days ||= {};
+  state.study.days[today] = (Number(state.study.days[today]) || 0) + elapsed;
+  saveStudyTime();
+};
+
+const renderStudyTime = () => {
+  const today = localDateKey();
+  const todayMs = Number(state.study.days?.[today]) || 0;
+  const targetMs = Math.max(10, Number(state.study.targetMinutes) || 120) * 60000;
+  $("#todayStudyTime").textContent = minutesLabel(todayMs);
+  $("#weekStudyTime").textContent = minutesLabel(sumStudyFrom(weekStartKey()));
+  $("#monthStudyTime").textContent = minutesLabel(sumStudyFrom(monthStartKey()));
+  if (studyGoalInput && document.activeElement !== studyGoalInput) {
+    studyGoalInput.value = Math.max(10, Number(state.study.targetMinutes) || 120);
+  }
+  document.documentElement.style.setProperty("--study-progress", `${Math.min(100, Math.round((todayMs / targetMs) * 100))}%`);
+};
+
+const startStudyClock = () => {
+  if (document.visibilityState === "visible" && !state.studyTickStartedAt) {
+    state.studyTickStartedAt = Date.now();
+  }
+};
+
+const pauseStudyClock = () => {
+  commitStudyTick();
+  state.studyTickStartedAt = null;
+  renderStudyTime();
+};
+
 const saveProgress = () => {
   localStorage.setItem("safetyNotebookProgress", JSON.stringify(state.progress));
 };
@@ -352,6 +422,7 @@ const saveAllLocal = () => {
   saveCustomQuiz();
   saveDrafts();
   saveDeletedItems();
+  saveStudyTime();
   localStorage.setItem("safetyNotebookTitle", state.appTitle);
 };
 
@@ -445,6 +516,7 @@ const buildReferenceTexts = (extra = []) => {
 };
 
 const renderSummary = () => {
+  commitStudyTick();
   const items = activeItems();
   const sections = activeSections();
   const mastered = items.filter((item) => itemProgress(item.id).mastered).length;
@@ -454,6 +526,7 @@ const renderSummary = () => {
   $("#masteredCount").textContent = mastered;
   $("#quizScore").textContent = attempts ? `${Math.round((state.quiz.right / attempts) * 100)}%` : "0%";
   $("#updatedAt").textContent = `已同步 ${items.length} 条`;
+  renderStudyTime();
 };
 
 const quizInsight = () =>
@@ -1312,6 +1385,7 @@ const cloudPayload = () => ({
   customQuiz: state.customQuiz,
   drafts: state.drafts,
   deletedItems: state.deletedItems,
+  study: state.study,
   updated: new Date().toISOString(),
 });
 
@@ -1388,6 +1462,18 @@ const applyCloudPayload = (payload) => {
   state.customQuiz = mergedCustom;
   state.drafts = mergedDrafts;
   state.deletedItems = mergedDeleted;
+  if (payload.study && typeof payload.study === "object") {
+    const cloudStudy = payload.study;
+    const mergedDays = { ...(state.study.days || {}) };
+    Object.entries(cloudStudy.days || {}).forEach(([key, value]) => {
+      mergedDays[key] = Math.max(Number(mergedDays[key]) || 0, Number(value) || 0);
+    });
+    state.study = {
+      targetMinutes: Number(state.study.targetMinutes || cloudStudy.targetMinutes || 120),
+      days: mergedDays,
+    };
+    if (cloudStudy.targetMinutes && !state.study.targetMinutes) state.study.targetMinutes = Number(cloudStudy.targetMinutes);
+  }
   state.quiz.sectionStats ||= {};
   saveAllLocal();
 };
@@ -1527,6 +1613,31 @@ $("#syncDataBtn").addEventListener("click", syncAllToGithub);
 $("#loadCloudBtn").addEventListener("click", () => loadCloudData());
 
 themeToggleBtn.addEventListener("click", () => setTheme(state.theme === "dark" ? "light" : "dark"));
+
+const saveStudyGoalFromInput = () => {
+  state.study.targetMinutes = Math.max(10, Math.min(1440, Number(studyGoalInput.value) || 120));
+  saveStudyTime();
+  renderStudyTime();
+  setTitleStatus("学习目标已保存，可云同步", "ok");
+};
+
+studyGoalInput?.addEventListener("input", saveStudyGoalFromInput);
+studyGoalInput?.addEventListener("change", saveStudyGoalFromInput);
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") startStudyClock();
+  else pauseStudyClock();
+});
+
+window.addEventListener("pagehide", pauseStudyClock);
+
+window.setInterval(() => {
+  if (document.visibilityState !== "visible") return;
+  commitStudyTick();
+  renderStudyTime();
+}, 15000);
+
+startStudyClock();
 
 $("#selectPageBtn").addEventListener("click", () => selectItemsForDeletion(currentPageItems()));
 $("#selectAllFilteredBtn").addEventListener("click", () => selectItemsForDeletion(filteredItems()));
