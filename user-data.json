@@ -5556,17 +5556,23 @@
       "testWrong": 0
     },
     "N101": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:51:19.916Z",
+      "lastTestedAt": "2026-08-03T10:31:19.916Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N102": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:52:03.638Z",
+      "lastTestedAt": "2026-08-03T10:32:03.638Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N103": {
@@ -5584,24 +5590,33 @@
       "testWrong": 0
     },
     "N105": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:53:36.330Z",
+      "lastTestedAt": "2026-08-03T10:33:36.330Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N106": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:53:41.669Z",
+      "lastTestedAt": "2026-08-03T10:33:41.669Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N107": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:53:54.203Z",
+      "lastTestedAt": "2026-08-03T10:33:54.203Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N108": {
@@ -5619,10 +5634,13 @@
       "testWrong": 0
     },
     "N110": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:56:47.833Z",
+      "lastTestedAt": "2026-08-03T10:36:47.833Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N111": {
@@ -5732,7 +5750,7 @@
     }
   },
   "quiz": {
-    "right": 55,
+    "right": 61,
     "wrong": 10,
     "sectionStats": {
       "机械基础": {
@@ -5782,6 +5800,10 @@
       "特种设备安全技术": {
         "right": 4,
         "wrong": 1
+      },
+      "气瓶": {
+        "right": 6,
+        "wrong": 0
       }
     }
   },
@@ -5916,8 +5938,8 @@
   "study": {
     "targetMinutes": 120,
     "days": {
-      "2026-08-03": 603313
+      "2026-08-03": 783664
     }
   },
-  "updated": "2026-08-03T10:28:42.853Z"
+  "updated": "2026-08-03T10:36:52.742Z"
 }
