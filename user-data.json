@@ -266,11 +266,11 @@
       "review": 3,
       "mastered": false,
       "memoryStage": 0,
-      "testAttempts": 1,
-      "testWrong": 0,
+      "nextReviewAt": "2026-08-03T00:50:36.932Z",
       "lastTestedAt": "2026-08-03T00:30:36.932Z",
       "lastResult": "right",
-      "nextReviewAt": "2026-08-03T00:50:36.932Z"
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "016": {
       "review": 0,
@@ -384,31 +384,31 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 0,
-      "testAttempts": 1,
-      "testWrong": 0,
+      "nextReviewAt": "2026-08-03T00:50:53.875Z",
       "lastTestedAt": "2026-08-03T00:30:53.875Z",
       "lastResult": "right",
-      "nextReviewAt": "2026-08-03T00:50:53.875Z"
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "032": {
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "testAttempts": 1,
-      "testWrong": 0,
+      "nextReviewAt": "2026-08-03T00:51:17.727Z",
       "lastTestedAt": "2026-08-03T00:31:17.727Z",
       "lastResult": "right",
-      "nextReviewAt": "2026-08-03T00:51:17.727Z"
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "033": {
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "testAttempts": 1,
-      "testWrong": 0,
+      "nextReviewAt": "2026-08-03T00:51:22.131Z",
       "lastTestedAt": "2026-08-03T00:31:22.131Z",
       "lastResult": "right",
-      "nextReviewAt": "2026-08-03T00:51:22.131Z"
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "034": {
       "review": 0,
@@ -462,21 +462,21 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 1,
-      "testWrong": 1,
+      "nextReviewAt": "2026-08-03T00:32:12.613Z",
       "lastTestedAt": "2026-08-03T00:32:12.613Z",
       "lastResult": "wrong",
-      "nextReviewAt": "2026-08-03T00:32:12.613Z"
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "041": {
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "testAttempts": 1,
-      "testWrong": 0,
+      "nextReviewAt": "2026-08-03T00:52:49.093Z",
       "lastTestedAt": "2026-08-03T00:32:49.093Z",
       "lastResult": "right",
-      "nextReviewAt": "2026-08-03T00:52:49.093Z"
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "042": {
       "review": 0,
@@ -503,11 +503,11 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 1,
-      "testWrong": 1,
+      "nextReviewAt": "2026-08-03T00:33:29.962Z",
       "lastTestedAt": "2026-08-03T00:33:29.962Z",
       "lastResult": "wrong",
-      "nextReviewAt": "2026-08-03T00:33:29.962Z"
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "046": {
       "review": 0,
@@ -527,11 +527,11 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 1,
-      "testWrong": 1,
+      "nextReviewAt": "2026-08-03T00:34:43.524Z",
       "lastTestedAt": "2026-08-03T00:34:43.524Z",
       "lastResult": "wrong",
-      "nextReviewAt": "2026-08-03T00:34:43.524Z"
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "049": {
       "review": 1,
@@ -547,11 +547,11 @@
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "testAttempts": 1,
-      "testWrong": 0,
+      "nextReviewAt": "2026-08-03T00:55:31.634Z",
       "lastTestedAt": "2026-08-03T00:35:31.634Z",
       "lastResult": "right",
-      "nextReviewAt": "2026-08-03T00:55:31.634Z"
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "051": {
       "review": 0,
@@ -5453,14 +5453,20 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-03T10:25:22.041Z",
+      "lastTestedAt": "2026-08-03T10:25:22.041Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "N089": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:45:24.559Z",
+      "lastTestedAt": "2026-08-03T10:25:24.559Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N090": {
@@ -5471,10 +5477,13 @@
       "testWrong": 0
     },
     "N091": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:45:38.138Z",
+      "lastTestedAt": "2026-08-03T10:25:38.138Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N092": {
@@ -5507,128 +5516,224 @@
     },
     "N096": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N097": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N098": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:48:39.506Z",
+      "lastTestedAt": "2026-08-03T10:28:39.506Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "N099": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N100": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:48:35.603Z",
+      "lastTestedAt": "2026-08-03T10:28:35.603Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "N101": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N102": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N103": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N104": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N105": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N106": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N107": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N108": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N109": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N110": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N111": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N112": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N113": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N114": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N115": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N116": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N117": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N118": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N119": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N120": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N121": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N122": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N123": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N124": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "N125": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     }
   },
   "quiz": {
-    "right": 51,
-    "wrong": 9,
+    "right": 55,
+    "wrong": 10,
     "sectionStats": {
       "机械基础": {
         "right": 21,
@@ -5672,6 +5777,10 @@
       },
       "锻造作业": {
         "right": 0,
+        "wrong": 1
+      },
+      "特种设备安全技术": {
+        "right": 4,
         "wrong": 1
       }
     }
@@ -5758,6 +5867,11 @@
       "prompt": "填空：木工平刨床刀体上的装刀梯形槽应____，靠近圆心",
       "answer": "上底在外，下底",
       "updated": "2026-08-03T00:30:24.468Z"
+    },
+    "N099": {
+      "prompt": "填空：爆破片的泄放面积__安全阀的进口面积。",
+      "answer": "不小于",
+      "updated": "2026-08-03T10:27:46.070Z"
     }
   },
   "drafts": {},
@@ -5802,8 +5916,8 @@
   "study": {
     "targetMinutes": 120,
     "days": {
-      "2026-08-03": 328940
+      "2026-08-03": 603313
     }
   },
-  "updated": "2026-08-03T00:35:36.832Z"
+  "updated": "2026-08-03T10:28:42.853Z"
 }
