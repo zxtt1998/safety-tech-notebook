@@ -1,5 +1,5 @@
 {
-  "title": "安全技术错题本",
+  "title": "安全错题本",
   "progress": {
     "100": {
       "review": 0,
@@ -144,13 +144,13 @@
       "testWrong": 0
     },
     "001": {
-      "review": 3,
+      "review": 5,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-07-31T15:39:13.136Z",
-      "lastTestedAt": "2026-07-31T15:19:13.136Z",
+      "memoryStage": 2,
+      "nextReviewAt": "2026-08-05T19:37:29.290Z",
+      "lastTestedAt": "2026-08-05T10:37:29.290Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 3,
       "testWrong": 0
     },
     "002": {
@@ -164,13 +164,13 @@
       "testWrong": 0
     },
     "003": {
-      "review": 7,
+      "review": 8,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-07-31T15:39:38.742Z",
-      "lastTestedAt": "2026-07-31T15:19:38.742Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-05T11:37:39.657Z",
+      "lastTestedAt": "2026-08-05T10:37:39.657Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "004": {
@@ -263,10 +263,13 @@
       "testWrong": 0
     },
     "015": {
-      "review": 2,
+      "review": 3,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T00:50:36.932Z",
+      "lastTestedAt": "2026-08-03T00:30:36.932Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "016": {
@@ -378,24 +381,33 @@
       "testWrong": 0
     },
     "031": {
-      "review": 0,
+      "review": 2,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T00:50:53.875Z",
+      "lastTestedAt": "2026-08-03T00:30:53.875Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "032": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T00:51:17.727Z",
+      "lastTestedAt": "2026-08-03T00:31:17.727Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "033": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T00:51:22.131Z",
+      "lastTestedAt": "2026-08-03T00:31:22.131Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "034": {
@@ -450,14 +462,20 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-03T00:32:12.613Z",
+      "lastTestedAt": "2026-08-03T00:32:12.613Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "041": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T00:52:49.093Z",
+      "lastTestedAt": "2026-08-03T00:32:49.093Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "042": {
@@ -485,8 +503,11 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-03T00:33:29.962Z",
+      "lastTestedAt": "2026-08-03T00:33:29.962Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "046": {
       "review": 0,
@@ -506,8 +527,11 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-03T00:34:43.524Z",
+      "lastTestedAt": "2026-08-03T00:34:43.524Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "049": {
       "review": 1,
@@ -520,10 +544,13 @@
       "testWrong": 0
     },
     "050": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T00:55:31.634Z",
+      "lastTestedAt": "2026-08-03T00:35:31.634Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "051": {
@@ -5426,14 +5453,20 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-03T10:25:22.041Z",
+      "lastTestedAt": "2026-08-03T10:25:22.041Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "N089": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:45:24.559Z",
+      "lastTestedAt": "2026-08-03T10:25:24.559Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N090": {
@@ -5444,10 +5477,13 @@
       "testWrong": 0
     },
     "N091": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:45:38.138Z",
+      "lastTestedAt": "2026-08-03T10:25:38.138Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N092": {
@@ -5477,14 +5513,266 @@
       "memoryStage": -1,
       "testAttempts": 0,
       "testWrong": 0
+    },
+    "N096": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N097": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N098": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:48:39.506Z",
+      "lastTestedAt": "2026-08-03T10:28:39.506Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N099": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N100": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:48:35.603Z",
+      "lastTestedAt": "2026-08-03T10:28:35.603Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N101": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:51:19.916Z",
+      "lastTestedAt": "2026-08-03T10:31:19.916Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N102": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:52:03.638Z",
+      "lastTestedAt": "2026-08-03T10:32:03.638Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N103": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N104": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N105": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:53:36.330Z",
+      "lastTestedAt": "2026-08-03T10:33:36.330Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N106": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:53:41.669Z",
+      "lastTestedAt": "2026-08-03T10:33:41.669Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N107": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:53:54.203Z",
+      "lastTestedAt": "2026-08-03T10:33:54.203Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N108": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N109": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N110": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-03T10:56:47.833Z",
+      "lastTestedAt": "2026-08-03T10:36:47.833Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N111": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N112": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N113": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N114": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N115": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N116": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N117": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-05T10:59:05.523Z",
+      "lastTestedAt": "2026-08-05T10:39:05.523Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N118": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-05T10:59:13.205Z",
+      "lastTestedAt": "2026-08-05T10:39:13.205Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N119": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "nextReviewAt": "2026-08-05T10:39:17.540Z",
+      "lastTestedAt": "2026-08-05T10:39:17.540Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
+    },
+    "N120": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-05T10:59:28.453Z",
+      "lastTestedAt": "2026-08-05T10:39:28.453Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N121": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "nextReviewAt": "2026-08-05T10:39:46.468Z",
+      "lastTestedAt": "2026-08-05T10:39:46.468Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
+    },
+    "N122": {
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-05T11:01:54.637Z",
+      "lastTestedAt": "2026-08-05T10:41:54.637Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
+    },
+    "N123": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N124": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N125": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     }
   },
   "quiz": {
-    "right": 44,
-    "wrong": 6,
+    "right": 67,
+    "wrong": 12,
     "sectionStats": {
       "机械基础": {
-        "right": 20,
+        "right": 23,
         "wrong": 0
       },
       "金属切削机床": {
@@ -5492,7 +5780,7 @@
         "wrong": 1
       },
       "木工平刨床": {
-        "right": 3,
+        "right": 5,
         "wrong": 2
       },
       "机械高频": {
@@ -5500,12 +5788,12 @@
         "wrong": 1
       },
       "铸造": {
-        "right": 2,
-        "wrong": 0
+        "right": 3,
+        "wrong": 1
       },
       "人机工程学": {
-        "right": 1,
-        "wrong": 0
+        "right": 2,
+        "wrong": 1
       },
       "砂轮机": {
         "right": 2,
@@ -5518,6 +5806,26 @@
       "电气安全技术": {
         "right": 3,
         "wrong": 0
+      },
+      "木工圆锯机": {
+        "right": 2,
+        "wrong": 0
+      },
+      "锻造作业": {
+        "right": 0,
+        "wrong": 1
+      },
+      "特种设备安全技术": {
+        "right": 4,
+        "wrong": 1
+      },
+      "气瓶": {
+        "right": 6,
+        "wrong": 0
+      },
+      "厂内专用机动车辆": {
+        "right": 4,
+        "wrong": 2
       }
     }
   },
@@ -5598,8 +5906,34 @@
     "HF04-01": {
       "text": "有惯性冲击的机床往复运动部件应设置可靠的限位装置，必要时可采取可靠的缓冲措施",
       "updated": "2026-08-01T16:00:19.299Z"
+    },
+    "015": {
+      "prompt": "填空：木工平刨床刀体上的装刀梯形槽应____，靠近圆心",
+      "answer": "上底在外，下底",
+      "updated": "2026-08-03T00:30:24.468Z"
+    },
+    "N099": {
+      "prompt": "填空：爆破片的泄放面积__安全阀的进口面积。",
+      "answer": "不小于",
+      "updated": "2026-08-03T10:27:46.070Z"
+    },
+    "N116": {
+      "prompt": "填空：内燃机____，但要有良好的通风换气措施。",
+      "answer": "为动力的叉车可以进入一般的仓库作业",
+      "updated": "2026-08-05T10:38:44.099Z"
+    },
+    "N122": {
+      "prompt": "填空：静压传动叉车相当于_，只有____。",
+      "answer": "自动挡，只有处于制动状态时才能启动发动机",
+      "updated": "2026-08-05T10:40:22.470Z"
+    },
+    "N123": {
+      "prompt": "填空：机械和液力传动叉车相当于_，在传动____。",
+      "answer": "手动挡，在传动装置结合状态能防止发动机启动",
+      "updated": "2026-08-05T10:40:37.668Z"
     }
   },
+  "drafts": {},
   "deletedItems": {
     "HF02-01": "2026-08-01T01:38:19.264Z",
     "HF02-05": "2026-08-01T01:38:29.484Z",
@@ -5638,5 +5972,12 @@
     "HF09-06": "2026-08-02T00:52:36.309Z",
     "HF09-07": "2026-08-02T00:52:36.309Z"
   },
-  "updated": "2026-08-02T00:52:39.290Z"
+  "study": {
+    "targetMinutes": 120,
+    "days": {
+      "2026-08-03": 791939,
+      "2026-08-05": 342695
+    }
+  },
+  "updated": "2026-08-05T10:41:59.023Z"
 }
