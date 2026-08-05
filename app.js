@@ -322,7 +322,8 @@ const FORGETTING_POINTS = [
 ];
 
 const isHighFrequencyMode = () => state.mode === "liyutian" || state.mode === "liyutianReview";
-const isTestMode = () => state.mode === "quiz" || state.mode === "liyutian";
+const isOtherSafetyMode = () => state.mode === "otherSafety" || state.mode === "otherSafetyReview";
+const isTestMode = () => state.mode === "quiz" || state.mode === "liyutian" || state.mode === "otherSafety";
 
 const localDateKey = (date = new Date()) => {
   const year = date.getFullYear();
@@ -484,13 +485,20 @@ const memoryQueue = () =>
 
 const isDeleted = (id) => Boolean(state.deletedItems[id]);
 
-const activeItems = () => (isHighFrequencyMode() ? state.data.highFrequencyItems || [] : state.data.items)
-  .filter((item) => !isDeleted(item.id));
+const activeItems = () => {
+  if (isHighFrequencyMode()) return (state.data.highFrequencyItems || []).filter((item) => !isDeleted(item.id));
+  if (isOtherSafetyMode()) return (state.data.otherSafetyItems || []).filter((item) => !isDeleted(item.id));
+  return state.data.items.filter((item) => !isDeleted(item.id));
+};
 
 const displayText = (item) => state.customQuiz[item.id]?.text || item.text;
 
 const activeSections = () => {
-  const source = isHighFrequencyMode() ? state.data.highFrequencySections || [] : state.data.sections;
+  const source = isHighFrequencyMode()
+    ? state.data.highFrequencySections || []
+    : isOtherSafetyMode()
+      ? state.data.otherSafetySections || []
+      : state.data.sections;
   const visibleItems = activeItems();
   return source
     .map((section) => ({
@@ -511,7 +519,11 @@ const filteredItems = () => {
 };
 
 const buildReferenceTexts = (extra = []) => {
-  const base = [...state.data.items, ...(state.data.highFrequencyItems || [])].map((item) => displayText(item));
+  const base = [
+    ...state.data.items,
+    ...(state.data.highFrequencyItems || []),
+    ...(state.data.otherSafetyItems || []),
+  ].map((item) => displayText(item));
   state.referenceTexts = [...new Set([...base, ...extra].filter(Boolean))];
 };
 
@@ -679,7 +691,7 @@ const renderTabs = () => {
   const all = document.createElement("button");
   all.type = "button";
   all.className = state.section === "all" ? "active" : "";
-  all.innerHTML = `<strong>${isHighFrequencyMode() ? "全部高频" : "全部错题"}</strong><span>${items.length} 条</span>`;
+  all.innerHTML = `<strong>${isHighFrequencyMode() ? "全部高频" : isOtherSafetyMode() ? "全部其他安全" : "全部错题"}</strong><span>${items.length} 条</span>`;
   all.addEventListener("click", () => {
     state.section = "all";
     state.quizPage = 0;
@@ -706,10 +718,10 @@ const renderCards = () => {
   const items = filteredItems();
   updateBulkDeleteBar();
   const section = activeSections().find((entry) => entry.section === state.section);
-  $("#domainName").textContent = section?.domain || (isHighFrequencyMode() ? "李天宇高频" : "全部章节");
+  $("#domainName").textContent = section?.domain || (isHighFrequencyMode() ? "李天宇高频" : isOtherSafetyMode() ? "其他安全" : "全部章节");
   $("#sectionName").textContent = isTestMode()
-    ? (state.mode === "liyutian" ? "李天宇高频模块测试" : "测试模式")
-    : (state.mode === "liyutianReview" ? "李天宇高频背诵" : section?.section || "错题总览");
+    ? (state.mode === "liyutian" ? "李天宇高频模块测试" : state.mode === "otherSafety" ? "其他安全测试" : "测试模式")
+    : (state.mode === "liyutianReview" ? "李天宇高频背诵" : state.mode === "otherSafetyReview" ? "其他安全背诵" : section?.section || "错题总览");
   $("#shuffleBtn").textContent = isTestMode() ? "下一页" : "随机背诵";
   $("#shuffleBtn").disabled = isTestMode() && state.quizPage >= Math.ceil(items.length / state.pageSize) - 1;
   const sectionHead = document.querySelector(".section-head");

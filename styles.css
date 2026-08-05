@@ -1617,7 +1617,9 @@ main {
 
 
 .mode-switch button[data-mode="liyutianReview"],
-.mode-switch button[data-mode="liyutian"] {
+.mode-switch button[data-mode="liyutian"],
+.mode-switch button[data-mode="otherSafetyReview"],
+.mode-switch button[data-mode="otherSafety"] {
   letter-spacing: 0;
 }
 
