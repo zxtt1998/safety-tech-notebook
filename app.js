@@ -18,6 +18,7 @@ const state = {
   bulkDeleteMode: false,
   selectedDeleteIds: new Set(),
   referenceTexts: [],
+  referenceEntries: [],
   studyTickStartedAt: null,
 };
 
@@ -519,11 +520,23 @@ const filteredItems = () => {
 };
 
 const buildReferenceTexts = (extra = []) => {
-  const base = [
+  const items = [
     ...state.data.items,
     ...(state.data.highFrequencyItems || []),
     ...(state.data.otherSafetyItems || []),
-  ].map((item) => displayText(item));
+  ];
+  state.referenceEntries = items
+    .map((item) => {
+      const custom = state.customQuiz[item.id];
+      return {
+        item,
+        text: displayText(item),
+        prompt: custom?.prompt || item.quiz?.prompt || "",
+        answer: custom?.answer || item.quiz?.answer || "",
+      };
+    })
+    .filter((entry) => entry.text || entry.prompt || entry.answer);
+  const base = state.referenceEntries.map((entry) => entry.text);
   state.referenceTexts = [...new Set([...base, ...extra].filter(Boolean))];
 };
 
@@ -1099,6 +1112,7 @@ const applyCustomItem = (item, nextCustom) => {
     updated: new Date().toISOString(),
   };
   saveCustomQuiz();
+  buildReferenceTexts(state.referenceTexts);
   renderCards();
   setTitleStatus("题目已本地保存，可云同步", "ok");
 };
@@ -1252,12 +1266,46 @@ const referenceScore = (prompt, referenceText) => {
   return grams.reduce((score, part) => score + (ref.includes(part) ? Math.min(part.length, 10) : 0), 0);
 };
 
+const answerLooksUsable = (answer) => {
+  const value = cleanInferredAnswer(answer);
+  return value.length >= 1 && value.length <= 120 && !/^（?填空|答案[:：]?$/i.test(value)
+    && !/结合图片复习本章节关键要求/.test(value);
+};
+
+const sortedKnowledgeForPrompt = (prompt, item) => {
+  const currentText = displayText(item);
+  const entries = state.referenceEntries.length
+    ? state.referenceEntries
+    : [
+      {
+        item,
+        text: currentText,
+        prompt: item.quiz?.prompt || "",
+        answer: item.quiz?.answer || "",
+      },
+    ];
+
+  return entries
+    .map((entry) => {
+      const textScore = referenceScore(prompt, entry.text);
+      const promptScore = referenceScore(prompt, entry.prompt);
+      const answerScore = referenceScore(prompt, entry.answer);
+      const sameItem = entry.item?.id === item?.id;
+      const contentScore = textScore + Math.round(promptScore * 1.35) + Math.round(answerScore * 0.3);
+      return {
+        ...entry,
+        contentScore,
+        score: contentScore + (sameItem ? 12 : 0),
+      };
+    })
+    .filter((entry) => entry.contentScore > 0)
+    .sort((a, b) => b.score - a.score);
+};
+
 const sortedReferencesForPrompt = (prompt, item) =>
-  [displayText(item), item.text, ...state.referenceTexts]
-    .filter(Boolean)
-    .map((text) => ({ text, score: referenceScore(prompt, text) }))
-    .sort((a, b) => b.score - a.score)
-    .map((entry) => entry.text);
+  sortedKnowledgeForPrompt(prompt, item)
+    .map((entry) => entry.text)
+    .filter(Boolean);
 
 const inferQuizFromPrompt = (prompt, item, fallback) => {
   const cleaned = prompt.replace(/^填空[:：]\s*/, "").trim();
@@ -1273,6 +1321,15 @@ const inferQuizFromPrompt = (prompt, item, fallback) => {
         };
       }
     }
+  }
+
+  // For short-answer prompts, prefer the answer already attached to the
+  // closest source item instead of cutting a random suffix from the prompt.
+  const best = sortedKnowledgeForPrompt(prompt, item)[0];
+  if (best && best.contentScore >= 10 && answerLooksUsable(best.answer)) {
+    return {
+      answer: cleanInferredAnswer(best.answer),
+    };
   }
 
   const regenerated = makeDefaultQuiz(cleaned || displayText(item));
@@ -1503,6 +1560,7 @@ const loadCloudData = async ({ rerender = true } = {}) => {
   } catch (error) {
     setTitleStatus("使用本地学习数据", "");
   }
+  if (state.data) buildReferenceTexts(state.referenceTexts);
   if (rerender && state.data) render();
 };
 
@@ -1683,7 +1741,10 @@ fetch("data.json")
   .then(async (data) => {
     state.data = data;
     buildReferenceTexts(await loadOptionalPdfReference());
-    loadCloudData({ rerender: false }).finally(render);
+    loadCloudData({ rerender: false }).finally(() => {
+      buildReferenceTexts(state.referenceTexts);
+      render();
+    });
   })
   .catch(() => {
     cards.innerHTML = '<div class="empty">data.json 读取失败</div>';
