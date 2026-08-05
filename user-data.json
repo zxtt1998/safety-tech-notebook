@@ -1,5 +1,5 @@
 {
-  "title": "安全技术错题本",
+  "title": "安全错题本",
   "progress": {
     "100": {
       "review": 0,
@@ -144,13 +144,13 @@
       "testWrong": 0
     },
     "001": {
-      "review": 4,
+      "review": 5,
       "mastered": false,
-      "memoryStage": 1,
-      "nextReviewAt": "2026-07-31T15:39:13.136Z",
-      "lastTestedAt": "2026-08-02T02:14:20.804Z",
+      "memoryStage": 2,
+      "nextReviewAt": "2026-08-05T19:37:29.290Z",
+      "lastTestedAt": "2026-08-05T10:37:29.290Z",
       "lastResult": "right",
-      "testAttempts": 2,
+      "testAttempts": 3,
       "testWrong": 0
     },
     "002": {
@@ -164,13 +164,13 @@
       "testWrong": 0
     },
     "003": {
-      "review": 7,
+      "review": 8,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-07-31T15:39:38.742Z",
-      "lastTestedAt": "2026-07-31T15:19:38.742Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-05T11:37:39.657Z",
+      "lastTestedAt": "2026-08-05T10:37:39.657Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "004": {
@@ -5686,45 +5686,63 @@
       "testWrong": 0
     },
     "N117": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-05T10:59:05.523Z",
+      "lastTestedAt": "2026-08-05T10:39:05.523Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N118": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-05T10:59:13.205Z",
+      "lastTestedAt": "2026-08-05T10:39:13.205Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N119": {
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-05T10:39:17.540Z",
+      "lastTestedAt": "2026-08-05T10:39:17.540Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "N120": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-05T10:59:28.453Z",
+      "lastTestedAt": "2026-08-05T10:39:28.453Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N121": {
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-05T10:39:46.468Z",
+      "lastTestedAt": "2026-08-05T10:39:46.468Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "N122": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-05T11:01:54.637Z",
+      "lastTestedAt": "2026-08-05T10:41:54.637Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "N123": {
@@ -5750,11 +5768,11 @@
     }
   },
   "quiz": {
-    "right": 61,
-    "wrong": 10,
+    "right": 67,
+    "wrong": 12,
     "sectionStats": {
       "机械基础": {
-        "right": 21,
+        "right": 23,
         "wrong": 0
       },
       "金属切削机床": {
@@ -5804,6 +5822,10 @@
       "气瓶": {
         "right": 6,
         "wrong": 0
+      },
+      "厂内专用机动车辆": {
+        "right": 4,
+        "wrong": 2
       }
     }
   },
@@ -5894,6 +5916,21 @@
       "prompt": "填空：爆破片的泄放面积__安全阀的进口面积。",
       "answer": "不小于",
       "updated": "2026-08-03T10:27:46.070Z"
+    },
+    "N116": {
+      "prompt": "填空：内燃机____，但要有良好的通风换气措施。",
+      "answer": "为动力的叉车可以进入一般的仓库作业",
+      "updated": "2026-08-05T10:38:44.099Z"
+    },
+    "N122": {
+      "prompt": "填空：静压传动叉车相当于_，只有____。",
+      "answer": "自动挡，只有处于制动状态时才能启动发动机",
+      "updated": "2026-08-05T10:40:22.470Z"
+    },
+    "N123": {
+      "prompt": "填空：机械和液力传动叉车相当于_，在传动____。",
+      "answer": "手动挡，在传动装置结合状态能防止发动机启动",
+      "updated": "2026-08-05T10:40:37.668Z"
     }
   },
   "drafts": {},
@@ -5938,8 +5975,9 @@
   "study": {
     "targetMinutes": 120,
     "days": {
-      "2026-08-03": 783664
+      "2026-08-03": 791939,
+      "2026-08-05": 342695
     }
   },
-  "updated": "2026-08-03T10:36:52.742Z"
+  "updated": "2026-08-05T10:41:59.023Z"
 }
