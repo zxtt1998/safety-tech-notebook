@@ -1,8 +1,8 @@
-const CACHE_NAME = "safety-tech-notebook-pwa-20260805-smart-answer";
+const CACHE_NAME = "safety-tech-notebook-pwa-20260806-screen-time";
 const APP_SHELL = [
   "./index.html",
-  "./styles.css?v=20260805-smart-answer",
-  "./app.js?v=20260805-smart-answer",
+  "./styles.css?v=20260806-screen-time",
+  "./app.js?v=20260806-screen-time",
   "./data.json",
   "./manifest.webmanifest",
   "./app-icon.svg",

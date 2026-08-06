@@ -11,7 +11,7 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css?v=20260805-smart-answer" />
+    <link rel="stylesheet" href="styles.css?v=20260806-screen-time" />
   </head>
   <body>
     <div class="app">
@@ -94,6 +94,33 @@
             <span id="quizScore">0%</span>
             <p>测试正确率</p>
           </article>
+        </section>
+
+        <section id="studyTimePanel" class="study-time-panel" aria-label="学习时间统计">
+          <div class="study-time-panel-head">
+            <div>
+              <p>学习时间</p>
+              <h2>屏幕使用时间</h2>
+            </div>
+            <span id="studyTimeUpdated">实时记录</span>
+          </div>
+          <div class="study-range-switch" role="tablist" aria-label="学习时间范围">
+            <button type="button" data-study-range="day" role="tab" aria-selected="true">日</button>
+            <button type="button" data-study-range="week" role="tab" aria-selected="false">周</button>
+            <button type="button" data-study-range="month" role="tab" aria-selected="false">月</button>
+          </div>
+          <div class="study-time-total">
+            <span id="studyTimePeriodLabel">今天</span>
+            <strong id="studyTimePeriodTotal">0 分钟</strong>
+          </div>
+          <div id="studyTimeChart" class="study-time-chart" aria-label="学习时间柱状图"></div>
+          <div class="study-most-used">
+            <div class="study-most-used-head">
+              <strong>最常使用</strong>
+              <span id="studyMostUsedSummary">按学习模式统计</span>
+            </div>
+            <div id="studyModeList" class="study-mode-list"></div>
+          </div>
         </section>
 
         <section id="analysisPanel" class="analysis-panel collapsed" aria-label="测试分析" hidden>
@@ -203,6 +230,6 @@
       </article>
     </template>
 
-    <script src="app.js?v=20260805-smart-answer"></script>
+    <script src="app.js?v=20260806-screen-time"></script>
   </body>
 </html>

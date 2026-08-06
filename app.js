@@ -15,6 +15,7 @@ const state = {
   study: JSON.parse(localStorage.getItem("safetyNotebookStudyTime") || '{"targetMinutes":120,"days":{}}'),
   analysisCollapsed: localStorage.getItem("safetyNotebookAnalysisCollapsed") !== "false",
   theme: localStorage.getItem("safetyNotebookTheme") || "light",
+  studyRange: localStorage.getItem("safetyNotebookStudyRange") || "day",
   bulkDeleteMode: false,
   selectedDeleteIds: new Set(),
   referenceTexts: [],
@@ -326,6 +327,15 @@ const isHighFrequencyMode = () => state.mode === "liyutian" || state.mode === "l
 const isOtherSafetyMode = () => state.mode === "otherSafety" || state.mode === "otherSafetyReview";
 const isTestMode = () => state.mode === "quiz" || state.mode === "liyutian" || state.mode === "otherSafety";
 
+const STUDY_MODES = [
+  { id: "review", label: "背诵复习", color: "#2f6fed" },
+  { id: "quiz", label: "测试模式", color: "#ff8a34" },
+  { id: "liyutianReview", label: "李天宇高频背诵", color: "#8b5cf6" },
+  { id: "liyutian", label: "李天宇高频测试", color: "#ef476f" },
+  { id: "otherSafetyReview", label: "其他安全背诵", color: "#10a981" },
+  { id: "otherSafety", label: "其他安全测试", color: "#14b8c4" },
+];
+
 const localDateKey = (date = new Date()) => {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -348,6 +358,7 @@ const minutesLabel = (ms = 0) => `${Math.floor(ms / 60000)} 分钟`;
 const saveStudyTime = () => {
   state.study.targetMinutes = Math.max(10, Number(state.study.targetMinutes) || 120);
   state.study.days ||= {};
+  state.study.modes ||= {};
   localStorage.setItem("safetyNotebookStudyTime", JSON.stringify(state.study));
 };
 
@@ -365,7 +376,97 @@ const commitStudyTick = () => {
   const today = localDateKey();
   state.study.days ||= {};
   state.study.days[today] = (Number(state.study.days[today]) || 0) + elapsed;
+  state.study.modes ||= {};
+  state.study.modes[today] ||= {};
+  state.study.modes[today][state.mode] = (Number(state.study.modes[today][state.mode]) || 0) + elapsed;
   saveStudyTime();
+};
+
+const studyDateFromKey = (key) => {
+  const [year, month, day] = String(key).split("-").map(Number);
+  return new Date(year, month - 1, day);
+};
+
+const studyKeysForRange = (range) => {
+  const today = new Date();
+  const keys = [];
+  if (range === "day") return [localDateKey(today)];
+  if (range === "week") {
+    const monday = new Date(today);
+    const offset = (monday.getDay() + 6) % 7;
+    monday.setDate(monday.getDate() - offset);
+    for (let index = 0; index < 7; index += 1) {
+      const date = new Date(monday);
+      date.setDate(monday.getDate() + index);
+      keys.push(localDateKey(date));
+    }
+    return keys;
+  }
+  for (let day = 1; day <= today.getDate(); day += 1) {
+    keys.push(localDateKey(new Date(today.getFullYear(), today.getMonth(), day)));
+  }
+  return keys;
+};
+
+const studyRangeLabel = (range) => ({ day: "今天", week: "本周", month: "本月" }[range] || "今天");
+
+const studySeries = (range) => {
+  const keys = studyKeysForRange(range);
+  if (range !== "month") {
+    return keys.map((key, index) => ({
+      key,
+      label: range === "day" ? "今天" : ["一", "二", "三", "四", "五", "六", "日"][index],
+      ms: Number(state.study.days?.[key]) || 0,
+    }));
+  }
+  return Array.from({ length: 5 }, (_, index) => {
+    const slice = keys.slice(index * 7, (index + 1) * 7);
+    return {
+      key: `month-${index}`,
+      label: `${index * 7 + 1}-${index * 7 + slice.length}日`,
+      ms: slice.reduce((sum, key) => sum + (Number(state.study.days?.[key]) || 0), 0),
+    };
+  }).filter((entry) => entry.ms > 0 || Number(entry.key.split("-")[1]) * 7 < keys.length);
+};
+
+const studyModeTotals = (range) => {
+  const totals = Object.fromEntries(STUDY_MODES.map((mode) => [mode.id, 0]));
+  studyKeysForRange(range).forEach((key) => {
+    Object.entries(state.study.modes?.[key] || {}).forEach(([mode, ms]) => {
+      totals[mode] = (totals[mode] || 0) + (Number(ms) || 0);
+    });
+  });
+  return STUDY_MODES.map((mode) => ({ ...mode, ms: totals[mode.id] || 0 }))
+    .sort((a, b) => b.ms - a.ms);
+};
+
+const renderStudyTimeChart = (series) => {
+  const target = $("#studyTimeChart");
+  if (!target) return;
+  const max = Math.max(...series.map((entry) => entry.ms), 1);
+  target.innerHTML = series.map((entry) => `
+    <div class="study-chart-column" title="${entry.label} ${minutesLabel(entry.ms)}">
+      <div class="study-chart-bar-wrap"><span class="study-chart-bar" style="height:${Math.max(entry.ms ? 8 : 2, Math.round((entry.ms / max) * 100))}%"></span></div>
+      <small>${entry.label}</small>
+    </div>
+  `).join("");
+};
+
+const renderStudyModes = (range) => {
+  const target = $("#studyModeList");
+  const summary = $("#studyMostUsedSummary");
+  if (!target || !summary) return;
+  const modes = studyModeTotals(range);
+  const active = modes.filter((mode) => mode.ms >= 60000);
+  const max = Math.max(...modes.map((mode) => mode.ms), 1);
+  summary.textContent = active.length ? `${active.length} 个模式` : "还没有模式记录";
+  target.innerHTML = active.length ? active.slice(0, 6).map((mode) => `
+    <div class="study-mode-row">
+      <span class="study-mode-icon" style="--mode-color:${mode.color}">${mode.label.slice(0, 1)}</span>
+      <div class="study-mode-copy"><strong>${mode.label}</strong><i><b style="width:${Math.max(5, Math.round((mode.ms / max) * 100))}%; background:${mode.color}"></b></i></div>
+      <span class="study-mode-time">${minutesLabel(mode.ms)}</span>
+    </div>
+  `).join("") : '<div class="study-mode-empty">打开网页后，学习时长会按当前模式自动记录。</div>';
 };
 
 const renderStudyTime = () => {
@@ -379,6 +480,19 @@ const renderStudyTime = () => {
     studyGoalInput.value = Math.max(10, Number(state.study.targetMinutes) || 120);
   }
   document.documentElement.style.setProperty("--study-progress", `${Math.min(100, Math.round((todayMs / targetMs) * 100))}%`);
+  const range = ["day", "week", "month"].includes(state.studyRange) ? state.studyRange : "day";
+  const series = studySeries(range);
+  const rangeTotal = series.reduce((sum, entry) => sum + entry.ms, 0);
+  $("#studyTimePeriodLabel")?.replaceChildren(document.createTextNode(studyRangeLabel(range)));
+  $("#studyTimePeriodTotal")?.replaceChildren(document.createTextNode(minutesLabel(rangeTotal)));
+  $("#studyTimeUpdated")?.replaceChildren(document.createTextNode(`更新于 ${new Date().toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit" })}`));
+  document.querySelectorAll("[data-study-range]").forEach((button) => {
+    const selected = button.dataset.studyRange === range;
+    button.classList.toggle("active", selected);
+    button.setAttribute("aria-selected", String(selected));
+  });
+  renderStudyTimeChart(series);
+  renderStudyModes(range);
 };
 
 const startStudyClock = () => {
@@ -1541,6 +1655,14 @@ const applyCloudPayload = (payload) => {
       targetMinutes: Number(state.study.targetMinutes || cloudStudy.targetMinutes || 120),
       days: mergedDays,
     };
+    const mergedModes = JSON.parse(JSON.stringify(state.study.modes || {}));
+    Object.entries(cloudStudy.modes || {}).forEach(([day, modes]) => {
+      mergedModes[day] ||= {};
+      Object.entries(modes || {}).forEach(([mode, value]) => {
+        mergedModes[day][mode] = Math.max(Number(mergedModes[day][mode]) || 0, Number(value) || 0);
+      });
+    });
+    state.study.modes = mergedModes;
     if (cloudStudy.targetMinutes && !state.study.targetMinutes) state.study.targetMinutes = Number(cloudStudy.targetMinutes);
   }
   state.quiz.sectionStats ||= {};
@@ -1639,6 +1761,7 @@ document.querySelectorAll(".segments button").forEach((button) => {
 
 document.querySelectorAll(".mode-switch button").forEach((button) => {
   button.addEventListener("click", () => {
+    commitStudyTick();
     document.querySelectorAll(".mode-switch button").forEach((entry) => entry.classList.remove("active"));
     button.classList.add("active");
     state.mode = button.dataset.mode;
@@ -1693,6 +1816,14 @@ const saveStudyGoalFromInput = () => {
 
 studyGoalInput?.addEventListener("input", saveStudyGoalFromInput);
 studyGoalInput?.addEventListener("change", saveStudyGoalFromInput);
+
+document.querySelectorAll("[data-study-range]").forEach((button) => {
+  button.addEventListener("click", () => {
+    state.studyRange = button.dataset.studyRange;
+    localStorage.setItem("safetyNotebookStudyRange", state.studyRange);
+    renderStudyTime();
+  });
+});
 
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "visible") startStudyClock();
