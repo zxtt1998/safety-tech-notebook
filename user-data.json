@@ -5701,23 +5701,23 @@
       "testWrong": 0
     },
     "N117": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-05T10:59:05.523Z",
-      "lastTestedAt": "2026-08-05T10:39:05.523Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-13T01:25:15.578Z",
+      "lastTestedAt": "2026-08-13T00:25:15.578Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "N118": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-05T10:59:13.205Z",
-      "lastTestedAt": "2026-08-05T10:39:13.205Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-13T01:25:20.479Z",
+      "lastTestedAt": "2026-08-13T00:25:20.479Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "N119": {
@@ -5731,23 +5731,23 @@
       "testWrong": 1
     },
     "N120": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-05T10:59:28.453Z",
-      "lastTestedAt": "2026-08-05T10:39:28.453Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-13T01:26:18.034Z",
+      "lastTestedAt": "2026-08-13T00:26:18.034Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "N121": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "nextReviewAt": "2026-08-05T10:39:46.468Z",
-      "lastTestedAt": "2026-08-05T10:39:46.468Z",
-      "lastResult": "wrong",
-      "testAttempts": 1,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-13T00:46:34.763Z",
+      "lastTestedAt": "2026-08-13T00:26:34.763Z",
+      "lastResult": "right",
+      "testAttempts": 2,
       "testWrong": 1
     },
     "N122": {
@@ -5783,68 +5783,382 @@
     },
     "OS01-01": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS01-02": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-13T00:47:19.311Z",
+      "lastTestedAt": "2026-08-13T00:27:19.311Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "OS01-03": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "nextReviewAt": "2026-08-13T00:27:23.444Z",
+      "lastTestedAt": "2026-08-13T00:27:23.444Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "OS01-04": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS02-01": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS02-02": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS02-03": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS02-04": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS03-01": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS03-02": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS04-01": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-13T00:50:24.156Z",
+      "lastTestedAt": "2026-08-13T00:30:24.156Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "OS04-02": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-13T00:51:42.029Z",
+      "lastTestedAt": "2026-08-13T00:31:42.029Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "OS04-03": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-13T00:51:43.556Z",
+      "lastTestedAt": "2026-08-13T00:31:43.556Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "OS05-01": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS05-02": {
+      "review": 0,
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
+    },
+    "N126": {
+      "review": 0,
+      "mastered": false
+    },
+    "N127": {
+      "review": 0,
+      "mastered": false
+    },
+    "N128": {
+      "review": 0,
+      "mastered": false
+    },
+    "N129": {
+      "review": 0,
+      "mastered": false
+    },
+    "N130": {
+      "review": 0,
+      "mastered": false
+    },
+    "N131": {
+      "review": 0,
+      "mastered": false
+    },
+    "N132": {
+      "review": 0,
+      "mastered": false
+    },
+    "N133": {
+      "review": 0,
+      "mastered": false
+    },
+    "N134": {
+      "review": 0,
+      "mastered": false
+    },
+    "N135": {
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-08-13T00:23:01.371Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-13T00:43:01.371Z"
+    },
+    "N136": {
+      "review": 0,
+      "mastered": false
+    },
+    "N137": {
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-08-13T00:24:28.903Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-13T00:44:28.903Z"
+    },
+    "N138": {
+      "review": 0,
+      "mastered": false,
+      "lastTestedAt": "2026-08-13T00:24:44.001Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1,
+      "memoryStage": -1,
+      "nextReviewAt": "2026-08-13T00:24:44.001Z"
+    },
+    "N139": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS06-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS06-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS06-03": {
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-08-13T00:34:28.907Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-13T00:54:28.907Z"
+    },
+    "OS06-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS07-01": {
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-08-13T00:37:55.899Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-13T00:57:55.899Z"
+    },
+    "OS07-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS07-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS07-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS07-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS07-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS07-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS07-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS07-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS07-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS08-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS08-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS08-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS08-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS08-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS08-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS08-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS08-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS08-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS08-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-01": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-02": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-03": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-04": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-05": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-06": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-07": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-08": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-09": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-10": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-11": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-12": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-13": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-14": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-15": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-16": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-17": {
+      "review": 0,
+      "mastered": false
+    },
+    "OS09-18": {
       "review": 0,
       "mastered": false
     }
   },
   "quiz": {
-    "right": 73,
-    "wrong": 13,
+    "right": 85,
+    "wrong": 15,
     "sectionStats": {
       "机械基础": {
         "right": 24,
@@ -5879,8 +6193,8 @@
         "wrong": 0
       },
       "电气安全技术": {
-        "right": 3,
-        "wrong": 0
+        "right": 5,
+        "wrong": 1
       },
       "木工圆锯机": {
         "right": 2,
@@ -5899,10 +6213,26 @@
         "wrong": 0
       },
       "厂内专用机动车辆": {
-        "right": 4,
+        "right": 8,
         "wrong": 2
       },
       "保护装置": {
+        "right": 1,
+        "wrong": 0
+      },
+      "电气接地与防雷": {
+        "right": 1,
+        "wrong": 1
+      },
+      "职业卫生与劳动保护": {
+        "right": 3,
+        "wrong": 0
+      },
+      "机械技术": {
+        "right": 1,
+        "wrong": 0
+      },
+      "电气安全补充": {
         "right": 1,
         "wrong": 0
       }
@@ -6020,6 +6350,11 @@
       "prompt": "填空：自检功能故障时，机械的功能____。",
       "answer": "不能执行或停止执行",
       "updated": "2026-08-06T00:50:40.651Z"
+    },
+    "092": {
+      "prompt": "填空：隔离变压器二次____。",
+      "answer": "回路不接地",
+      "updated": "2026-08-13T00:20:27.586Z"
     }
   },
   "drafts": {
@@ -6072,7 +6407,8 @@
     "days": {
       "2026-08-03": 791939,
       "2026-08-05": 372323,
-      "2026-08-06": 902594
+      "2026-08-06": 921993,
+      "2026-08-13": 884457
     },
     "modes": {
       "2026-08-06": {
@@ -6081,8 +6417,13 @@
         "otherSafety": 984,
         "otherSafetyReview": 1748,
         "liyutianReview": 28114
+      },
+      "2026-08-13": {
+        "review": 33096,
+        "quiz": 400495,
+        "otherSafety": 417109
       }
     }
   },
-  "updated": "2026-08-06T00:50:49.579Z"
+  "updated": "2026-08-13T00:38:55.699Z"
 }
