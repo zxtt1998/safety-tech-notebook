@@ -325,7 +325,8 @@ const FORGETTING_POINTS = [
 
 const isHighFrequencyMode = () => state.mode === "liyutian" || state.mode === "liyutianReview";
 const isOtherSafetyMode = () => state.mode === "otherSafety" || state.mode === "otherSafetyReview";
-const isTestMode = () => state.mode === "quiz" || state.mode === "liyutian" || state.mode === "otherSafety";
+const isEightSetsMode = () => state.mode === "eightSets" || state.mode === "eightSetsReview";
+const isTestMode = () => state.mode === "quiz" || state.mode === "liyutian" || state.mode === "otherSafety" || state.mode === "eightSets";
 
 const STUDY_MODES = [
   { id: "review", label: "背诵复习", color: "#2f6fed" },
@@ -334,6 +335,8 @@ const STUDY_MODES = [
   { id: "liyutian", label: "李天宇高频测试", color: "#ef476f" },
   { id: "otherSafetyReview", label: "其他安全背诵", color: "#10a981" },
   { id: "otherSafety", label: "其他安全测试", color: "#14b8c4" },
+  { id: "eightSetsReview", label: "李天宇八套卷2026背诵", color: "#f59e0b" },
+  { id: "eightSets", label: "李天宇八套卷2026测试", color: "#f97316" },
 ];
 
 const localDateKey = (date = new Date()) => {
@@ -603,6 +606,7 @@ const isDeleted = (id) => Boolean(state.deletedItems[id]);
 const activeItems = () => {
   if (isHighFrequencyMode()) return (state.data.highFrequencyItems || []).filter((item) => !isDeleted(item.id));
   if (isOtherSafetyMode()) return (state.data.otherSafetyItems || []).filter((item) => !isDeleted(item.id));
+  if (isEightSetsMode()) return (state.data.eightSetsItems || []).filter((item) => !isDeleted(item.id));
   return state.data.items.filter((item) => !isDeleted(item.id));
 };
 
@@ -613,6 +617,8 @@ const activeSections = () => {
     ? state.data.highFrequencySections || []
     : isOtherSafetyMode()
       ? state.data.otherSafetySections || []
+      : isEightSetsMode()
+        ? state.data.eightSetsSections || []
       : state.data.sections;
   const visibleItems = activeItems();
   return source
@@ -638,6 +644,7 @@ const buildReferenceTexts = (extra = []) => {
     ...state.data.items,
     ...(state.data.highFrequencyItems || []),
     ...(state.data.otherSafetyItems || []),
+    ...(state.data.eightSetsItems || []),
   ];
   state.referenceEntries = items
     .map((item) => {
@@ -818,7 +825,7 @@ const renderTabs = () => {
   const all = document.createElement("button");
   all.type = "button";
   all.className = state.section === "all" ? "active" : "";
-  all.innerHTML = `<strong>${isHighFrequencyMode() ? "全部高频" : isOtherSafetyMode() ? "全部其他安全" : "全部错题"}</strong><span>${items.length} 条</span>`;
+  all.innerHTML = `<strong>${isHighFrequencyMode() ? "全部高频" : isOtherSafetyMode() ? "全部其他安全" : isEightSetsMode() ? "全部八套卷" : "全部错题"}</strong><span>${items.length} 条</span>`;
   all.addEventListener("click", () => {
     state.section = "all";
     state.quizPage = 0;
@@ -845,10 +852,10 @@ const renderCards = () => {
   const items = filteredItems();
   updateBulkDeleteBar();
   const section = activeSections().find((entry) => entry.section === state.section);
-  $("#domainName").textContent = section?.domain || (isHighFrequencyMode() ? "李天宇高频" : isOtherSafetyMode() ? "其他安全" : "全部章节");
+  $("#domainName").textContent = section?.domain || (isHighFrequencyMode() ? "李天宇高频" : isOtherSafetyMode() ? "其他安全" : isEightSetsMode() ? "李天宇八套卷2026" : "全部章节");
   $("#sectionName").textContent = isTestMode()
-    ? (state.mode === "liyutian" ? "李天宇高频模块测试" : state.mode === "otherSafety" ? "其他安全测试" : "测试模式")
-    : (state.mode === "liyutianReview" ? "李天宇高频背诵" : state.mode === "otherSafetyReview" ? "其他安全背诵" : section?.section || "错题总览");
+    ? (state.mode === "liyutian" ? "李天宇高频模块测试" : state.mode === "otherSafety" ? "其他安全测试" : state.mode === "eightSets" ? "李天宇八套卷2026测试" : "测试模式")
+    : (state.mode === "liyutianReview" ? "李天宇高频背诵" : state.mode === "otherSafetyReview" ? "其他安全背诵" : state.mode === "eightSetsReview" ? "李天宇八套卷2026背诵" : section?.section || "错题总览");
   $("#shuffleBtn").textContent = isTestMode() ? "下一页" : "随机背诵";
   $("#shuffleBtn").disabled = isTestMode() && state.quizPage >= Math.ceil(items.length / state.pageSize) - 1;
   const sectionHead = document.querySelector(".section-head");
