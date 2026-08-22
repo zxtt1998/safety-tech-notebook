@@ -1501,6 +1501,15 @@ const openQuizEditor = (item, node, quiz) => {
     if (force || !answerTouched) answerField.value = inferred.answer;
   };
 
+  promptField.addEventListener("beforeinput", (event) => {
+    if (event.inputType !== "insertText" || event.data !== " ") return;
+    event.preventDefault();
+    const start = promptField.selectionStart ?? promptField.value.length;
+    const end = promptField.selectionEnd ?? start;
+    promptField.setRangeText("____", start, end, "end");
+    applyAutoAnswer();
+  });
+
   promptField.addEventListener("input", () => applyAutoAnswer());
   answerField.addEventListener("input", () => {
     answerTouched = true;
