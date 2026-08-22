@@ -1323,6 +1323,8 @@ const normalizeWithMap = (value) => {
 const cleanInferredAnswer = (value) => String(value)
   .replace(/^[:：，。,；;\s]+|[:：，。,；;\s]+$/g, "")
   .replace(/([\u4e00-\u9fa5])\1/g, "$1")
+  .replace(/(\d)\s+(?=[\u4e00-\u9fa5%])/g, "$1")
+  .replace(/\s+/g, " ")
   .trim();
 
 const matchingNgrams = (value) => {
@@ -1336,38 +1338,55 @@ const matchingNgrams = (value) => {
   return [...grams].sort((a, b) => b.length - a.length);
 };
 
-const inferBlankFromReference = (prompt, referenceText) => {
+const locateReferenceSegment = (segment, reference, cursor) => {
+  const segmentNorm = normalizeForMatch(segment);
+  if (!segmentNorm) return cursor;
+  let start = reference.text.indexOf(segmentNorm, cursor);
+  if (start >= 0) return start;
+  if (segmentNorm.length > 8) {
+    start = reference.text.indexOf(segmentNorm.slice(-8), cursor);
+    if (start >= 0) return start + segmentNorm.length - 8;
+  }
+  const gram = matchingNgrams(segment).find((entry) => reference.text.indexOf(entry, cursor) >= 0);
+  if (!gram) return -1;
+  return reference.text.indexOf(gram, cursor);
+};
+
+const inferBlanksFromReference = (prompt, referenceText) => {
   const cleaned = prompt.replace(/^填空[:：]\s*/, "").trim();
   const blankPattern = /_{2,}|＿{2,}|（\s*）|\(\s*\)/;
   if (!blankPattern.test(cleaned)) return "";
 
-  const [before = "", after = ""] = cleaned.split(blankPattern);
-  const beforeNorm = normalizeForMatch(before);
-  const afterNorm = normalizeForMatch(after);
-  if (!beforeNorm && !afterNorm) return "";
-
   const ref = normalizeWithMap(referenceText);
-  let start = beforeNorm ? ref.text.indexOf(beforeNorm) : 0;
-  if (start < 0 && beforeNorm.length > 8) start = ref.text.indexOf(beforeNorm.slice(-8));
-  let matchedBeforeLength = beforeNorm.length;
-  if (start < 0 && beforeNorm) {
-    const gram = matchingNgrams(before).find((entry) => ref.text.includes(entry));
-    if (gram) {
-      start = ref.text.indexOf(gram);
-      matchedBeforeLength = gram.length;
-    }
+  const segments = cleaned.split(blankPattern);
+  const boundaries = [];
+  let cursor = 0;
+
+  for (const segment of segments) {
+    const start = locateReferenceSegment(segment, ref, cursor);
+    if (start < 0) return [];
+    const segmentLength = normalizeForMatch(segment).length;
+    boundaries.push({ start, end: start + segmentLength });
+    cursor = start + segmentLength;
   }
-  if (start < 0) return "";
 
-  const answerStartNorm = start + (beforeNorm && ref.text.startsWith(beforeNorm, start) ? beforeNorm.length : matchedBeforeLength);
-  let answerEndNorm = afterNorm ? ref.text.indexOf(afterNorm, answerStartNorm) : ref.text.length;
-  if (answerEndNorm < 0 && afterNorm.length > 8) answerEndNorm = ref.text.indexOf(afterNorm.slice(0, 8), answerStartNorm);
-  if (answerEndNorm < answerStartNorm) return "";
+  const answers = [];
+  for (let index = 0; index < boundaries.length - 1; index += 1) {
+    const answerStartNorm = boundaries[index].end;
+    const answerEndNorm = boundaries[index + 1].start;
+    if (answerEndNorm < answerStartNorm) return [];
+    const rawStart = ref.map[answerStartNorm] ?? 0;
+    const rawEnd = ref.map[answerEndNorm] ?? String(referenceText).length;
+    const answer = cleanInferredAnswer(String(referenceText).slice(rawStart, rawEnd));
+    if (!answer || answer.length > 80) return [];
+    answers.push(answer);
+  }
+  return answers;
+};
 
-  const rawStart = ref.map[answerStartNorm] ?? 0;
-  const rawEnd = ref.map[answerEndNorm] ?? String(referenceText).length;
-  const answer = cleanInferredAnswer(String(referenceText).slice(rawStart, rawEnd));
-  return answer.length <= 80 ? answer : "";
+const inferBlankFromReference = (prompt, referenceText) => {
+  const answers = inferBlanksFromReference(prompt, referenceText);
+  return answers.length === 1 ? answers[0] : "";
 };
 
 const referenceScore = (prompt, referenceText) => {
@@ -1426,10 +1445,10 @@ const inferQuizFromPrompt = (prompt, item, fallback) => {
 
   if (blankMatch) {
     for (const referenceText of sortedReferencesForPrompt(prompt, item).slice(0, 80)) {
-      const answer = inferBlankFromReference(prompt, referenceText);
-      if (answer) {
+      const answers = inferBlanksFromReference(prompt, referenceText);
+      if (answers.length) {
         return {
-          answer,
+          answer: answers.join("、"),
         };
       }
     }
