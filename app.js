@@ -1005,6 +1005,25 @@ const renderPager = (count, totalPages) => {
     const page = document.createElement("span");
     page.textContent = `第 ${state.quizPage + 1} / ${totalPages} 页 · 共 ${count} 题`;
 
+    const jump = document.createElement("label");
+    jump.className = "quiz-page-jump";
+    jump.innerHTML = `<span>跳转</span><input type="number" min="1" max="${totalPages}" value="${state.quizPage + 1}" aria-label="跳转到第几页" /><span>页</span>`;
+    const jumpInput = jump.querySelector("input");
+    const jumpToPage = () => {
+      const requested = Number(jumpInput.value);
+      if (!Number.isFinite(requested)) return;
+      const target = Math.max(1, Math.min(totalPages, Math.round(requested))) - 1;
+      jumpInput.value = String(target + 1);
+      changeQuizPage(target);
+    };
+    jumpInput.addEventListener("change", jumpToPage);
+    jumpInput.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter") return;
+      event.preventDefault();
+      jumpToPage();
+      jumpInput.blur();
+    });
+
     const next = document.createElement("button");
     next.type = "button";
     next.textContent = "下一页";
@@ -1013,7 +1032,7 @@ const renderPager = (count, totalPages) => {
       changeQuizPage(Math.min(totalPages - 1, state.quizPage + 1));
     });
 
-    pager.append(prev, page, next);
+    pager.append(prev, page, jump, next);
   });
 };
 
@@ -1321,7 +1340,7 @@ const normalizeWithMap = (value) => {
 };
 
 const cleanInferredAnswer = (value) => String(value)
-  .replace(/^[:：，。,；;\s]+|[:：，。,；;\s]+$/g, "")
+  .replace(/^[\s,，、。；;：:。.!！？!?]+|[\s,，、。；;：:。.!！？!?]+$/g, "")
   .replace(/([\u4e00-\u9fa5])\1/g, "$1")
   .replace(/(\d)\s+(?=[\u4e00-\u9fa5%])/g, "$1")
   .replace(/\s+/g, " ")
@@ -1362,10 +1381,13 @@ const inferBlanksFromReference = (prompt, referenceText) => {
   const boundaries = [];
   let cursor = 0;
 
-  for (const segment of segments) {
-    const start = locateReferenceSegment(segment, ref, cursor);
+  for (const [index, segment] of segments.entries()) {
+    const normalizedSegment = normalizeForMatch(segment);
+    const start = !normalizedSegment && index === segments.length - 1
+      ? ref.text.length
+      : locateReferenceSegment(segment, ref, cursor);
     if (start < 0) return [];
-    const segmentLength = normalizeForMatch(segment).length;
+    const segmentLength = normalizedSegment.length;
     boundaries.push({ start, end: start + segmentLength });
     cursor = start + segmentLength;
   }
@@ -1698,15 +1720,12 @@ const applyCloudPayload = (payload) => {
 const loadCloudData = async ({ rerender = true } = {}) => {
   saveTitleLocal(state.appTitle);
   try {
-    const response = await fetch(`user-data.json?_=${Date.now()}`);
-    if (response.ok) {
-      applyCloudPayload(await response.json());
-      setTitleStatus("云端学习数据已加载", "ok");
-    } else {
-      setTitleStatus("使用本地学习数据", "");
-    }
+    const response = await fetch(`user-data.json?_=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`user-data.json ${response.status}`);
+    applyCloudPayload(await response.json());
+    setTitleStatus("云端学习数据已加载", "ok");
   } catch (error) {
-    setTitleStatus("使用本地学习数据", "");
+    setTitleStatus("云端未读取，使用本地数据", "warn");
   }
   if (state.data) buildReferenceTexts(state.referenceTexts);
   if (rerender && state.data) render();
@@ -1893,8 +1912,11 @@ const renderAnalysisCollapse = () => {
 
 renderAnalysisCollapse();
 
-fetch("data.json")
-  .then((response) => response.json())
+fetch(`data.json?_=${Date.now()}`, { cache: "no-store" })
+  .then((response) => {
+    if (!response.ok) throw new Error(`data.json ${response.status}`);
+    return response.json();
+  })
   .then(async (data) => {
     state.data = data;
     buildReferenceTexts(await loadOptionalPdfReference());
