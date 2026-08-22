@@ -553,13 +553,13 @@
       "testWrong": 0
     },
     "050": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-03T00:55:31.634Z",
-      "lastTestedAt": "2026-08-03T00:35:31.634Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-22T03:40:59.327Z",
+      "lastTestedAt": "2026-08-22T02:40:59.327Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "051": {
@@ -570,13 +570,13 @@
       "testWrong": 0
     },
     "052": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-01T14:39:19.925Z",
-      "lastTestedAt": "2026-08-01T14:19:19.925Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-22T03:40:58.245Z",
+      "lastTestedAt": "2026-08-22T02:40:58.245Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "053": {
@@ -5782,10 +5782,13 @@
       "testWrong": 0
     },
     "OS01-01": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-20T14:53:31.995Z",
+      "lastTestedAt": "2026-08-20T14:33:31.995Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS01-02": {
@@ -6732,18 +6735,24 @@
       "testWrong": 1
     },
     "E2026-01-027": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-20T15:06:33.953Z",
+      "lastTestedAt": "2026-08-20T14:46:33.953Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "E2026-01-028": {
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-20T14:46:32.226Z",
+      "lastTestedAt": "2026-08-20T14:46:32.226Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "E2026-01-029": {
       "review": 0,
@@ -6753,17 +6762,23 @@
       "testWrong": 0
     },
     "E2026-01-030": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-20T15:06:49.237Z",
+      "lastTestedAt": "2026-08-20T14:46:49.237Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "E2026-01-031": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-20T15:08:15.187Z",
+      "lastTestedAt": "2026-08-20T14:48:15.187Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "E2026-01-032": {
@@ -6845,8 +6860,11 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-22T02:33:41.040Z",
+      "lastTestedAt": "2026-08-22T02:33:41.040Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "E2026-01-042": {
       "review": 0,
@@ -6885,40 +6903,64 @@
     },
     "OS10-01": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS10-02": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS10-03": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS11-01": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS11-02": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS12-01": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS12-02": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "OS12-03": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     }
   },
   "quiz": {
-    "right": 105,
-    "wrong": 23,
+    "right": 107,
+    "wrong": 24,
     "sectionStats": {
       "机械基础": {
         "right": 24,
@@ -6941,11 +6983,11 @@
         "wrong": 1
       },
       "人机工程学": {
-        "right": 2,
+        "right": 3,
         "wrong": 1
       },
       "砂轮机": {
-        "right": 2,
+        "right": 3,
         "wrong": 0
       },
       "静电防护": {
@@ -6981,7 +7023,7 @@
         "wrong": 0
       },
       "电气接地与防雷": {
-        "right": 1,
+        "right": 2,
         "wrong": 1
       },
       "职业卫生与劳动保护": {
@@ -6998,7 +7040,7 @@
       },
       "第一套": {
         "right": 20,
-        "wrong": 8
+        "wrong": 9
       }
     }
   },
@@ -7120,15 +7162,10 @@
       "answer": "回路不接地",
       "updated": "2026-08-13T00:20:27.586Z"
     },
-    "E2026-01-012": {
-      "prompt": "填空：甲醇、乙醇等水溶性液体火灾，用____。",
-      "answer": "抗溶性泡沫灭火",
-      "updated": "2026-08-20T00:38:13.790Z"
-    },
-    "E2026-01-021": {
-      "prompt": "填空：剧毒或者构成重大危险源的危化品，实行____。",
-      "answer": "双人收发、双人保管的制度",
-      "updated": "2026-08-20T00:48:10.433Z"
+    "E2026-01-027": {
+      "prompt": "填空：微启式安全阀泄放量比较小，适用于液体介质 。气体介质____，所以用全启式安全阀。",
+      "answer": "要求泄放量大",
+      "updated": "2026-08-20T14:46:42.907Z"
     },
     "E2026-01-032": {
       "prompt": "填空：盛装氧气或者氧化性 气体瓶阀的非金属____。",
@@ -7139,6 +7176,21 @@
       "prompt": "填空：黄绿双色线做 ____。",
       "answer": "PE 线",
       "updated": "2026-08-21T00:31:58.594Z"
+    },
+    "E2026-01-012": {
+      "prompt": "填空：甲醇、乙醇等水溶性液体火灾，用____。",
+      "answer": "抗溶性泡沫灭火",
+      "updated": "2026-08-20T00:38:13.790Z"
+    },
+    "E2026-01-021": {
+      "prompt": "填空：剧毒或者构成重大危险源的危化品，实行____。",
+      "answer": "双人收发、双人保管的制度",
+      "updated": "2026-08-20T00:48:10.433Z"
+    },
+    "E2026-01-043": {
+      "prompt": "填空：特低电压和剩余电流动作保护装置对____起到有效防护效果。",
+      "answer": "直接触电击和间接触电击都能",
+      "updated": "2026-08-22T02:36:15.315Z"
     }
   },
   "drafts": {
@@ -7189,11 +7241,12 @@
   "study": {
     "targetMinutes": 120,
     "days": {
+      "2026-08-20": 950765,
       "2026-08-03": 791939,
       "2026-08-05": 372323,
       "2026-08-06": 921993,
       "2026-08-13": 884457,
-      "2026-08-20": 861708,
+      "2026-08-22": 720159,
       "2026-08-21": 284026
     },
     "modes": {
@@ -7216,8 +7269,14 @@
         "eightSetsReview": 2329,
         "eightSets": 240790,
         "quiz": 29573
+      },
+      "2026-08-22": {
+        "review": 5759,
+        "eightSetsReview": 472,
+        "eightSets": 428633,
+        "quiz": 270291
       }
     }
   },
-  "updated": "2026-08-21T00:32:37.147Z"
+  "updated": "2026-08-22T02:45:01.912Z"
 }
