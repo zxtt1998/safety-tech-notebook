@@ -11,7 +11,7 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css?v=20260822-cloud-fix" />
+    <link rel="stylesheet" href="styles.css?v=20260823-dashboard-v3" />
   </head>
   <body>
     <div class="app">
@@ -23,12 +23,13 @@
         </div>
         <button class="new-book-btn" type="button">新建错题本</button>
         <nav class="side-nav">
-          <a class="active" href="#cards">错题本</a>
-          <a href="#sectionTabs">章节练习</a>
-          <a href="#analysisPanel">统计分析</a>
-          <a href="#cards">学习笔记</a>
-          <a href="#syncDataBtn">云端备份</a>
-          <a href="#cards">标签管理</a>
+          <a class="active" href="#cards"><span aria-hidden="true">▣</span><span class="nav-label">错题本</span></a>
+          <a href="#sectionTabs"><span aria-hidden="true">◇</span><span class="nav-label">章节练习</span></a>
+          <a href="#analysisPanel"><span aria-hidden="true">▥</span><span class="nav-label">统计分析</span></a>
+          <a href="#cards"><span aria-hidden="true">▤</span><span class="nav-label">学习笔记</span></a>
+          <a href="#syncDataBtn"><span aria-hidden="true">☁</span><span class="nav-label">云端备份</span></a>
+          <a href="#cards"><span aria-hidden="true">◇</span><span class="nav-label">标签管理</span></a>
+          <a href="#themeToggleBtn"><span aria-hidden="true">⚙</span><span class="nav-label">设置中心</span></a>
         </nav>
         <div class="study-target">
           <strong>今日学习进度</strong>
@@ -46,6 +47,17 @@
         </div>
       </aside>
       <header class="topbar">
+        <div class="dashboard-toolbar">
+          <div>
+            <strong>下午好，学习中！</strong>
+            <span>专注错题重盘，稳步提升安全工程能力</span>
+          </div>
+          <label class="global-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="globalSearchInput" type="search" placeholder="搜索错题、章节、标签…" aria-label="全局搜索" />
+          </label>
+          <span class="toolbar-status" aria-label="学习状态">学</span>
+        </div>
         <div class="title-editor">
           <p class="source">Apple Notes · 26技术</p>
           <input id="titleInput" class="title-input" type="text" value="安全技术错题本" aria-label="错题本标题" />
@@ -56,10 +68,15 @@
             <button id="themeToggleBtn" type="button" aria-pressed="false">夜间模式</button>
             <span id="titleSyncStatus">读取云端学习数据</span>
           </div>
+          <img class="dashboard-hero-art" src="assets/dashboard-shield.png" alt="蓝色安全盾牌" />
         </div>
         <div class="honor">
           <strong>错题攻克中</strong>
-          <span>稳步提升</span>
+          <span>稳步提升，攻克薄弱环节</span>
+          <svg class="honor-chart" viewBox="0 0 260 76" role="img" aria-label="学习进度趋势">
+            <path d="M8 57 L48 39 L91 48 L132 24 L176 37 L218 13 L252 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <g fill="currentColor"><circle cx="8" cy="57" r="4"/><circle cx="48" cy="39" r="4"/><circle cx="91" cy="48" r="4"/><circle cx="132" cy="24" r="4"/><circle cx="176" cy="37" r="4"/><circle cx="218" cy="13" r="4"/><circle cx="252" cy="7" r="4"/></g>
+          </svg>
         </div>
         <div class="sync">
           <span class="sync-dot"></span>
@@ -69,30 +86,34 @@
 
       <main>
         <section class="mode-switch" aria-label="学习模式">
-          <button class="active" type="button" data-mode="review">背诵复习</button>
-          <button type="button" data-mode="quiz">测试模式</button>
-          <button type="button" data-mode="otherSafetyReview">其他安全背诵</button>
-          <button type="button" data-mode="otherSafety">其他安全测试</button>
-          <button type="button" data-mode="eightSetsReview">李天宇八套卷2026背诵</button>
-          <button type="button" data-mode="eightSets">李天宇八套卷2026测试</button>
+          <button class="active" type="button" data-mode="review"><span>▣</span><b>背诵复习<small>巩固记忆，强化掌握</small></b></button>
+          <button type="button" data-mode="quiz"><span>◉</span><b>测试模式<small>模拟考试，检验水平</small></b></button>
+          <button type="button" data-mode="otherSafetyReview"><span>♢</span><b>其他安全背诵<small>拓展知识，全面提升</small></b></button>
+          <button type="button" data-mode="otherSafety"><span>▤</span><b>其他安全测试<small>专项测试，查漏补缺</small></b></button>
+          <button type="button" data-mode="eightSetsReview"><span>李</span><b>李天宇八套卷2026背诵<small>高频套卷专项背诵</small></b></button>
+          <button type="button" data-mode="eightSets"><span>测</span><b>李天宇八套卷2026测试<small>八套卷模拟测试</small></b></button>
         </section>
 
         <section class="summary" aria-label="学习概览">
           <article>
+            <i aria-hidden="true">▤</i>
             <span id="totalCount">0</span>
-            <p>错题</p>
+            <p>错题<small>全部错题数</small></p>
           </article>
           <article>
+            <i aria-hidden="true">▥</i>
             <span id="sectionCount">0</span>
-            <p>章节</p>
+            <p>章节<small>涉及章节数</small></p>
           </article>
           <article>
+            <i aria-hidden="true">✓</i>
             <span id="masteredCount">0</span>
-            <p>已掌握</p>
+            <p>已掌握<small>已掌握题数</small></p>
           </article>
           <article>
+            <i aria-hidden="true">↗</i>
             <span id="quizScore">0%</span>
-            <p>测试正确率</p>
+            <p>测试正确率<small>正确率</small></p>
           </article>
         </section>
 
@@ -230,6 +251,6 @@
       </article>
     </template>
 
-    <script src="app.js?v=20260822-cloud-fix"></script>
+    <script src="app.js?v=20260823-dashboard-v3"></script>
   </body>
 </html>

@@ -38,6 +38,7 @@ const analysisPanel = $("#analysisPanel");
 const analysisBody = $("#analysisBody");
 const analysisToggle = $("#analysisToggle");
 const studyGoalInput = $("#studyGoalInput");
+const globalSearchInput = $("#globalSearchInput");
 
 const applyTheme = () => {
   document.body.dataset.theme = state.theme;
@@ -1816,12 +1817,21 @@ document.querySelectorAll(".mode-switch button").forEach((button) => {
     state.bulkDeleteMode = false;
     state.selectedDeleteIds.clear();
     $("#searchInput").value = "";
+    if (globalSearchInput) globalSearchInput.value = "";
     render();
   });
 });
 
 $("#searchInput").addEventListener("input", (event) => {
   state.query = event.target.value;
+  if (globalSearchInput) globalSearchInput.value = state.query;
+  state.quizPage = 0;
+  renderCards();
+});
+
+globalSearchInput?.addEventListener("input", (event) => {
+  state.query = event.target.value;
+  $("#searchInput").value = state.query;
   state.quizPage = 0;
   renderCards();
 });
@@ -1837,6 +1847,7 @@ $("#shuffleBtn").addEventListener("click", () => {
   const pick = items[Math.floor(Math.random() * items.length)];
   state.query = displayText(pick).slice(0, 8);
   $("#searchInput").value = state.query;
+  if (globalSearchInput) globalSearchInput.value = state.query;
   renderCards();
   cards.firstElementChild?.scrollIntoView({ behavior: "smooth", block: "start" });
 });

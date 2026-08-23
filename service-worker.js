@@ -1,9 +1,10 @@
-const CACHE_NAME = "safety-tech-notebook-pwa-20260822-cloud-fix";
+const CACHE_NAME = "safety-tech-notebook-pwa-20260823-dashboard-v3";
 const APP_SHELL = [
   "./index.html",
-  "./styles.css?v=20260822-cloud-fix",
-  "./app.js?v=20260822-cloud-fix",
+  "./styles.css?v=20260823-dashboard-v3",
+  "./app.js?v=20260823-dashboard-v3",
   "./data.json",
+  "./assets/dashboard-shield.png",
   "./manifest.webmanifest",
   "./app-icon.svg",
   "./apple-touch-icon.png",
