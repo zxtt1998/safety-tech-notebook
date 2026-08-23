@@ -8420,58 +8420,96 @@ body[data-theme="dark"] .quiz-page-jump input {
   }
 
   body .title-editor {
-    min-height: 306px;
-    padding: 26px 18px 148px;
-    justify-content: flex-start;
+    display: block;
+    min-height: 0;
+    padding: 20px;
     border-radius: 18px;
   }
 
+  body .title-editor::after {
+    display: none;
+  }
+
+  body .source {
+    display: block;
+    margin: 0 0 7px;
+  }
+
   body .title-input {
-    width: 64%;
-    font-size: 31px;
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    font-size: 29px;
+    line-height: 1.25;
   }
 
   body .dashboard-hero-art {
-    right: -8px;
-    bottom: 64px;
-    width: 190px;
-    transform: none;
-    opacity: 1;
+    display: none;
   }
 
   body .title-actions {
-    position: absolute !important;
-    right: 14px;
-    bottom: 38px;
-    left: 14px;
+    position: static !important;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 6px;
-    margin: 0;
-    padding: 9px 6px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin: 16px 0 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   body .title-actions button,
   body .title-actions #themeToggleBtn {
-    display: grid;
-    grid-template-rows: 34px auto;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
     width: 100%;
     min-width: 0;
-    min-height: 60px;
-    padding: 0 2px;
+    min-height: 52px;
+    padding: 7px 10px;
     color: #33435e;
-    background: transparent;
-    border: 0;
-    box-shadow: none;
-    font-size: 10px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid #dce6f4;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(55, 83, 140, 0.07);
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: left;
+  }
+
+  body .title-actions button::before {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    font-size: 15px;
+  }
+
+  body #saveTitleBtn,
+  body #syncDataBtn,
+  body #loadCloudBtn,
+  body #themeToggleBtn {
+    color: #33435e;
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid #dce6f4;
+    box-shadow: 0 6px 16px rgba(55, 83, 140, 0.07);
   }
 
   body #titleSyncStatus {
-    position: absolute;
-    bottom: -26px;
-    left: 0;
+    position: static;
     grid-column: 1 / -1;
+    margin-top: 2px;
+    padding: 2px 3px 0;
+    font-size: 11px;
+  }
+
+  body .honor,
+  body .sync {
+    width: 100%;
   }
 
   body main {
@@ -8479,33 +8517,53 @@ body[data-theme="dark"] .quiz-page-jump input {
   }
 
   body .mode-switch {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 4px;
-    padding: 9px 6px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    padding: 10px;
   }
 
   body .mode-switch button,
   body .mode-switch button:nth-child(5),
   body .mode-switch button:nth-child(6) {
     grid-column: auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: 38px auto;
-    place-items: center;
-    gap: 5px;
-    min-height: 78px;
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: start;
+    gap: 9px;
+    min-height: 66px;
     margin: 0;
-    padding: 7px 2px;
-    border: 0;
-    text-align: center;
+    padding: 9px 10px;
+    color: #34445f;
+    background: #f7f9fd;
+    border: 1px solid #e4ebf6;
+    border-radius: 12px;
+    box-shadow: none;
+    text-align: left;
+  }
+
+  body .mode-switch button.active {
+    color: #1f5fd5;
+    background: #edf4ff;
+    border-color: #bcd2fb;
+    box-shadow: inset 3px 0 0 #2d6cf2;
+  }
+
+  body .mode-switch button.active > span {
+    color: #ffffff;
+    background: linear-gradient(145deg, #4a84f6, #6557ed);
   }
 
   body .mode-switch button b {
-    display: block;
+    display: -webkit-box;
     width: 100%;
     overflow: hidden;
-    font-size: 10px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 12px;
+    line-height: 1.35;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   body .mode-switch button small {
@@ -8514,16 +8572,16 @@ body[data-theme="dark"] .quiz-page-jump input {
 
   body .mode-switch button:nth-child(5),
   body .mode-switch button:nth-child(6) {
-    grid-template-columns: 34px minmax(0, 1fr);
-    grid-template-rows: 1fr;
-    min-height: 52px;
-    margin-top: 3px;
-    padding: 7px 9px;
-    text-align: left;
+    grid-column: 1 / -1;
+    min-height: 58px;
   }
 
-  body .mode-switch button:nth-child(5) { grid-column: 1 / 3; }
-  body .mode-switch button:nth-child(6) { grid-column: 3 / 5; }
+  body .mode-switch button:nth-child(5) b,
+  body .mode-switch button:nth-child(6) b {
+    display: block;
+    font-size: 12px;
+    white-space: nowrap;
+  }
 
   body .summary {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -8557,7 +8615,26 @@ body[data-theme="dark"] .quiz-page-jump input {
     display: block;
   }
 
+  body .study-time-panel-head h2 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  body .study-time-panel-head p,
+  body .study-time-panel-head > span {
+    font-size: 11px;
+  }
+
   body .mobile-tabbar {
     display: grid;
+  }
+
+  body[data-theme="dark"] #saveTitleBtn,
+  body[data-theme="dark"] #syncDataBtn,
+  body[data-theme="dark"] #loadCloudBtn,
+  body[data-theme="dark"] #themeToggleBtn {
+    color: #e6eefb;
+    background: #1b2940;
+    border-color: #31445f;
   }
 }
