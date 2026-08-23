@@ -11,7 +11,7 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="app-icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css?v=20260823-dashboard-v3" />
+    <link rel="stylesheet" href="styles.css?v=20260823-mobile-v2" />
   </head>
   <body>
     <div class="app">
@@ -46,7 +46,7 @@
           </div>
         </div>
       </aside>
-      <header class="topbar">
+      <header id="topbar" class="topbar">
         <div class="dashboard-toolbar">
           <div>
             <strong>下午好，学习中！</strong>
@@ -221,6 +221,28 @@
       <footer class="site-footer"><span>Copyright © 2026 Shelton Chu. All rights reserved.</span></footer>
     </div>
 
+    <nav class="mobile-tabbar" aria-label="手机主导航">
+      <a class="active" href="#topbar" aria-label="首页">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5v8a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+        <span>首页</span>
+      </a>
+      <a href="#cards" aria-label="错题本">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H11l2 2h4.5A2.5 2.5 0 0 1 20 8.5v8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5z"/></svg>
+        <span>错题本</span>
+      </a>
+      <a class="mobile-tabbar-add" href="#sectionTabs" aria-label="开始学习">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+      </a>
+      <a href="#studyTimePanel" aria-label="统计">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10m7 10V4m7 16v-7"/></svg>
+        <span>统计</span>
+      </a>
+      <a href="#syncDataBtn" aria-label="云端">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18h10a4 4 0 0 0 .6-8A6 6 0 0 0 6.2 8.5 4.8 4.8 0 0 0 7 18Z"/><path d="m9.5 13 2.5 2.5 3.5-4"/></svg>
+        <span>云端</span>
+      </a>
+    </nav>
+
     <template id="cardTemplate">
       <article class="mistake-card">
         <div class="card-meta">
@@ -251,6 +273,6 @@
       </article>
     </template>
 
-    <script src="app.js?v=20260823-dashboard-v3"></script>
+    <script src="app.js?v=20260823-mobile-v2"></script>
   </body>
 </html>

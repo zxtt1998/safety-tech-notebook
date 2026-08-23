@@ -1,8 +1,8 @@
-const CACHE_NAME = "safety-tech-notebook-pwa-20260823-dashboard-v3";
+const CACHE_NAME = "safety-tech-notebook-pwa-20260823-mobile-v2";
 const APP_SHELL = [
   "./index.html",
-  "./styles.css?v=20260823-dashboard-v3",
-  "./app.js?v=20260823-dashboard-v3",
+  "./styles.css?v=20260823-mobile-v2",
+  "./app.js?v=20260823-mobile-v2",
   "./data.json",
   "./assets/dashboard-shield.png",
   "./manifest.webmanifest",
