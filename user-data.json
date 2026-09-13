@@ -9,20 +9,23 @@
       "testWrong": 0
     },
     "101": {
-      "review": 0,
-      "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
-    },
-    "102": {
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "nextReviewAt": "2026-08-01T14:55:43.830Z",
-      "lastTestedAt": "2026-08-01T14:35:43.830Z",
+      "nextReviewAt": "2026-08-23T15:04:26.409Z",
+      "lastTestedAt": "2026-08-23T14:44:26.409Z",
       "lastResult": "right",
       "testAttempts": 1,
+      "testWrong": 0
+    },
+    "102": {
+      "review": 2,
+      "mastered": false,
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-01T14:55:43.830Z",
+      "lastTestedAt": "2026-08-23T14:44:25.558Z",
+      "lastResult": "right",
+      "testAttempts": 2,
       "testWrong": 0
     },
     "103": {
@@ -43,10 +46,13 @@
       "testWrong": 0
     },
     "105": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-22T03:13:27.992Z",
+      "lastTestedAt": "2026-08-22T02:53:27.992Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "106": {
@@ -174,10 +180,13 @@
       "testWrong": 0
     },
     "004": {
-      "review": 2,
+      "review": 3,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-23T10:40:45.280Z",
+      "lastTestedAt": "2026-08-23T10:20:45.280Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "005": {
@@ -213,12 +222,12 @@
     "008": {
       "review": 1,
       "mastered": false,
-      "memoryStage": 0,
+      "memoryStage": -1,
       "nextReviewAt": "2026-07-31T15:41:12.271Z",
-      "lastTestedAt": "2026-07-31T15:21:12.271Z",
-      "lastResult": "right",
-      "testAttempts": 1,
-      "testWrong": 0
+      "lastTestedAt": "2026-08-23T10:21:18.019Z",
+      "lastResult": "wrong",
+      "testAttempts": 2,
+      "testWrong": 1
     },
     "009": {
       "review": 1,
@@ -5788,7 +5797,7 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-25T11:36:53.618Z",
+      "nextReviewAt": "2026-08-20T14:53:31.995Z",
       "lastTestedAt": "2026-08-25T10:36:53.618Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -5798,7 +5807,7 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-25T11:36:56.029Z",
+      "nextReviewAt": "2026-08-13T00:47:19.311Z",
       "lastTestedAt": "2026-08-25T10:36:56.029Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -5808,11 +5817,11 @@
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "nextReviewAt": "2026-08-25T10:57:04.664Z",
+      "nextReviewAt": "2026-08-23T14:20:10.684Z",
       "lastTestedAt": "2026-08-25T10:37:04.664Z",
       "lastResult": "right",
       "testAttempts": 2,
-      "testWrong": 1
+      "testWrong": 2
     },
     "OS01-04": {
       "review": 1,
@@ -5855,7 +5864,7 @@
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "nextReviewAt": "2026-08-25T10:59:37.332Z",
+      "nextReviewAt": "2026-08-23T14:41:15.614Z",
       "lastTestedAt": "2026-08-25T10:39:37.332Z",
       "lastResult": "right",
       "testAttempts": 1,
@@ -5872,17 +5881,20 @@
       "testWrong": 0
     },
     "OS03-02": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-23T14:41:36.675Z",
+      "lastTestedAt": "2026-08-23T14:21:36.675Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS04-01": {
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-25T11:40:16.438Z",
+      "nextReviewAt": "2026-08-13T00:50:24.156Z",
       "lastTestedAt": "2026-08-25T10:40:16.438Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -5902,7 +5914,7 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-25T11:40:24.251Z",
+      "nextReviewAt": "2026-08-23T15:22:18.434Z",
       "lastTestedAt": "2026-08-25T10:40:24.251Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -6030,10 +6042,13 @@
       "testWrong": 0
     },
     "OS06-01": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-23T14:42:36.855Z",
+      "lastTestedAt": "2026-08-23T14:22:36.855Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS06-02": {
@@ -6047,7 +6062,7 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-25T11:41:06.875Z",
+      "nextReviewAt": "2026-08-13T00:54:28.907Z",
       "lastTestedAt": "2026-08-25T10:41:06.875Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -6061,13 +6076,13 @@
       "testWrong": 0
     },
     "OS07-01": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
+      "memoryStage": 1,
       "nextReviewAt": "2026-08-13T00:57:55.899Z",
-      "lastTestedAt": "2026-08-13T00:37:55.899Z",
+      "lastTestedAt": "2026-08-23T14:24:03.317Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "OS07-02": {
@@ -6091,7 +6106,7 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "nextReviewAt": "2026-08-25T10:43:23.445Z",
+      "nextReviewAt": "2026-08-23T14:25:29.021Z",
       "lastTestedAt": "2026-08-25T10:43:23.445Z",
       "lastResult": "wrong",
       "testAttempts": 1,
@@ -6136,7 +6151,7 @@
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "nextReviewAt": "2026-08-25T11:03:53.656Z",
+      "nextReviewAt": "2026-08-23T14:46:23.839Z",
       "lastTestedAt": "2026-08-25T10:43:53.656Z",
       "lastResult": "right",
       "testAttempts": 1,
@@ -6146,8 +6161,11 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-23T14:27:10.700Z",
+      "lastTestedAt": "2026-08-23T14:27:10.700Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "OS08-02": {
       "review": 0,
@@ -6171,10 +6189,13 @@
       "testWrong": 0
     },
     "OS08-05": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-23T14:47:50.428Z",
+      "lastTestedAt": "2026-08-23T14:27:50.428Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS08-06": {
@@ -6185,18 +6206,24 @@
       "testWrong": 0
     },
     "OS08-07": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-23T14:49:20.466Z",
+      "lastTestedAt": "2026-08-23T14:29:20.466Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS08-08": {
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-23T14:29:26.573Z",
+      "lastTestedAt": "2026-08-23T14:29:26.573Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "OS08-09": {
       "review": 0,
@@ -6601,11 +6628,11 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-25T11:36:37.230Z",
+      "nextReviewAt": "2026-08-20T00:56:35.385Z",
       "lastTestedAt": "2026-08-25T10:36:37.230Z",
       "lastResult": "right",
       "testAttempts": 2,
-      "testWrong": 0
+      "testWrong": 1
     },
     "E2026-01-011": {
       "review": 0,
@@ -6635,13 +6662,13 @@
       "testWrong": 0
     },
     "E2026-01-014": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
+      "memoryStage": 1,
       "nextReviewAt": "2026-08-20T00:58:41.086Z",
-      "lastTestedAt": "2026-08-20T00:38:41.086Z",
+      "lastTestedAt": "2026-08-22T02:51:11.766Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "E2026-01-015": {
@@ -6655,13 +6682,13 @@
       "testWrong": 0
     },
     "E2026-01-016": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
+      "memoryStage": 0,
       "nextReviewAt": "2026-08-20T00:41:44.071Z",
-      "lastTestedAt": "2026-08-20T00:41:44.071Z",
-      "lastResult": "wrong",
-      "testAttempts": 1,
+      "lastTestedAt": "2026-08-22T03:20:18.268Z",
+      "lastResult": "right",
+      "testAttempts": 2,
       "testWrong": 1
     },
     "E2026-01-017": {
@@ -6799,13 +6826,13 @@
       "testWrong": 0
     },
     "E2026-01-031": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
+      "memoryStage": 1,
       "nextReviewAt": "2026-08-20T15:08:15.187Z",
-      "lastTestedAt": "2026-08-20T14:48:15.187Z",
+      "lastTestedAt": "2026-08-22T03:22:05.962Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "E2026-01-032": {
@@ -6826,23 +6853,23 @@
       "testWrong": 0
     },
     "E2026-01-034": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
+      "memoryStage": 1,
       "nextReviewAt": "2026-08-21T00:51:41.972Z",
-      "lastTestedAt": "2026-08-21T00:31:41.972Z",
+      "lastTestedAt": "2026-08-22T03:22:26.346Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "E2026-01-035": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
+      "memoryStage": 1,
       "nextReviewAt": "2026-08-21T00:51:47.491Z",
-      "lastTestedAt": "2026-08-21T00:31:47.491Z",
+      "lastTestedAt": "2026-08-22T03:22:25.926Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "E2026-01-036": {
@@ -6983,15 +7010,277 @@
       "memoryStage": -1,
       "testAttempts": 0,
       "testWrong": 0
+    },
+    "E2026-02-001": {
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-09-13T07:24:28.894Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:44:28.894Z"
+    },
+    "E2026-02-002": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-02-003": {
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-09-13T07:27:27.309Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:47:27.309Z"
+    },
+    "E2026-02-004": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-02-005": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-02-006": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-02-007": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-02-008": {
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-09-13T07:25:07.936Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:45:07.936Z"
+    },
+    "E2026-02-009": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-02-010": {
+      "review": 0,
+      "mastered": false,
+      "lastTestedAt": "2026-09-13T07:26:55.415Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1,
+      "memoryStage": -1,
+      "nextReviewAt": "2026-09-13T07:26:55.415Z"
+    },
+    "E2026-02-011": {
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-09-13T07:28:07.775Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:48:07.775Z"
+    },
+    "E2026-02-012": {
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-09-13T07:28:05.334Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:48:05.334Z"
+    },
+    "E2026-03-001": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-002": {
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-09-13T07:29:23.197Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:49:23.197Z"
+    },
+    "E2026-03-003": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-004": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-005": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-006": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-007": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-008": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-009": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-010": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-011": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-012": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-013": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-014": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-015": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-016": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-017": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-018": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-019": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-020": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-021": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-022": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-023": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-024": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-025": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-026": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-027": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-028": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-029": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-030": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-031": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-032": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-033": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-034": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-035": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-036": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-037": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-038": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-039": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-040": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-041": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-042": {
+      "review": 0,
+      "mastered": false
+    },
+    "E2026-03-043": {
+      "review": 0,
+      "mastered": false
     }
   },
   "quiz": {
-    "right": 121,
-    "wrong": 25,
+    "right": 130,
+    "wrong": 31,
     "sectionStats": {
       "机械基础": {
-        "right": 24,
-        "wrong": 0
+        "right": 25,
+        "wrong": 1
       },
       "金属切削机床": {
         "right": 5,
@@ -7018,7 +7307,7 @@
         "wrong": 0
       },
       "静电防护": {
-        "right": 3,
+        "right": 6,
         "wrong": 0
       },
       "电气安全技术": {
@@ -7051,7 +7340,7 @@
       },
       "电气接地与防雷": {
         "right": 6,
-        "wrong": 1
+        "wrong": 2
       },
       "职业卫生与劳动保护": {
         "right": 5,
@@ -7066,8 +7355,8 @@
         "wrong": 1
       },
       "第一套": {
-        "right": 21,
-        "wrong": 9
+        "right": 25,
+        "wrong": 10
       },
       "压力容器": {
         "right": 0,
@@ -7078,6 +7367,18 @@
         "wrong": 0
       },
       "动火与有限空间": {
+        "right": 1,
+        "wrong": 0
+      },
+      "特种设备补充": {
+        "right": 2,
+        "wrong": 2
+      },
+      "第二套": {
+        "right": 5,
+        "wrong": 1
+      },
+      "第三套": {
         "right": 1,
         "wrong": 0
       }
@@ -7124,13 +7425,6 @@
       "answer": "0.3米、1.3、2米",
       "hint": "提示：重点核对数值、单位、上下限和适用对象。",
       "updated": "2026-08-01T03:52:42.949Z",
-      "images": []
-    },
-    "N095": {
-      "prompt": "查看图片：特种设备安全技术 备忘录参考图",
-      "answer": "结合图片复习本章节关键要求。",
-      "hint": "提示：这是备忘录中的参考图。",
-      "updated": "2026-08-01T03:52:57.179Z",
       "images": []
     },
     "031": {
@@ -7209,9 +7503,9 @@
       "updated": "2026-08-13T00:20:27.586Z"
     },
     "E2026-01-027": {
-      "prompt": "填空：微启式安全阀泄放量比较小，适用于液体介质 。气体介质____，所以用全启式安全阀。",
-      "answer": "要求泄放量大",
-      "updated": "2026-08-20T14:46:42.907Z"
+      "prompt": "填空：微启式安全阀泄放量比较小，适用于____ 。气体介质____，所以用____。",
+      "answer": "液体介质、要求泄放量大、全启式安全阀",
+      "updated": "2026-08-22T03:21:51.466Z"
     },
     "E2026-01-032": {
       "prompt": "填空：盛装氧气或者氧化性 气体瓶阀的非金属____。",
@@ -7238,6 +7532,43 @@
       "answer": "直接触电击和间接触电击都能",
       "updated": "2026-08-22T02:36:15.315Z"
     },
+    "087": {
+      "prompt": "填空：导线连接处力学强度不得低于原导线强度的 ____，绝缘强度不得低于____，接头部位电阻不得大于原导线电阻的 ____。",
+      "answer": "80%、原导线绝缘强度、120%",
+      "updated": "2026-08-22T03:17:55.667Z"
+    },
+    "097": {
+      "prompt": "填空：短路会导致发热，断路____。",
+      "answer": "不会导致发热",
+      "updated": "2026-08-22T03:19:32.563Z"
+    },
+    "E2026-01-016": {
+      "prompt": "填空：烟花爆竹厂房布局。临时存药间的最大药量不得超过____需用量，且不得超过 ____公斤，____级厂房不应设置除更衣室以外的辅助用房。",
+      "answer": "单人半天、10、1.1",
+      "updated": "2026-08-22T03:20:10.786Z"
+    },
+    "E2026-01-036": {
+      "prompt": "填空：硫化氢和氰化氢导致的是____。环境氧含量不足是氮气 导致的____。典型的____就是一氧化碳。",
+      "answer": "细胞内窒息、物理性窒息、血液窒息物质",
+      "updated": "2026-08-22T03:22:44.336Z"
+    },
+    "OS07-02": {
+      "prompt": "场所____因受潮而失去不导电性能。",
+      "answer": "不会",
+      "updated": "2026-08-25T10:42:47.506Z"
+    },
+    "OS09-06": {
+      "prompt": "发生危险物质泄漏时，任何区域坐在____一定是正确的。",
+      "answer": "测风向",
+      "updated": "2026-08-23T14:33:17.812Z"
+    },
+    "N095": {
+      "prompt": "查看图片：特种设备安全技术 备忘录参考图",
+      "answer": "结合图片复习本章节关键要求。",
+      "hint": "提示：这是备忘录中的参考图。",
+      "updated": "2026-08-01T03:52:57.179Z",
+      "images": []
+    },
     "OS06-01": {
       "prompt": "机床运转前未达到安全预警力时，驱动装置____动作。",
       "answer": "不应",
@@ -7248,15 +7579,30 @@
       "answer": "高电位引出、低电位引入的可能性",
       "updated": "2026-08-25T10:42:17.184Z"
     },
-    "OS07-02": {
-      "prompt": "场所____因受潮而失去不导电性能。",
-      "answer": "不会",
-      "updated": "2026-08-25T10:42:47.506Z"
-    },
     "OS07-05": {
       "prompt": "绝缘破损后呈现危险电压的金属部位，____",
       "answer": "除特殊规定外都应接地",
       "updated": "2026-08-25T10:43:42.810Z"
+    },
+    "E2026-02-003": {
+      "prompt": "填空：进口的危化品标签至少注明一家中国境内的____。",
+      "answer": "应急咨询电话",
+      "updated": "2026-09-13T07:24:40.281Z"
+    },
+    "E2026-02-010": {
+      "prompt": "填空：压力管道湿度会____。",
+      "answer": "导致蠕变",
+      "updated": "2026-09-13T07:27:02.433Z"
+    },
+    "E2026-03-006": {
+      "prompt": "填空：高压系统隔离开关用于分段不大的____，用于隔离电压。",
+      "answer": "空载电流",
+      "updated": "2026-09-13T07:32:17.038Z"
+    },
+    "E2026-03-009": {
+      "prompt": "填空：起重机分桥架式和臂架式起重机。桥架式包括桥式、门式、____。臂架式起重机包括____",
+      "answer": "电动葫芦、缆索式、塔式和门座式",
+      "updated": "2026-09-13T07:34:30.797Z"
     }
   },
   "drafts": {
@@ -7307,18 +7653,21 @@
   "study": {
     "targetMinutes": 120,
     "days": {
-      "2026-08-02": 87809,
+      "2026-08-20": 950765,
       "2026-08-03": 791939,
-      "2026-08-04": 22924,
       "2026-08-05": 451774,
       "2026-08-06": 921993,
       "2026-08-13": 884457,
+      "2026-08-22": 2837123,
+      "2026-08-21": 284026,
+      "2026-08-23": 1861639,
+      "2026-08-27": 453036,
+      "2026-08-02": 87809,
+      "2026-08-04": 22924,
       "2026-08-19": 60162,
-      "2026-08-20": 950765,
-      "2026-08-23": 247994,
       "2026-08-25": 402700,
-      "2026-08-22": 720159,
-      "2026-08-21": 284026
+      "2026-08-28": 195821,
+      "2026-09-13": 665927
     },
     "modes": {
       "2026-08-06": {
@@ -7352,8 +7701,12 @@
         "eightSetsReview": 684,
         "eightSets": 24476,
         "otherSafety": 312569
+      },
+      "2026-09-13": {
+        "review": 16098,
+        "eightSets": 625556
       }
     }
   },
-  "updated": "2026-08-25T10:44:14.913Z"
+  "updated": "2026-09-13T07:34:58.387Z"
 }
