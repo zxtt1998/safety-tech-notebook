@@ -7146,8 +7146,14 @@
       "mastered": false
     },
     "E2026-03-012": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-09-13T07:36:54.310Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:56:54.310Z"
     },
     "E2026-03-013": {
       "review": 0,
@@ -7158,8 +7164,14 @@
       "mastered": false
     },
     "E2026-03-015": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-09-13T07:40:06.929Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T08:00:06.929Z"
     },
     "E2026-03-016": {
       "review": 0,
@@ -7178,8 +7190,14 @@
       "mastered": false
     },
     "E2026-03-020": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "lastTestedAt": "2026-09-13T07:42:41.398Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T08:02:41.398Z"
     },
     "E2026-03-021": {
       "review": 0,
@@ -7275,7 +7293,7 @@
     }
   },
   "quiz": {
-    "right": 130,
+    "right": 133,
     "wrong": 31,
     "sectionStats": {
       "机械基础": {
@@ -7379,7 +7397,7 @@
         "wrong": 1
       },
       "第三套": {
-        "right": 1,
+        "right": 4,
         "wrong": 0
       }
     }
@@ -7603,6 +7621,26 @@
       "prompt": "填空：起重机分桥架式和臂架式起重机。桥架式包括桥式、门式、____。臂架式起重机包括____",
       "answer": "电动葫芦、缆索式、塔式和门座式",
       "updated": "2026-09-13T07:34:30.797Z"
+    },
+    "E2026-03-013": {
+      "prompt": "填空：圆锯片和法兰盘应与锯轴同心，是为了防止圆锯片震颤，属于____。",
+      "answer": "消除非机械性危险",
+      "updated": "2026-09-13T07:38:21.165Z"
+    },
+    "E2026-03-017": {
+      "prompt": "填空：歪拉斜吊、起升限位开关失灵是____。夹角过大、被吊重物割伤是____。",
+      "answer": "起升绳断裂、吊装绳断裂",
+      "updated": "2026-09-13T07:41:25.028Z"
+    },
+    "E2026-03-025": {
+      "prompt": "填空：可以通过添加____降低感度。",
+      "answer": "钝化剂",
+      "updated": "2026-09-13T07:45:12.895Z"
+    },
+    "E2026-03-033": {
+      "prompt": "填空：隔爆式防爆型设备，d 代表 ____，t 代表____。",
+      "answer": "气体、粉尘",
+      "updated": "2026-09-13T07:46:10.126Z"
     }
   },
   "drafts": {
@@ -7667,7 +7705,7 @@
       "2026-08-19": 60162,
       "2026-08-25": 402700,
       "2026-08-28": 195821,
-      "2026-09-13": 665927
+      "2026-09-13": 1341095
     },
     "modes": {
       "2026-08-06": {
@@ -7704,9 +7742,9 @@
       },
       "2026-09-13": {
         "review": 16098,
-        "eightSets": 625556
+        "eightSets": 1300724
       }
     }
   },
-  "updated": "2026-09-13T07:34:58.387Z"
+  "updated": "2026-09-13T07:46:15.903Z"
 }
