@@ -17,7 +17,7 @@
 
 当前版本不会自动读取 macOS 备忘录。备忘录更新后，需要重新导出并更新 `data.json`，再推送到 GitHub。
 
-顶部标题和学习数据会优先读取 `user-data.json`。页面里的“保存标题”和“编辑命题”会先保存到本机浏览器；“云同步全部”需要输入具备仓库 Contents 写入权限的 GitHub Token，用于更新 `user-data.json`，同时同步 `title-config.json` 以保持兼容。
+顶部标题和学习数据会优先读取 `user-data.json`。页面里的保存标题、编辑命题、删除题目和答题记录会先保存到本机浏览器；配置具备仓库 Contents 写入权限的 GitHub Token 后，这些操作会自动同步到 GitHub。仍可使用“云同步全部”立即同步，用于更新 `user-data.json`，同时同步 `title-config.json` 以保持兼容。
 
 建议使用 GitHub fine-grained token：只选择仓库 `zxtt1998/safety-tech-notebook`，Repository permissions 里把 Contents 设置为 Read and write。Token 只保存在本机浏览器。
 

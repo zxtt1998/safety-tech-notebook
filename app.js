@@ -39,6 +39,9 @@ const analysisBody = $("#analysisBody");
 const analysisToggle = $("#analysisToggle");
 const studyGoalInput = $("#studyGoalInput");
 const globalSearchInput = $("#globalSearchInput");
+let autoSyncTimer = null;
+let cloudSyncInFlight = null;
+let autoSyncQueued = false;
 
 const applyTheme = () => {
   document.body.dataset.theme = state.theme;
@@ -92,7 +95,7 @@ const bulkDeleteSelected = () => {
     setTitleStatus("请先选择要删除的题目", "warn");
     return;
   }
-  const ok = window.confirm(`确定删除已选择的 ${ids.length} 道题吗？\n删除后可通过“云同步全部”同步到其他设备。`);
+  const ok = window.confirm(`确定删除已选择的 ${ids.length} 道题吗？\n删除后会自动同步到其他设备。`);
   if (!ok) return;
   const deletedAt = new Date().toISOString();
   ids.forEach((id) => {
@@ -106,7 +109,8 @@ const bulkDeleteSelected = () => {
   saveCustomQuiz();
   saveDrafts();
   render();
-  setTitleStatus(`已删除 ${ids.length} 题，可云同步`, "ok");
+  setTitleStatus(`已删除 ${ids.length} 题，等待自动同步`, "ok");
+  scheduleAutoSync();
 };
 
 const createBulkSelector = (item) => {
@@ -908,12 +912,14 @@ const renderCards = () => {
     node.querySelector(".review-btn").addEventListener("click", () => {
       progress.review += 1;
       saveProgress();
+      scheduleAutoSync();
       render();
     });
     node.querySelector(".master-btn").textContent = progress.mastered ? "取消掌握" : "标记掌握";
     node.querySelector(".master-btn").addEventListener("click", () => {
       progress.mastered = !progress.mastered;
       saveProgress();
+      scheduleAutoSync();
       render();
     });
     cards.appendChild(node);
@@ -953,9 +959,13 @@ const renderQuizCards = (items) => {
     editBtn.textContent = state.customQuiz[item.id] ? "已自定义" : "编辑命题";
     editBtn.addEventListener("click", () => openQuizEditor(item, node, quiz));
     node.querySelector(".card-meta").appendChild(createCardTools(item, editBtn));
-    node.querySelector(".reveal-btn").addEventListener("click", () => {
-      node.querySelector(".quiz-answer").hidden = false;
-      node.querySelector(".quiz-actions").hidden = false;
+    node.querySelector(".reveal-btn").addEventListener("click", (event) => {
+      const answer = node.querySelector(".quiz-answer");
+      const actions = node.querySelector(".quiz-actions");
+      const isRevealed = !answer.hidden;
+      answer.hidden = isRevealed;
+      actions.hidden = isRevealed;
+      event.currentTarget.textContent = isRevealed ? "显示答案" : "收起答案";
     });
     node.querySelector(".wrong-btn").addEventListener("click", () => {
       state.quiz.wrong += 1;
@@ -968,6 +978,7 @@ const renderQuizCards = (items) => {
       renderAnalysis();
       node.classList.add("wrong");
       lockQuizCard(node);
+      scheduleAutoSync();
     });
     node.querySelector(".right-btn").addEventListener("click", () => {
       state.quiz.right += 1;
@@ -982,6 +993,7 @@ const renderQuizCards = (items) => {
       renderAnalysis();
       node.classList.add("right");
       lockQuizCard(node);
+      scheduleAutoSync();
     });
     cards.appendChild(node);
   });
@@ -1246,11 +1258,12 @@ const applyCustomItem = (item, nextCustom) => {
   saveCustomQuiz();
   buildReferenceTexts(state.referenceTexts);
   renderCards();
-  setTitleStatus("题目已本地保存，可云同步", "ok");
+  setTitleStatus("命题已保存，等待自动同步", "ok");
+  scheduleAutoSync();
 };
 
 const deleteItemFromEditor = (item) => {
-  const ok = window.confirm(`确定删除这道题吗？\n${item.id} · ${displayText(item)}\n\n删除后会从当前题库隐藏，并可通过“云同步全部”同步到其他设备。`);
+  const ok = window.confirm(`确定删除这道题吗？\n${item.id} · ${displayText(item)}\n\n删除后会从当前题库隐藏，并自动同步到其他设备。`);
   if (!ok) return;
   state.deletedItems[item.id] = new Date().toISOString();
   delete state.customQuiz[item.id];
@@ -1260,7 +1273,8 @@ const deleteItemFromEditor = (item) => {
   saveDrafts();
   state.quizPage = Math.max(0, state.quizPage);
   render();
-  setTitleStatus("题目已删除，可云同步", "ok");
+  setTitleStatus("题目已删除，等待自动同步", "ok");
+  scheduleAutoSync();
 };
 
 const openReviewEditor = (item, node) => {
@@ -1296,7 +1310,8 @@ const openReviewEditor = (item, node) => {
     delete state.customQuiz[item.id];
     saveCustomQuiz();
     renderCards();
-    setTitleStatus("已恢复默认题目，可云同步", "ok");
+    setTitleStatus("已恢复默认题目，等待自动同步", "ok");
+    scheduleAutoSync();
   });
 
   editor.querySelector("[data-editor-delete]").addEventListener("click", () => deleteItemFromEditor(item));
@@ -1558,7 +1573,8 @@ const openQuizEditor = (item, node, quiz) => {
     delete state.customQuiz[item.id];
     saveCustomQuiz();
     renderCards();
-    setTitleStatus("已恢复默认命题，可云同步", "ok");
+    setTitleStatus("已恢复默认命题，等待自动同步", "ok");
+    scheduleAutoSync();
   });
 
   editor.querySelector("[data-editor-delete]").addEventListener("click", () => deleteItemFromEditor(item));
@@ -1743,8 +1759,9 @@ const loadOptionalPdfReference = async () => {
   }
 };
 
-const githubToken = () => {
+const githubToken = ({ prompt = true } = {}) => {
   let token = localStorage.getItem("safetyNotebookGithubToken") || "";
+  if (!token && !prompt) return "";
   if (!token) {
     token = window.prompt("粘贴你在 GitHub 生成的 Personal access token。权限选 Repository contents: Read and write，只授权 zxtt1998/safety-tech-notebook。Token 只保存在本机浏览器。") || "";
     if (!token.trim()) return "";
@@ -1776,24 +1793,58 @@ const putGithubJson = async (path, payload, message, token) => {
   if (!response.ok) throw new Error(`GitHub API failed: ${path}`);
 };
 
-const syncAllToGithub = async () => {
+const syncAllToGithub = async ({ automatic = false } = {}) => {
+  if (!automatic) {
+    window.clearTimeout(autoSyncTimer);
+    autoSyncTimer = null;
+  }
   saveTitleLocal(titleInput.value);
   saveAllLocal();
-  const token = githubToken();
+  const token = githubToken({ prompt: !automatic });
   if (!token) {
-    setTitleStatus("已本地保存，未云同步", "warn");
+    setTitleStatus(automatic ? "已本地保存，请配置 Token 后自动同步" : "已本地保存，未云同步", "warn");
     return;
   }
 
-  setTitleStatus("云同步中...", "");
-  try {
-    const payload = cloudPayload();
-    await putGithubJson("user-data.json", payload, "Sync notebook learning data", token);
-    await putGithubJson("title-config.json", { title: state.appTitle, updated: payload.updated }, `Update notebook title to ${state.appTitle}`, token);
-    setTitleStatus("学习数据已云同步", "ok");
-  } catch (error) {
-    setTitleStatus("云同步失败，已本地保存", "warn");
+  if (cloudSyncInFlight) {
+    if (automatic) autoSyncQueued = true;
+    else await cloudSyncInFlight;
+    if (automatic) return cloudSyncInFlight;
   }
+
+  setTitleStatus("云同步中...", "");
+  const run = (async () => {
+    try {
+      const payload = cloudPayload();
+      await putGithubJson("user-data.json", payload, "Sync notebook learning data", token);
+      await putGithubJson("title-config.json", { title: state.appTitle, updated: payload.updated }, `Update notebook title to ${state.appTitle}`, token);
+      setTitleStatus("学习数据已自动同步", "ok");
+    } catch (error) {
+      setTitleStatus("云同步失败，已本地保存", "warn");
+    }
+  })();
+  cloudSyncInFlight = run.finally(() => {
+    cloudSyncInFlight = null;
+    if (autoSyncQueued) {
+      autoSyncQueued = false;
+      scheduleAutoSync();
+    }
+  });
+  return cloudSyncInFlight;
+};
+
+const scheduleAutoSync = () => {
+  window.clearTimeout(autoSyncTimer);
+  autoSyncTimer = null;
+  if (!githubToken({ prompt: false })) {
+    setTitleStatus("已本地保存，请配置 Token 后自动同步", "warn");
+    return;
+  }
+  setTitleStatus("已本地保存，等待自动同步...", "ok");
+  autoSyncTimer = window.setTimeout(() => {
+    autoSyncTimer = null;
+    syncAllToGithub({ automatic: true });
+  }, 900);
 };
 
 document.querySelectorAll(".segments button").forEach((button) => {
@@ -1854,10 +1905,11 @@ $("#shuffleBtn").addEventListener("click", () => {
 
 $("#saveTitleBtn").addEventListener("click", () => {
   saveTitleLocal(titleInput.value);
-  setTitleStatus("已本地保存", "ok");
+  setTitleStatus("标题已保存，等待自动同步", "ok");
+  scheduleAutoSync();
 });
 
-$("#syncDataBtn").addEventListener("click", syncAllToGithub);
+$("#syncDataBtn").addEventListener("click", () => syncAllToGithub());
 
 $("#loadCloudBtn").addEventListener("click", () => loadCloudData());
 
