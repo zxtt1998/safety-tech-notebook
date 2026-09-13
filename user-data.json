@@ -6921,12 +6921,12 @@
     "E2026-01-040": {
       "review": 1,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-21T00:52:16.700Z",
-      "lastTestedAt": "2026-08-21T00:32:16.700Z",
-      "lastResult": "right",
-      "testAttempts": 1,
-      "testWrong": 0
+      "memoryStage": -1,
+      "nextReviewAt": "2026-09-13T08:42:04.347Z",
+      "lastTestedAt": "2026-09-13T08:42:04.347Z",
+      "lastResult": "wrong",
+      "testAttempts": 2,
+      "testWrong": 1
     },
     "E2026-01-041": {
       "review": 0,
@@ -7456,7 +7456,7 @@
   },
   "quiz": {
     "right": 148,
-    "wrong": 36,
+    "wrong": 37,
     "sectionStats": {
       "机械基础": {
         "right": 25,
@@ -7536,7 +7536,7 @@
       },
       "第一套": {
         "right": 34,
-        "wrong": 13
+        "wrong": 14
       },
       "压力容器": {
         "right": 0,
@@ -7897,7 +7897,7 @@
       "2026-08-19": 60162,
       "2026-08-25": 402700,
       "2026-08-28": 195821,
-      "2026-09-13": 3235604
+      "2026-09-13": 3242344
     },
     "modes": {
       "2026-08-06": {
@@ -7934,10 +7934,10 @@
       },
       "2026-09-13": {
         "review": 209433,
-        "eightSets": 2125843,
+        "eightSets": 2132583,
         "quiz": 228572
       }
     }
   },
-  "updated": "2026-09-13T08:41:58.514Z"
+  "updated": "2026-09-13T08:42:05.254Z"
 }
