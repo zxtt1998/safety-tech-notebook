@@ -7014,287 +7014,431 @@
     "E2026-02-001": {
       "review": 1,
       "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:44:28.894Z",
       "lastTestedAt": "2026-09-13T07:24:28.894Z",
       "lastResult": "right",
       "testAttempts": 1,
-      "testWrong": 0,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-09-13T07:44:28.894Z"
+      "testWrong": 0
     },
     "E2026-02-002": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-02-003": {
       "review": 1,
       "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:47:27.309Z",
       "lastTestedAt": "2026-09-13T07:27:27.309Z",
       "lastResult": "right",
       "testAttempts": 1,
-      "testWrong": 0,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-09-13T07:47:27.309Z"
+      "testWrong": 0
     },
     "E2026-02-004": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-02-005": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-02-006": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-02-007": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-02-008": {
       "review": 1,
       "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:45:07.936Z",
       "lastTestedAt": "2026-09-13T07:25:07.936Z",
       "lastResult": "right",
       "testAttempts": 1,
-      "testWrong": 0,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-09-13T07:45:07.936Z"
+      "testWrong": 0
     },
     "E2026-02-009": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-02-010": {
       "review": 0,
       "mastered": false,
+      "memoryStage": -1,
+      "nextReviewAt": "2026-09-13T07:26:55.415Z",
       "lastTestedAt": "2026-09-13T07:26:55.415Z",
       "lastResult": "wrong",
       "testAttempts": 1,
-      "testWrong": 1,
-      "memoryStage": -1,
-      "nextReviewAt": "2026-09-13T07:26:55.415Z"
+      "testWrong": 1
     },
     "E2026-02-011": {
       "review": 1,
       "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:48:07.775Z",
       "lastTestedAt": "2026-09-13T07:28:07.775Z",
       "lastResult": "right",
       "testAttempts": 1,
-      "testWrong": 0,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-09-13T07:48:07.775Z"
+      "testWrong": 0
     },
     "E2026-02-012": {
       "review": 1,
       "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:48:05.334Z",
       "lastTestedAt": "2026-09-13T07:28:05.334Z",
       "lastResult": "right",
       "testAttempts": 1,
-      "testWrong": 0,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-09-13T07:48:05.334Z"
+      "testWrong": 0
     },
     "E2026-03-001": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-002": {
       "review": 1,
       "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:49:23.197Z",
       "lastTestedAt": "2026-09-13T07:29:23.197Z",
       "lastResult": "right",
       "testAttempts": 1,
-      "testWrong": 0,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-09-13T07:49:23.197Z"
+      "testWrong": 0
     },
     "E2026-03-003": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-004": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-005": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-006": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-007": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-008": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-009": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-010": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-011": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-012": {
       "review": 1,
       "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T07:56:54.310Z",
       "lastTestedAt": "2026-09-13T07:36:54.310Z",
       "lastResult": "right",
       "testAttempts": 1,
-      "testWrong": 0,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-09-13T07:56:54.310Z"
+      "testWrong": 0
     },
     "E2026-03-013": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-014": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-015": {
       "review": 1,
       "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T08:00:06.929Z",
       "lastTestedAt": "2026-09-13T07:40:06.929Z",
       "lastResult": "right",
       "testAttempts": 1,
-      "testWrong": 0,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-09-13T08:00:06.929Z"
+      "testWrong": 0
     },
     "E2026-03-016": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-017": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-018": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-019": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-020": {
       "review": 1,
       "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T08:02:41.398Z",
       "lastTestedAt": "2026-09-13T07:42:41.398Z",
       "lastResult": "right",
       "testAttempts": 1,
-      "testWrong": 0,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-09-13T08:02:41.398Z"
+      "testWrong": 0
     },
     "E2026-03-021": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-022": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-023": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-024": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-025": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-026": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-027": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-028": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-029": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-030": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-031": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-032": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-033": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-034": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-035": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T08:09:08.385Z",
+      "lastTestedAt": "2026-09-13T07:49:08.385Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "E2026-03-036": {
-      "review": 0,
-      "mastered": false
+      "review": 1,
+      "mastered": false,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-09-13T08:10:43.472Z",
+      "lastTestedAt": "2026-09-13T07:50:43.472Z",
+      "lastResult": "right",
+      "testAttempts": 1,
+      "testWrong": 0
     },
     "E2026-03-037": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-038": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-039": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-040": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-041": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-042": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "testAttempts": 0,
+      "testWrong": 0
     },
     "E2026-03-043": {
       "review": 0,
-      "mastered": false
+      "mastered": false,
+      "memoryStage": -1,
+      "nextReviewAt": "2026-09-13T07:51:54.235Z",
+      "lastTestedAt": "2026-09-13T07:51:54.235Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     }
   },
   "quiz": {
-    "right": 133,
-    "wrong": 31,
+    "right": 135,
+    "wrong": 32,
     "sectionStats": {
       "机械基础": {
         "right": 25,
@@ -7397,8 +7541,8 @@
         "wrong": 1
       },
       "第三套": {
-        "right": 4,
-        "wrong": 0
+        "right": 6,
+        "wrong": 1
       }
     }
   },
@@ -7641,6 +7785,21 @@
       "prompt": "填空：隔爆式防爆型设备，d 代表 ____，t 代表____。",
       "answer": "气体、粉尘",
       "updated": "2026-09-13T07:46:10.126Z"
+    },
+    "E2026-03-041": {
+      "prompt": "填空：化学抑爆系统通过探测预警，____。",
+      "answer": "从而实现初期火灾爆炸抑制",
+      "updated": "2026-09-13T07:51:07.576Z"
+    },
+    "E2026-03-042": {
+      "prompt": "填空：含有稀碱液的容器，采取____。",
+      "answer": "措施保证碱液不会被浓缩",
+      "updated": "2026-09-13T07:52:03.664Z"
+    },
+    "E2026-01-001": {
+      "prompt": "填空：可____。",
+      "answer": "采用将皮带全部遮盖的防护网、防护栅栏对皮带进行防护",
+      "updated": "2026-09-13T08:20:45.917Z"
     }
   },
   "drafts": {
@@ -7705,7 +7864,7 @@
       "2026-08-19": 60162,
       "2026-08-25": 402700,
       "2026-08-28": 195821,
-      "2026-09-13": 1341095
+      "2026-09-13": 1970844
     },
     "modes": {
       "2026-08-06": {
@@ -7741,10 +7900,10 @@
         "otherSafety": 312569
       },
       "2026-09-13": {
-        "review": 16098,
-        "eightSets": 1300724
+        "review": 21007,
+        "eightSets": 1429780
       }
     }
   },
-  "updated": "2026-09-13T07:46:15.903Z"
+  "updated": "2026-09-13T08:20:46.830Z"
 }
