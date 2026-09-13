@@ -278,13 +278,13 @@
       "testWrong": 0
     },
     "015": {
-      "review": 3,
+      "review": 4,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-03T00:50:36.932Z",
-      "lastTestedAt": "2026-08-03T00:30:36.932Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-09-13T09:30:33.874Z",
+      "lastTestedAt": "2026-09-13T08:30:33.874Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "016": {
@@ -7443,7 +7443,7 @@
     }
   },
   "quiz": {
-    "right": 136,
+    "right": 137,
     "wrong": 34,
     "sectionStats": {
       "机械基础": {
@@ -7455,7 +7455,7 @@
         "wrong": 3
       },
       "木工平刨床": {
-        "right": 5,
+        "right": 6,
         "wrong": 2
       },
       "机械高频": {
@@ -7885,7 +7885,7 @@
       "2026-08-19": 60162,
       "2026-08-25": 402700,
       "2026-08-28": 195821,
-      "2026-09-13": 2548671
+      "2026-09-13": 2551872
     },
     "modes": {
       "2026-08-06": {
@@ -7923,9 +7923,9 @@
       "2026-09-13": {
         "review": 209433,
         "eightSets": 1474792,
-        "quiz": 192690
+        "quiz": 195891
       }
     }
   },
-  "updated": "2026-09-13T08:30:31.584Z"
+  "updated": "2026-09-13T08:30:37.668Z"
 }
