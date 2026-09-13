@@ -147,7 +147,7 @@
       "review": 5,
       "mastered": false,
       "memoryStage": 2,
-      "nextReviewAt": "2026-08-05T19:37:29.290Z",
+      "nextReviewAt": "2026-07-31T15:39:13.136Z",
       "lastTestedAt": "2026-08-05T10:37:29.290Z",
       "lastResult": "right",
       "testAttempts": 3,
@@ -167,7 +167,7 @@
       "review": 8,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-05T11:37:39.657Z",
+      "nextReviewAt": "2026-07-31T15:39:38.742Z",
       "lastTestedAt": "2026-08-05T10:37:39.657Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -509,7 +509,7 @@
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "nextReviewAt": "2026-08-06T01:08:35.141Z",
+      "nextReviewAt": "2026-08-03T00:33:29.962Z",
       "lastTestedAt": "2026-08-06T00:48:35.141Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -556,7 +556,7 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-22T03:40:59.327Z",
+      "nextReviewAt": "2026-08-03T00:55:31.634Z",
       "lastTestedAt": "2026-08-22T02:40:59.327Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -573,7 +573,7 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-22T03:40:58.245Z",
+      "nextReviewAt": "2026-08-01T14:39:19.925Z",
       "lastTestedAt": "2026-08-22T02:40:58.245Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -5662,8 +5662,11 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-02T14:49:27.996Z",
+      "lastTestedAt": "2026-08-02T14:49:27.996Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "N112": {
       "review": 0,
@@ -5704,7 +5707,7 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-13T01:25:15.578Z",
+      "nextReviewAt": "2026-08-05T10:59:05.523Z",
       "lastTestedAt": "2026-08-13T00:25:15.578Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -5714,7 +5717,7 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-13T01:25:20.479Z",
+      "nextReviewAt": "2026-08-05T10:59:13.205Z",
       "lastTestedAt": "2026-08-13T00:25:20.479Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -5734,7 +5737,7 @@
       "review": 2,
       "mastered": false,
       "memoryStage": 1,
-      "nextReviewAt": "2026-08-13T01:26:18.034Z",
+      "nextReviewAt": "2026-08-05T10:59:28.453Z",
       "lastTestedAt": "2026-08-13T00:26:18.034Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -5744,7 +5747,7 @@
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "nextReviewAt": "2026-08-13T00:46:34.763Z",
+      "nextReviewAt": "2026-08-05T10:39:46.468Z",
       "lastTestedAt": "2026-08-13T00:26:34.763Z",
       "lastResult": "right",
       "testAttempts": 2,
@@ -5782,40 +5785,43 @@
       "testWrong": 0
     },
     "OS01-01": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-20T14:53:31.995Z",
-      "lastTestedAt": "2026-08-20T14:33:31.995Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-25T11:36:53.618Z",
+      "lastTestedAt": "2026-08-25T10:36:53.618Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "OS01-02": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-13T00:47:19.311Z",
-      "lastTestedAt": "2026-08-13T00:27:19.311Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-25T11:36:56.029Z",
+      "lastTestedAt": "2026-08-25T10:36:56.029Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "OS01-03": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "nextReviewAt": "2026-08-13T00:27:23.444Z",
-      "lastTestedAt": "2026-08-13T00:27:23.444Z",
-      "lastResult": "wrong",
-      "testAttempts": 1,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-25T10:57:04.664Z",
+      "lastTestedAt": "2026-08-25T10:37:04.664Z",
+      "lastResult": "right",
+      "testAttempts": 2,
       "testWrong": 1
     },
     "OS01-04": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-25T10:57:08.218Z",
+      "lastTestedAt": "2026-08-25T10:37:08.218Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS02-01": {
@@ -5826,31 +5832,43 @@
       "testWrong": 0
     },
     "OS02-02": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-25T10:58:29.830Z",
+      "lastTestedAt": "2026-08-25T10:38:29.830Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS02-03": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-25T10:59:17.293Z",
+      "lastTestedAt": "2026-08-25T10:39:17.293Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS02-04": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-25T10:59:37.332Z",
+      "lastTestedAt": "2026-08-25T10:39:37.332Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS03-01": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-25T10:59:40.985Z",
+      "lastTestedAt": "2026-08-25T10:39:40.985Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS03-02": {
@@ -5861,13 +5879,13 @@
       "testWrong": 0
     },
     "OS04-01": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-13T00:50:24.156Z",
-      "lastTestedAt": "2026-08-13T00:30:24.156Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-25T11:40:16.438Z",
+      "lastTestedAt": "2026-08-25T10:40:16.438Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "OS04-02": {
@@ -5881,13 +5899,13 @@
       "testWrong": 0
     },
     "OS04-03": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-13T00:51:43.556Z",
-      "lastTestedAt": "2026-08-13T00:31:43.556Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-25T11:40:24.251Z",
+      "lastTestedAt": "2026-08-25T10:40:24.251Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "OS05-01": {
@@ -6026,13 +6044,13 @@
       "testWrong": 0
     },
     "OS06-03": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-13T00:54:28.907Z",
-      "lastTestedAt": "2026-08-13T00:34:28.907Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-25T11:41:06.875Z",
+      "lastTestedAt": "2026-08-25T10:41:06.875Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "OS06-04": {
@@ -6053,10 +6071,13 @@
       "testWrong": 0
     },
     "OS07-02": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-25T11:03:08.988Z",
+      "lastTestedAt": "2026-08-25T10:43:08.988Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS07-03": {
@@ -6070,8 +6091,11 @@
       "review": 0,
       "mastered": false,
       "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
+      "nextReviewAt": "2026-08-25T10:43:23.445Z",
+      "lastTestedAt": "2026-08-25T10:43:23.445Z",
+      "lastResult": "wrong",
+      "testAttempts": 1,
+      "testWrong": 1
     },
     "OS07-05": {
       "review": 0,
@@ -6109,10 +6133,13 @@
       "testWrong": 0
     },
     "OS07-10": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
+      "memoryStage": 0,
+      "nextReviewAt": "2026-08-25T11:03:53.656Z",
+      "lastTestedAt": "2026-08-25T10:43:53.656Z",
+      "lastResult": "right",
+      "testAttempts": 1,
       "testWrong": 0
     },
     "OS08-01": {
@@ -6514,10 +6541,10 @@
       "testWrong": 0
     },
     "E2026-01-004": {
-      "review": 0,
+      "review": 1,
       "mastered": false,
       "memoryStage": -1,
-      "nextReviewAt": "2026-08-20T00:30:35.123Z",
+      "nextReviewAt": "2026-08-19T08:53:02.511Z",
       "lastTestedAt": "2026-08-20T00:30:35.123Z",
       "lastResult": "wrong",
       "testAttempts": 1,
@@ -6571,13 +6598,13 @@
       "testWrong": 0
     },
     "E2026-01-010": {
-      "review": 1,
+      "review": 2,
       "mastered": false,
-      "memoryStage": 0,
-      "nextReviewAt": "2026-08-20T00:56:35.385Z",
-      "lastTestedAt": "2026-08-20T00:36:35.385Z",
+      "memoryStage": 1,
+      "nextReviewAt": "2026-08-25T11:36:37.230Z",
+      "lastTestedAt": "2026-08-25T10:36:37.230Z",
       "lastResult": "right",
-      "testAttempts": 1,
+      "testAttempts": 2,
       "testWrong": 0
     },
     "E2026-01-011": {
@@ -6959,8 +6986,8 @@
     }
   },
   "quiz": {
-    "right": 107,
-    "wrong": 24,
+    "right": 121,
+    "wrong": 25,
     "sectionStats": {
       "机械基础": {
         "right": 24,
@@ -7023,24 +7050,36 @@
         "wrong": 0
       },
       "电气接地与防雷": {
-        "right": 2,
+        "right": 6,
         "wrong": 1
       },
       "职业卫生与劳动保护": {
-        "right": 3,
+        "right": 5,
         "wrong": 0
       },
       "机械技术": {
-        "right": 1,
+        "right": 2,
         "wrong": 0
       },
       "电气安全补充": {
-        "right": 1,
-        "wrong": 0
+        "right": 3,
+        "wrong": 1
       },
       "第一套": {
-        "right": 20,
+        "right": 21,
         "wrong": 9
+      },
+      "压力容器": {
+        "right": 0,
+        "wrong": 1
+      },
+      "评价资料与重大隐患": {
+        "right": 3,
+        "wrong": 0
+      },
+      "动火与有限空间": {
+        "right": 1,
+        "wrong": 0
       }
     }
   },
@@ -7085,6 +7124,13 @@
       "answer": "0.3米、1.3、2米",
       "hint": "提示：重点核对数值、单位、上下限和适用对象。",
       "updated": "2026-08-01T03:52:42.949Z",
+      "images": []
+    },
+    "N095": {
+      "prompt": "查看图片：特种设备安全技术 备忘录参考图",
+      "answer": "结合图片复习本章节关键要求。",
+      "hint": "提示：这是备忘录中的参考图。",
+      "updated": "2026-08-01T03:52:57.179Z",
       "images": []
     },
     "031": {
@@ -7191,6 +7237,26 @@
       "prompt": "填空：特低电压和剩余电流动作保护装置对____起到有效防护效果。",
       "answer": "直接触电击和间接触电击都能",
       "updated": "2026-08-22T02:36:15.315Z"
+    },
+    "OS06-01": {
+      "prompt": "机床运转前未达到安全预警力时，驱动装置____动作。",
+      "answer": "不应",
+      "updated": "2026-08-25T10:40:48.036Z"
+    },
+    "OS07-01": {
+      "prompt": "不导电环境应防止____和____",
+      "answer": "高电位引出、低电位引入的可能性",
+      "updated": "2026-08-25T10:42:17.184Z"
+    },
+    "OS07-02": {
+      "prompt": "场所____因受潮而失去不导电性能。",
+      "answer": "不会",
+      "updated": "2026-08-25T10:42:47.506Z"
+    },
+    "OS07-05": {
+      "prompt": "绝缘破损后呈现危险电压的金属部位，____",
+      "answer": "除特殊规定外都应接地",
+      "updated": "2026-08-25T10:43:42.810Z"
     }
   },
   "drafts": {
@@ -7241,11 +7307,16 @@
   "study": {
     "targetMinutes": 120,
     "days": {
-      "2026-08-20": 950765,
+      "2026-08-02": 87809,
       "2026-08-03": 791939,
-      "2026-08-05": 372323,
+      "2026-08-04": 22924,
+      "2026-08-05": 451774,
       "2026-08-06": 921993,
       "2026-08-13": 884457,
+      "2026-08-19": 60162,
+      "2026-08-20": 950765,
+      "2026-08-23": 247994,
+      "2026-08-25": 402700,
       "2026-08-22": 720159,
       "2026-08-21": 284026
     },
@@ -7275,8 +7346,14 @@
         "eightSetsReview": 472,
         "eightSets": 428633,
         "quiz": 270291
+      },
+      "2026-08-25": {
+        "review": 8463,
+        "eightSetsReview": 684,
+        "eightSets": 24476,
+        "otherSafety": 312569
       }
     }
   },
-  "updated": "2026-08-22T02:45:01.912Z"
+  "updated": "2026-08-25T10:44:14.913Z"
 }
