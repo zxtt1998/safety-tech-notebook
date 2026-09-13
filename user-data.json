@@ -7046,20 +7046,23 @@
       "testWrong": 0
     },
     "E2026-02-002": {
-      "review": 0,
-      "mastered": false,
-      "memoryStage": -1,
-      "testAttempts": 0,
-      "testWrong": 0
-    },
-    "E2026-02-003": {
       "review": 1,
       "mastered": false,
       "memoryStage": 0,
-      "nextReviewAt": "2026-09-13T07:47:27.309Z",
-      "lastTestedAt": "2026-09-13T07:27:27.309Z",
+      "nextReviewAt": "2026-09-13T09:06:12.694Z",
+      "lastTestedAt": "2026-09-13T08:46:12.694Z",
       "lastResult": "right",
       "testAttempts": 1,
+      "testWrong": 0
+    },
+    "E2026-02-003": {
+      "review": 2,
+      "mastered": false,
+      "memoryStage": 1,
+      "nextReviewAt": "2026-09-13T09:46:16.257Z",
+      "lastTestedAt": "2026-09-13T08:46:16.257Z",
+      "lastResult": "right",
+      "testAttempts": 2,
       "testWrong": 0
     },
     "E2026-02-004": {
@@ -7461,7 +7464,7 @@
     }
   },
   "quiz": {
-    "right": 150,
+    "right": 152,
     "wrong": 37,
     "sectionStats": {
       "机械基础": {
@@ -7561,7 +7564,7 @@
         "wrong": 2
       },
       "第二套": {
-        "right": 5,
+        "right": 7,
         "wrong": 1
       },
       "第三套": {
@@ -7903,7 +7906,7 @@
       "2026-08-19": 60162,
       "2026-08-25": 402700,
       "2026-08-28": 195821,
-      "2026-09-13": 3406793
+      "2026-09-13": 3421797
     },
     "modes": {
       "2026-08-06": {
@@ -7940,10 +7943,10 @@
       },
       "2026-09-13": {
         "review": 209433,
-        "eightSets": 2297032,
+        "eightSets": 2312036,
         "quiz": 228572
       }
     }
   },
-  "updated": "2026-09-13T08:46:05.745Z"
+  "updated": "2026-09-13T08:46:25.103Z"
 }
